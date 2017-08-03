@@ -1,0 +1,4 @@
+.common :global(.cspace-ui-PublicPage--common),
+.common :global(.cspace-ui-Logo--common) {
+  background-image: url(../../images/logo.jpg);
+}
