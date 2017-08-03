@@ -1,0 +1,45 @@
+<!--
+  index.html
+
+  This page is used to run the CollectionSpace UI with the BAMPFA profile plugin, using a local
+  development server.
+
+  Use the command: npm run devserver
+  Then open a browser to: http://localhost:8080
+-->
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <!--
+    Load the latest version of the CollectionSpace UI. This places the cspaceUI function into
+    the global namespace. (In production, this should specify an exact version of cspace-ui,
+    to avoid loading a new major version, which could be incompatible with the configurations
+    and plugins that are being used.)
+  -->
+  <script src="https://unpkg.com/cspace-ui/dist/cspaceUI.min.js"></script>
+
+  <!--
+    Load the BAMPFA profile plugin. This places the cspaceUIPluginProfileBAMPFA function into the
+    global namespace.
+
+    webpack dev server generates a JS bundle into memory, and updates it as files are edited.
+    This bundle is served from the URL /cspaceUIPluginProfileBAMPFA.js, but it does not exist in
+    the filesystem.
+  -->
+  <script src="/cspaceUIPluginProfileBAMPFA.js"></script>
+</head>
+<body>
+  <main></main>
+  <script>
+    cspaceUI({
+      serverUrl: 'http://nightly.collectionspace.org:8180',
+      serverTimeZone: 'America/Los_Angeles',
+      prettyUrls: true,
+      plugins: [
+        cspaceUIPluginProfileBAMPFA(),
+      ],
+    });
+  </script>
+</body>
+</html>
