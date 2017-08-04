@@ -12,12 +12,11 @@
   <meta charset="UTF-8">
 
   <!--
-    Load the latest version of the CollectionSpace UI. This places the cspaceUI function into
-    the global namespace. (In production, this should specify an exact version of cspace-ui,
-    to avoid loading a new major version, which could be incompatible with the configurations
-    and plugins that are being used.)
+    Load the CollectionSpace UI. This places the cspaceUI function into the global namespace.
+    A compatible version of cspace-ui is specified as a development dependency of this package
+    (in package.json), so its distribution bundle will be in node_modules.
   -->
-  <script src="https://unpkg.com/cspace-ui/dist/cspaceUI.min.js"></script>
+  <script src="/node_modules/cspace-ui/dist/cspaceUI.min.js"></script>
 
   <!--
     Load the BAMPFA profile plugin. This places the cspaceUIPluginProfileBAMPFA function into the
@@ -34,7 +33,7 @@
   <script>
     cspaceUI({
       serverUrl: 'http://nightly.collectionspace.org:8180',
-      serverTimeZone: 'America/Los_Angeles',
+      serverTimeZone: 'America/New_York',
       prettyUrls: true,
       plugins: [
         cspaceUIPluginProfileBAMPFA(),
