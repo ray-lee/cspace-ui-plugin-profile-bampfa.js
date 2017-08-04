@@ -29,8 +29,8 @@ host BAMPFA-customized CollectionSpace services, so some features may not work p
 currently no publicly accessible CollectionSpace 5.0 server customized for BAMPFA, but source code
 is available:
 
-BAMPFA 5.0 services layer: https://github.com/cspace-deployment/services/tree/bampfa_5.0
-BAMPFA 5.0 application layer: https://github.com/cspace-deployment/application/tree/bampfa_5.0
+- BAMPFA 5.0 services layer: https://github.com/cspace-deployment/services/tree/bampfa_5.0
+- BAMPFA 5.0 application layer: https://github.com/cspace-deployment/application/tree/bampfa_5.0
 
 A BAMPFA-customized CollectionSpace 5.0 server can be built from these sources, and installed
 on a host of your own.
