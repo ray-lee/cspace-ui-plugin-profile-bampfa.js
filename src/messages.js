@@ -17,4 +17,6 @@ export default {
     'field.intakes_common.currentLocation.name': 'Current location',
     'field.intakes_common.currentLocationFitness.name': 'Current location fitness',
     'field.intakes_common.currentLocationNote.name': 'Current location note',
+    'field.intakes_common.entryDate.name': 'Date in',
+    'field.intakes_common.despositorsRequirements.name': 'Address for Agenda',
 };
