@@ -28,11 +28,11 @@ const template = (pluginContext) => {
         <Row> 
           <Col>
             <Field name="entryDate" />
-            <Field name="artistTitleMedium" />
+            <Field name="intakeObject" />
           </Col>
 
           <Col>
-            <Field name="addressForAgenda" />
+            <Field name="sourceAddress" />
             <Field name="receipt" />
              {/*TO DO: load options */}
           </Col>
@@ -59,7 +59,7 @@ const template = (pluginContext) => {
         </Field>
         
         <Field name="entryNote" />
-        <Field name="packingNote" />
+        <Field name="disposition" />
 
       </Panel>
 
