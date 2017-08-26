@@ -68,11 +68,11 @@ export default (pluginContext) => {
             },
           },
         },
-        artistTitleMedium: {
+        intakeObject: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.bampfa_intakes.artistTitleMedium.name', 
+                id: 'field.bampfa_intakes.intakeObject.name', 
                 defaultMessage: 'Object (Artist/Title/Medium)',
               },
             }),
@@ -239,12 +239,12 @@ export default (pluginContext) => {
             },
           },
         },
-        packingNote: {
+        disposition: {
           [config]: {
             messages: defineMessages({
               name: {
                 id: 'field.intakes_common.packingNote.name',
-                defaultMessage: 'Packing note',
+                defaultMessage: 'Disposition',
               },
             }),
             view: {
