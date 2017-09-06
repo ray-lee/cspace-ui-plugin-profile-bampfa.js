@@ -100,7 +100,7 @@ export default (pluginContext) => {
             },
           },
         },
-        addressForAgenda: {
+        sourceAddress: {
           [config]: {
             messages: defineMessages({
               name: {

@@ -19,34 +19,24 @@ const template = (pluginContext) => {
     <Field name="document">
 
       <Panel name="objectEntryInfo" collapsible>
-
-        <Row>
-          <Field name="entryNumber" />
-          <Field name="currentOwner" />
-        </Row>
-
-        <Row> 
-          <Col>
-            <Field name="entryDate" />
-            <Field name="intakeObject" />
-          </Col>
-
-          <Col>
-            <Field name="sourceAddress" />
-            <Field name="receipt" />
-             {/*TO DO: load options */}
-          </Col>
-        </Row>
-
-        <Field name="entryReason" />
-
         <Cols>
           <Col>
-            <Field name="entryMethods" label="">
+            <Field name="entryNumber" />
+            <Field name="entryDate" />
+            <Field name="intakeObject" />
+            <Field name="entryReason" />
+
+            <Field name="entryMethods">
               <Field name="entryMethod" />
             </Field>
           </Col>
-          <Col />
+
+          <Col>
+            <Field name="currentOwner" />
+            <Field name="sourceAddress"/>
+            <Field name="receipt" />
+
+          </Col>
         </Cols>
 
         <Field name="currentLocationGroupList">
@@ -57,56 +47,43 @@ const template = (pluginContext) => {
             <Field name="currentLocationNote" />
           </Field>
         </Field>
-        
+
         <Field name="entryNote" />
         <Field name="disposition" />
-
       </Panel>
 
-      <Panel name="objectCollectionInfo" collapsible>
-
-        <Row>
-          <Field name="fieldCollectionDate" />
-          <Field name="fieldCollectionPlace" />
-        </Row>
-
+      <Panel name="objectCollectionInfo" collapsible collapsed>
         <Cols>
           <Col>
-            <Field name="fieldCollectionMethods" label="">
+            <Field name="fieldCollectionDate" />
+
+            <Field name="fieldCollectionMethods">
               <Field name="fieldCollectionMethod" />
             </Field>
-          </Col>
-          <Col>
-            <Field name="fieldCollectionSources" label="">
-              <Field name="fieldCollectionSource" />
-            </Field>
-          </Col>
-        </Cols>
 
-        <Cols>
-          <Col>
-            <Field name="fieldCollectionEventNames" label="">
-              <Field name="fieldCollectionEventName" />
-            </Field>
-            
-          </Col>
-          <Col>
-            <Field name="fieldCollectors" label="">
-              <Field name="fieldCollector" />
-            </Field>
-          </Col>
-        </Cols>
-
-        <Cols>
-          <Col>
+            <Field name="fieldCollectionNote" />
             <Field name="fieldCollectionNumber" />
           </Col>
-          <Col />
+
+          <Col>
+            <Field name="fieldCollectionPlace" />
+
+            <Field name="fieldCollectionSources">
+              <Field name="fieldCollectionSource" />
+            </Field>
+
+            <Field name="fieldCollectors">
+              <Field name="fieldCollector" />
+            </Field>
+
+            <Field name="fieldCollectionEventNames">
+              <Field name="fieldCollectionEventName" />
+            </Field>
+          </Col>
         </Cols>
       </Panel>
 
       <Panel name="valuation" collapsible>
-
         <Row>
           <Field name="valuer" />
           <Field name="valuationReferenceNumber" />
@@ -115,69 +92,47 @@ const template = (pluginContext) => {
       </Panel>
 
       <Panel name="insurance" collapsible>
-
         <Cols>
           <Col>
-            <Field name="insurers" label="">
+            <Field name="insurers">
               <Field name="insurer" />
             </Field>
-          </Col>
-          <Col>
-            <Field name="insuranceReferenceNumber" />
-          </Col>
-        </Cols>
 
-        <Row>
-          <Field name="insurancePolicyNumber" />
-          <Field name="insuranceNote" />
-        </Row>
-
-        <Cols>
-          <Col>
+            <Field name="insurancePolicyNumber" />
             <Field name="insuranceRenewalDate" />
           </Col>
+
           <Col>
+            <Field name="insuranceReferenceNumber" />
+            <Field name="insuranceNote" />
           </Col>
         </Cols>
       </Panel>
 
-      <Panel name="condition" collapsible>
-
+      <Panel name="condition" collapsible collapsed>
         <Cols>
           <Col>
-            <Field name="conditionCheckMethods" label="">
+            <Field name="conditionCheckMethods">
               <Field name="conditionCheckMethod" />
             </Field>
-          </Col>
-          <Col>
-            <Field name="conditionCheckDate" />
-          </Col>
-        </Cols>
 
-        <Cols>
-          <Col>
-            <Field name="conditionCheckReasons" label="">
+            <Field name="conditionCheckReasons">
               <Field name="conditionCheckReason" />
             </Field>
+
+            <Field name="conditionCheckersOrAssessors">
+              <Field name="conditionCheckerOrAssessor" />
+            </Field>
           </Col>
+
           <Col>
+            <Field name="conditionCheckDate" />
             <Field name="conditionCheckReferenceNumber" />
           </Col>
         </Cols>
 
-        <Cols>
-          <Col>
-            <Field name="conditionCheckersOrAssessors" label="">
-              <Field name="conditionCheckerOrAssessor" />
-            </Field>
-          </Col>
-          <Col />
-        </Cols>
-
         <Field name="conditionCheckNote" />
-
       </Panel>
-
     </Field>
   );
 };
