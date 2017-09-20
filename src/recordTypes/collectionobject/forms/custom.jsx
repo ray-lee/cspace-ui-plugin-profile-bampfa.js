@@ -113,7 +113,7 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* TO DO: Make this pannel's name show up */}
-      <Panel name="detail" collapsible>
+      <Panel name="detail" collapsible collapsed>
         <Row>
           <Col> 
             <Field name="productionDate"/>
@@ -149,7 +149,7 @@ const template = (pluginContext) => {
         </Field>
       </Panel>
 
-      <Panel name="desc" collapsible>
+      <Panel name="desc" collapsible collapsed>
         <Row>
           <div>
             <Field name="editionNumber" />
@@ -191,7 +191,7 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* Item-specific acq info */}
-      <Panel name="acq" collapsible>
+      <Panel name="acq" collapsible collapsed>
         
         <Row> 
           <div>
@@ -240,7 +240,7 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* Classification */}
-      <Panel name="classification" collapsible>
+      <Panel name="classification" collapsible collapsed>
         <Row> 
           <Col>
             <Field name="bampfaCollection"/>
@@ -255,7 +255,7 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* copyright */}
-      <Panel name="copyright" collapsible>
+      <Panel name="copyright" collapsible collapsed>
         <Row> 
           <Col>
             <Field name="copyrightCredit"/>
@@ -270,7 +270,7 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* Condition/Conservation info */}
-      <Panel name="condition" collapsible>
+      <Panel name="condition" collapsible collapsed>
 
         <Field name="conditionCheckGroupList">
           <Field name="conditionCheckGroup">
@@ -299,14 +299,14 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* notes panel */}
-      <Panel name="notes" collapsible>
+      <Panel name="notes" collapsible collapsed>
         <div>
           <Field name="comments"/>
         </div>
       </Panel>
 
       {/* collection text information */}
-      <Panel name="collectinfo" collapsible>
+      <Panel name="collectinfo" collapsible collapsed>
         <Field name="collectionTextGroupList">
             <Field name="collectionTextGroup">
               <Panel>
@@ -330,7 +330,7 @@ const template = (pluginContext) => {
       </Panel>
 
       {/* Cataloger Information */}
-      <Panel name="cataloger">
+      <Panel name="cataloger" collapsible collapsed>
         <Field name="catalogerGroupList">
           <Field name="catalogerGroup">
             <Field name="catalogerName" />
