@@ -229,9 +229,9 @@ export default (pluginContext) => {
               },
             }),
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
-                source: 'TEMP',
+                source: 'legalstatus',
               },
             },
           },
@@ -258,9 +258,9 @@ export default (pluginContext) => {
               },
             }),
             view: {
-              type:OptionPickerInput,
+              type: TermPickerInput,
               props: {
-                source: 'TEMP'
+                source: 'itemclass'
               },
             },
           },
@@ -955,7 +955,7 @@ export default (pluginContext) => {
                   },
                 }),
                 view: {
-                  type: TermPickerInput,
+                  type: OptionPickerInput,
                   props : {
                     source: "TEMP",
                   }
@@ -1094,7 +1094,7 @@ export default (pluginContext) => {
                   },
                 }),
                 view: {
-                  type: TermPickerInput,
+                  type: OptionPickerInput,
                   props : {
                     source: "TEMP",
                   }
@@ -1202,9 +1202,9 @@ export default (pluginContext) => {
             }),
             repeating: true,
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
-                source: "TEMP",
+                source: 'acquisitionreason',
               },
             },
           },
@@ -1418,9 +1418,9 @@ export default (pluginContext) => {
             }),
             repeating: true,
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
-                source: "TEMP",
+                source: 'subjectsandthemes',
               },
             },
           },
@@ -1435,9 +1435,9 @@ export default (pluginContext) => {
             }),
             repeating: true,
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
-                source: "TEMP",
+                source: 'periodorstyle',
               },
             },
           },
