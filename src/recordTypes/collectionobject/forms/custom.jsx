@@ -25,31 +25,30 @@ const template = (pluginContext) => {
             <Row>
               <Col>
                 <InputTable name="idNumberInfo">
-                  <Field name="prefix" /> 
-                  <Field name="year" />
-                  <Field name="giftBoxOne" />
-                  <Field name="giftBoxTwo" />
-                  <Field name="giftBoxThree" />
-                  <Field name="alpha" />
+                  <Field name="accNumberPrefix" /> 
+                  <Field name="accNumberPart1" />
+                  <Field name="accNumberPart2" />
+                  <Field name="accNumberPart3" />
+                  <Field name="accNumberPart4" />
+                  <Field name="accNumberPart5" />
                 </InputTable>
                 <Field name="objectNumber" />
               </Col>
               <Col>
                 <Field name="legalStatus" />
-                <Field name="statusDate" />
+                <Field name="legalStatusDateGroup" />
                 <Field name="itemClass" />
               </Col>
             </Row>
           </div>
         </Row>
 
-        {/*ASK RAY WHY I CANT REMOVE THIS   */}
 
-        <Field name="artistMakerList">
-          <Field name="artistMakerGroup">
-            <Field name="artistMaker" />
-            <Field name="artistMakerRole" />
-            <Field name="artistMakerQualifier" />
+        <Field name="bampfaObjectProductionPersonGroupList">
+          <Field name="bampfaObjectProductionPersonGroup">
+            <Field name="bampfaObjectProductionPerson" />
+            <Field name="bampfaObjectProductionPersonRole" />
+            <Field name="bampfaObjectProductionPersonQualifier" />
           </Field>
         
         <Field name="artistDisplayOverride" />
@@ -60,7 +59,7 @@ const template = (pluginContext) => {
             <Panel>
               <Row>
                 <div>
-                  <Field name="title" />
+                  <Field name="bampfaTitle" />
                 </div>
               </Row>
             </Panel>
@@ -92,15 +91,15 @@ const template = (pluginContext) => {
         </Field>
 
         <Row> 
-          <Field name="medium" />
+          <Field name="physicalDescription" />
           <Field name="creditLine" />
         </Row>
 
         <Row>
-          <Field name="trNumberGroupList">
-            <Field name="trNumberGroup">
-              <Field name="trNumber" />
-              <Field name="trNumberType" />
+          <Field name="otherNumberList">
+            <Field name="otherNumberGroup">
+              <Field name="numberValue" />
+              <Field name="numberType" />
             </Field>
           </Field>
           <Col>
@@ -118,22 +117,21 @@ const template = (pluginContext) => {
           <Col> 
             <Field name="productionDate"/>
 
-            <Field name="centuryGroupList">
-              <Field name="centuryGroup">
-                <Field name="century" />
-                <Field name="era" />
-              </Field>
-            </Field>
+            <InputTable name="centuryEra">
+              <Field name="objectProductionDateCentury" />
+                <Field name="objectProductionDateEra" />
+            </InputTable>
+
           </Col>
           <Col>
             <Field name="workDescription"/>
           </Col>
         </Row>
         <Row>
-          <Field name="dynasty"/>
+          <Field name="objectProductionDynasty"/>
           <Col>
             <Row>
-              <Field name="itemCount"/>
+              <Field name="numberOfObjects"/>
               <Field name="numberOfScans"/>
             </Row>
             </Col>
@@ -141,10 +139,10 @@ const template = (pluginContext) => {
 
         <Field name="productionPlace"/>
 
-        <Field name="prodOrgList">
-          <Field name="prodOrgGroup">
-            <Field name="prodOrg" />
-            <Field name="prodOrgRole"/>
+        <Field name="objectProductionPeopleGroupList">
+          <Field name="objectProductionPeopleGroup">
+            <Field name="objectProductionPeople" />
+            <Field name="objectProductionPeopleRole"/>
           </Field>
         </Field>
       </Panel>
@@ -158,7 +156,7 @@ const template = (pluginContext) => {
 
           <div>
             <Field name="soundOrSilent"/>
-            <Field name="blackOrWhite"/>
+            <Field name="bwOrColor"/>
     
           </div>
         </Row>
@@ -196,7 +194,7 @@ const template = (pluginContext) => {
         <Row> 
           <div>
             <Field name="acquisitionMethod"/>
-            <Field name="acquisitionDate"/>
+            <Field name="acquisitionDateGroup"/>
           </div>
           <div>
             <Field name="provenance"/>
