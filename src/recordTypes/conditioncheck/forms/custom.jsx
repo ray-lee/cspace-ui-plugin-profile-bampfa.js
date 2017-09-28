@@ -17,61 +17,59 @@ const template = (pluginContext) => {
   return (
     <Field name="document">
 
-      <Panel name="objectConditionAndTechAssessmentInfo" collapsible>
-
+      <Panel name="objectConditionAndTechAssessmentInfo" collapsible collapsed>
         <Row>
           <Field name="objectAuditCategory" />
           <Field name="conservationTreatmentPriority" />
           <Field name="nextConditionCheckDate" />
         </Row>
 
-      <Cols>
-        <Col>
-          <Field name="completenessGroupList">
-          <Field name="completenessGroup">
-              <Field name="completeness" />
-              <Field name="completenessDate" />
-              <Field name="completenessNote" />
-          </Field>
-          </Field>
-
-          <Field name="hazardGroupList">
-            <Field name="hazardGroup">
-              <Field name="hazard" />
-              <Field name="hazardDate" />
-              <Field name="hazardNote" />
+        <Cols>
+         <Col>
+            <Field name="completenessGroupList">
+              <Field name="completenessGroup">
+                <Field name="completeness" />
+                <Field name="completenessDate" />
+                <Field name="completenessNote" />
+              </Field>
             </Field>
-          </Field>
-      
-          <Field name="techAssessmentGroupList">
-            <Field name="techAssessmentGroup">
-              <Field name="techAssessment" />
-              <Field name="techAssessmentDate" />
-            </Field>
-          </Field>
 
-        </Col>
-
-        <Col>
-          <Field name="conditionCheckGroupList">
-          <Field name="conditionCheckGroup">
-              <Field name="condition" />
-              <Field name="conditionDate" />
-              <Field name="conditionNote" />
-          </Field>
-          </Field>
-          <Field name="envConditionNoteGroupList">
-            <Field name="envConditionNoteGroup">
-              <Field name="envConditionNote" />
-              <Field name="envConditionNoteDate" />
+            <Field name="hazardGroupList">
+              <Field name="hazardGroup">
+                <Field name="hazard" />
+                <Field name="hazardDate" />
+                <Field name="hazardNote" />
+              </Field>
             </Field>
-          </Field>
-        </Col>
-      </Cols>
+
+            <Field name="techAssessmentGroupList">
+              <Field name="techAssessmentGroup">
+                <Field name="techAssessment" />
+                <Field name="techAssessmentDate" />
+              </Field>
+            </Field>
+          </Col>
+          
+          <Col>
+            <Field name="conditionCheckGroupList">
+              <Field name="conditionCheckGroup">
+                <Field name="condition" />
+                <Field name="conditionDate" />
+                <Field name="conditionNote" />
+              </Field>
+            </Field>
+
+            <Field name="envConditionNoteGroupList">
+              <Field name="envConditionNoteGroup">
+                <Field name="envConditionNote" />
+                <Field name="envConditionNoteDate" />
+              </Field>
+            </Field>
+          </Col>
+        </Cols>
       </Panel>
 
       <Panel name="conditionCheckAndTechAssessmentInfo" collapsible>
-
         <Row>
           <Field name="conditionCheckRefNumber" />
           <Field name="conditionCheckAssessmentDate" />
@@ -84,30 +82,24 @@ const template = (pluginContext) => {
         </Row>
 
         <Field name="conditionCheckNote" />
-
       </Panel>
 
-      <Panel name="objectRequirementInfo" collapsible>
+      <Panel name="objectRequirementInfo" collapsible collapsed>
+        <Cols>
+          <Col>
+            <Field name="displayRecommendations" />
+            <Field name="handlingRecommendations" />
+            <Field name="securityRecommendations" />
+            <Field name="storageRequirements" />
+          </Col>
 
-        <Row>
-          <Field name="displayRecommendations" />
-          <Field name="envRecommendations" />
-        </Row>
-
-        <Row>
-          <Field name="handlingRecommendations" />
-          <Field name="packingRecommendations" />
-        </Row>
-
-        <Row>
-          <Field name="securityRecommendations" />
-          <Field name="specialRequirements" />
-        </Row>
-
-        <Row>
-          <Field name="storageRequirements" />
-          <Field name="legalRequirements" />
-        </Row>
+          <Col>
+            <Field name="envRecommendations" />
+            <Field name="packingRecommendations" />
+            <Field name="specialRequirements" />
+            <Field name="legalRequirements" />
+          </Col>
+        </Cols>
 
         <Field name="legalReqsHeldGroupList">
           <Field name="legalReqsHeldGroup">
@@ -128,11 +120,10 @@ const template = (pluginContext) => {
               </Field>
             </Field>
           </Col>
+
           <Col />
         </Cols>
-
       </Panel>
-
     </Field>
   );
 };
