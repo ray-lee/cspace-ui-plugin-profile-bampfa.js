@@ -21,6 +21,15 @@ export default {
     'field.intakes_common.currentLocationNote.name': 'Current location note',
     'field.intakes_common.entryDate.name': 'Date in',
     'field.intakes_common.despositorsRequirements.name': 'Address for Agenda',
+   
     'field.bampfa_collectionobjects.editionNumber.name': 'Edition',
     'panel.collectionobject.hierarchy': 'Object Hierarchy',
-};
+   
+    'panel.movement.movement': 'Inventory/Movement Information',
+    'field.movements_common.movementContact.name': 'Handler',
+    'field.movements_common.reasonForMove.name': 'Reason',
+    'field.movements_common.movementMethod.name': 'Method',
+    'field.movements_common.currentLocation.name': 'Storage Location',
+    'inputTable.movement.currentLocation': 'Storage Location',
+
+  };
