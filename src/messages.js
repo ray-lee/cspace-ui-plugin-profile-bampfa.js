@@ -69,5 +69,13 @@ export default {
     'field.conditionchecks_common.nextConditionCheckDate.name': 'Next Condition Check/Assessment Date',
     'field.conditionchecks_common.conditionCheckNote.name': 'Condition Check/Assessment Note',
     'panel.conditioncheck.objectRequirementInfo': 'Object Requirement Information',
+
+    'field.media_common.measurementUnit.name': 'Dimension Unit',
+    'field.media_common.valueQualifier.name': 'Value Qualifier',
+    'field.media_common.type.name': 'Types' ,
+    'field.media_common.language.name': 'Languages' ,
+    'field.media_common.relation.name': 'Relations',
+    'field.media_common.subject.name': 'Subjects',
+    'field.media_common.dateGroup.name': 'Dates',
     
   };
