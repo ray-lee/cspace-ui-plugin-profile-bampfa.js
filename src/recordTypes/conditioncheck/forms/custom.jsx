@@ -17,7 +17,7 @@ const template = (pluginContext) => {
   return (
     <Field name="document">
 
-      <Panel name="objectConditionAndTechAssessmentInfo" collapsible collapsed>
+      <Panel name="objectConditionAndTechAssessmentInfo" collapsible>
         <Row>
           <Field name="objectAuditCategory" />
           <Field name="conservationTreatmentPriority" />
@@ -69,7 +69,7 @@ const template = (pluginContext) => {
         </Cols>
       </Panel>
 
-      <Panel name="conditionCheckAndTechAssessmentInfo" collapsible>
+      <Panel name="conditionCheckAndTechAssessmentInfo" collapsible collapsed>
         <Row>
           <Field name="conditionCheckRefNumber" />
           <Field name="conditionCheckAssessmentDate" />
