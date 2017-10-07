@@ -17,17 +17,17 @@ const template = (pluginContext) => {
 
   return (
     <Field name="document">
-      <Panel name="movement" collapsible collapsed>
+      <Panel name="movement" collapsible>
         <InputTable name="currentLocation">
           <Field name="currentLocation" />
-          {/* <Field name="crate"/> location-crate */}
+          <Field name="crate"/>
           <Field name="currentLocationFitness" />
           <Field name="currentLocationNote" />
         </InputTable>
 
         <Cols>
           <Col>
-            {/* <Field name="locationDate" /> Mandatory */}
+            <Field name="locationDate" /> 
             <Field name="reasonForMove" />
 
             <Field name="movementMethods">
