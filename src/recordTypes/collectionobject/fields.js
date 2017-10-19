@@ -23,6 +23,7 @@ export default (pluginContext) => {
     DATA_TYPE_FLOAT,
     DATA_TYPE_DATE,
     DATA_TYPE_DATETIME,
+    DATA_TYPE_BOOL,
   } = pluginContext.dataTypes;
 
   return {
@@ -346,7 +347,7 @@ export default (pluginContext) => {
                 view: {
                   type: AutocompleteInput,
                   props: {
-                    source: 'TEMP',
+                    source: 'person-person',
                   },
                 },
               },
@@ -362,7 +363,7 @@ export default (pluginContext) => {
                 view: {
                   type: OptionPickerInput,
                   props: {
-                    source: 'TEMP',
+                    source: 'productionpersonrole',
                   },
                 },
               },
@@ -378,7 +379,7 @@ export default (pluginContext) => {
                 view: {
                   type: OptionPickerInput,
                   props: {
-                    source: 'TEMP',
+                    source: 'productionpersonqualifier',
                   },
                 },
               },
@@ -971,7 +972,7 @@ export default (pluginContext) => {
                   type: AutocompleteInput,
                 }, 
                 props: {
-                  source: 'TEMP',
+                  source: 'organization-organization,organization-collective',
                 },
               },
             },
@@ -986,7 +987,7 @@ export default (pluginContext) => {
                 view: {
                   type: OptionPickerInput,
                   props : {
-                    source: "TEMP",
+                    source: 'productionpeoplerole',
                   }
                 },
               },
@@ -1049,7 +1050,7 @@ export default (pluginContext) => {
             view: {
               type: OptionPickerInput,
               props: {
-                source: "TEMP",
+                source: 'acquisitionmethod',
               },
             },
           },
@@ -1165,6 +1166,7 @@ export default (pluginContext) => {
         },
         currentValueGroupList: {
           [config]: {
+            dataType: DATA_TYPE_FLOAT,
             messages: defineMessages({
               name: {
                 id: 'field.bampfa_collectionobjects.currentValueGroupList.name',
@@ -1243,6 +1245,7 @@ export default (pluginContext) => {
           },
           initialValue: {
             [config]: {
+              dataType: DATA_TYPE_FLOAT,
               messages: defineMessages({
                 name: {
                   id: 'field.bampfa_collectionobjects.initialValue.name',
@@ -1349,7 +1352,7 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.copyrightCredit..name',
+                id: 'field.copyrightCredit.name',
                 defaultMessage: 'Copyright Credit',
               },
             }),
@@ -1416,6 +1419,9 @@ export default (pluginContext) => {
             }),
             view: {
               type: OptionPickerInput,
+              props: {
+                source: 'TEMP',
+              },
             },
           },
         },
@@ -1485,6 +1491,7 @@ export default (pluginContext) => {
             },
             conditionCheckDate: {
               [config]: {
+                dataType: DATA_TYPE_DATE,
                 messages: defineMessages({
                   name: {
                     id: 'field.bampfa_collectionobjects.conditionCheckDate.name',
@@ -1549,6 +1556,7 @@ export default (pluginContext) => {
             },
             collectionTextDoNotPublish: {
               [config]: {
+                dataType: DATA_TYPE_BOOL,                
                 messages: defineMessages({
                   name: {
                     id: 'field.bampfa_collectionobjects.collectionTextDoNotPublish.name',
@@ -1658,6 +1666,7 @@ export default (pluginContext) => {
             },
             catalogDate: {
               [config]: {
+                dataType: DATA_TYPE_DATE,
                 messages: defineMessages({
                   name: {
                     id: 'field.bampfa_collectionobjects.catalogDate.name',
