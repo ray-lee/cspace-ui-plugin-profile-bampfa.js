@@ -11,7 +11,7 @@ export default (pluginContext) => ({
     panel: defineMessages({
       detail: {
           id: 'panel.collectionobject.detail',
-          defaultMessage: 'Details',
+          defaultMessage: 'Detail',
       },
       acq: {
           id: 'panel.collectionobject.acq',

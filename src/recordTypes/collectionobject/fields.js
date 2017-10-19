@@ -935,6 +935,9 @@ export default (pluginContext) => {
             repeating: true,
             view: {
               type: TextInput,
+              props: {
+                multiline: true,
+              }
             },
           },
         },
@@ -989,6 +992,93 @@ export default (pluginContext) => {
                   props : {
                     source: 'productionpeoplerole',
                   }
+                },
+              },
+            },
+          },
+        },
+        editionNumber: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.bampfa_collectionobjects.editionMumber.name',
+                defaultMessage: 'Edition',
+              },
+            }),
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        textualInscriptionGroupList: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.bampfa_collectionobjects.textualInscriptionGroupList.name',
+                defaultMessage: 'Textual Inscription',
+              },
+            }),
+            view: {
+              type: CompoundInput,
+            },
+          },
+          textualInscriptionGroup: {
+            [config]: {
+              repeating: true,
+              view: {
+                type: CompoundInput,
+              },
+            },
+            inscriptionContent: {
+              [config]: {
+                messages: defineMessages({
+                  name: {
+                    id: 'field.bampfa_collectionobjects.inscriptionContent.name',
+                    defaultMessage: 'Inscription Content',
+                  },
+                }),
+                view: {
+                  type: TextInput,
+                  props: {
+                    multiline: true,
+                  },
+                },
+              },
+            },
+          },
+        },
+        nonTextualInscriptionGroupList: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.bampfa_collectionobjects.nonTextualInscriptionGroupList.name',
+                defaultMessage: 'Non-Textual Inscription',
+              },
+            }),
+            view: {
+              type: CompoundInput,
+            },
+          },
+          nonTextualInscriptionGroup: {
+            [config]: {
+              repeating: true,
+              view: {
+                type: CompoundInput,
+              },
+            },
+            inscriptionDescription: {
+              [config]: {
+                messages: defineMessages({
+                  name: {
+                    id: 'field.bampfa_collectionobjects.inscriptionDescription.name',
+                    defaultMessage: 'Inscription Description',
+                  },
+                }),
+                view: {
+                  type: TextInput,
+                  props: {
+                    multiline: true,
+                  },
                 },
               },
             },
@@ -1166,7 +1256,6 @@ export default (pluginContext) => {
         },
         currentValueGroupList: {
           [config]: {
-            dataType: DATA_TYPE_FLOAT,
             messages: defineMessages({
               name: {
                 id: 'field.bampfa_collectionobjects.currentValueGroupList.name',
@@ -1189,6 +1278,7 @@ export default (pluginContext) => {
             },
             currentValue: {
               [config]: {
+                dataType: DATA_TYPE_FLOAT,
                 messages: defineMessages({
                   name: {
                     id: 'field.bampfa_collectionobjects.currentValue.name',
