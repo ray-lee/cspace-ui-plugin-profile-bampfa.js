@@ -131,6 +131,71 @@ export default (pluginContext) => {
             ns: 'http://collectionspace.org/services/collectionobject',
           },
         },
+          // COMPUTED/HIDDEN Fields
+        sortableObjectNumber: {
+          [config]: {
+            readOnly: true,
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        effectiveObjectNumber: {
+          [config] : {
+            readOnly: true,
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        objectNumberRangeSearch: {
+          [config]: {
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        objectNumberSearch: {
+          [config]: {
+            view: {
+              type: TextInput // TO DO: Double check
+            },
+          },
+        },
+        sortableEffectiveObjectNumber: {
+          [config]: {
+            readOnly: true,
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        computedCrate: {
+          [config]: {
+            readOnly: true,
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        bampfaFormattedTitle: { // TO DO: Replace Title with this, ask Ray how
+          [config]: {
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+        bampfaTitle: {
+          [config]: {
+            readOnly: true,
+            view: {
+              type: TextInput,
+            },
+          },
+        },
         accNumberPrefix: {
           [config]: {
             messages: defineMessages({
@@ -347,7 +412,7 @@ export default (pluginContext) => {
                 view: {
                   type: AutocompleteInput,
                   props: {
-                    source: 'person-person',
+                    source: 'person/local,person/shared',
                   },
                 },
               },
@@ -361,7 +426,7 @@ export default (pluginContext) => {
                   },
                 }),
                 view: {
-                  type: OptionPickerInput,
+                  type: TermPickerInput,
                   props: {
                     source: 'productionpersonrole',
                   },
@@ -377,7 +442,7 @@ export default (pluginContext) => {
                   },
                 }),
                 view: {
-                  type: OptionPickerInput,
+                  type: TermPickerInput,
                   props: {
                     source: 'productionpersonqualifier',
                   },
@@ -847,9 +912,9 @@ export default (pluginContext) => {
               },
             }),
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props : {
-                source: "TEMP",
+                source: 'dateera',
               }
             },
           },
@@ -973,10 +1038,10 @@ export default (pluginContext) => {
                 }),
                 view: {
                   type: AutocompleteInput,
+                  props: {
+                    source: 'organization/local,organization/shared', // TO DO: add Artists Collectives when implemented
+                  },
                 }, 
-                props: {
-                  source: 'organization-organization,organization-collective',
-                },
               },
             },
             objectProductionPeopleRole: {
@@ -988,7 +1053,7 @@ export default (pluginContext) => {
                   },
                 }),
                 view: {
-                  type: OptionPickerInput,
+                  type: TermPickerInput,
                   props : {
                     source: 'productionpeoplerole',
                   }
@@ -1138,7 +1203,7 @@ export default (pluginContext) => {
               },
             }),
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
                 source: 'acquisitionmethod',
               },
