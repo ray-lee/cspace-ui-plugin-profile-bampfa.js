@@ -125,7 +125,7 @@ export default (pluginContext) => {
               },
             }),
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
                 source: 'intakepurpose',
               },
@@ -222,7 +222,7 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.intakes_common.entryNote.name',
+                id: 'fiel d.intakes_common.entryNote.name',
                 defaultMessage: 'Entry note',
               },
             }),
