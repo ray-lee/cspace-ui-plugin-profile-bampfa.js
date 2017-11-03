@@ -1,5 +1,4 @@
 import { defineMessages } from 'react-intl';
-// import getCoreFields from '../../../helpers/coreFields';
 
 export default (pluginContext) => {
   const {
@@ -25,8 +24,6 @@ export default (pluginContext) => {
     DATA_TYPE_BOOL,
   } = pluginContext.dataTypes;
 
-//   const coreFields = getCoreFields(pluginContext);
-
   return {
     document: {
       [config]: {
@@ -38,8 +35,6 @@ export default (pluginContext) => {
           },
         },
       },
-      // Define core fields
-    //   ...coreFields,
       'ns2:media_common': {
         [config]: {
           service: {
