@@ -20,7 +20,7 @@ const template = (pluginContext) => {
       <Panel name="movement" collapsible>
         <InputTable name="currentLocation">
           <Field name="currentLocation" />
-          <Field name="crate"/>
+          <Field name="crate" subpath="ns2:movements_bampfa"/>
           <Field name="currentLocationFitness" />
           <Field name="currentLocationNote" />
         </InputTable>
