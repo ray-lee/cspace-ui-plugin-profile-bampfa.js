@@ -1,6 +1,6 @@
 export default {
   'about.title': 'CollectionSpace - BAMPFA',
-  'about.content': `
+  'about.contentHTML': `
     <p>
       This service is supported by UC Berkeley <a href="http://research-it.berkeley.edu/">Research
       IT</a>. To send feedback, report bugs, or request support, email
