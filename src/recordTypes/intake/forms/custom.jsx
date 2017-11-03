@@ -23,7 +23,7 @@ const template = (pluginContext) => {
           <Col>
             <Field name="entryNumber" />
             <Field name="entryDate" />
-            <Field name="intakeObject" />
+            <Field name="intakeObject" subpath='ns2:intakes_bampfa' />
             <Field name="entryReason" />
 
             <Field name="entryMethods">
@@ -33,8 +33,8 @@ const template = (pluginContext) => {
 
           <Col>
             <Field name="currentOwner" />
-            <Field name="sourceAddress"/>
-            <Field name="receipt" />
+            <Field name="sourceAddress" subpath='ns2:intakes_bampfa' />
+            <Field name="receipt" subpath='ns2:intakes_bampfa' />
 
           </Col>
         </Cols>
