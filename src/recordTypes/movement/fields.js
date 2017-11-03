@@ -26,10 +26,10 @@ export default (pluginContext) => {
           type: CompoundInput,
           props: {
             defaultChildSubpath: 'ns2:movements_common',
+            movementsBampfaSubpath: 'ns2:movements_bampfa',
           },
         },
       },
-      // Altered core fields
       'ns2:movements_common': {
         [config]: {
           service: {
@@ -73,12 +73,18 @@ export default (pluginContext) => {
             },
           },
         },
-        // This is a new field
+      },
+      'ns2:movements_bampfa': {
+        [config]: {
+          service: {
+            ns: 'http://collectionspace.org/services/movement',
+          },
+        },
         crate: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.bampfa_movements.crate.name',
+                id: 'field.movements_bampfa.crate.name',
                 defaultMessage: 'Box or Container',
               },
             }),
@@ -90,6 +96,7 @@ export default (pluginContext) => {
             },
           },
         },
+
       },
     },
   };
