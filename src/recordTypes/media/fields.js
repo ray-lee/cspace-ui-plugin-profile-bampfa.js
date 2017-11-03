@@ -34,6 +34,7 @@ export default (pluginContext) => {
           type: CompoundInput,
           props: {
             defaultChildSubpath: 'ns2:media_common',
+            mediaChildPath: 'ns2:media_bampfa',
           },
         },
       },
@@ -45,67 +46,6 @@ export default (pluginContext) => {
             ns: 'http://collectionspace.org/services/media',
           },
         },
-        // NEW FIELDS:
-        imageNumber: {
-					[config]: {
-            required: true,
-            dataType: DATA_TYPE_INT,
-						messages: defineMessages({
-							name: {
-									id: 'field.bampfa_media.imageNumber.name',
-									defaultMessage: 'Image Number',
-							},
-						}), 
-						view: {
-							type: TextInput,
-						},
-					},
-				},
-				primaryDisplay: {
-					[config]: {
-            dataType: DATA_TYPE_BOOL,
-						messages: defineMessages({
-							name: {
-								id: 'field.bampfa_media.primaryDisplay.name',
-								defaultMessage: 'Primary Display',
-							},
-						}),
-						view : {
-								type: CheckboxInput,
-						},
-					},
-				},
-				websiteDisplayLevel : {
-					[config]: {
-						messages: defineMessages({
-							name: {
-								id: 'field.bampfa_media.websiteDisplayLevel.name',
-								defaultMessage: 'Website Display Level',
-							},
-						}),
-						view : {
-							type: TermPickerInput,
-							props: {
-								source: 'TEMP',
-							},
-						},
-					},
-				},
-				// measuredPartNote: {
-				// 	[config]: {
-				// 		messages: defineMessages({
-				// 			name: {
-				// 				id: 'field.bampfa_media.measuredPartNote.name',
-				// 				defaultMessage: 'Note',
-				// 			},
-				// 		}),
-				// 		view: {
-				// 			type: TextInput,
-				// 		},
-				// 	},
-				// },
-
-
         identificationNumber: {
           [config]: {
             cloneable: false,
@@ -115,7 +55,7 @@ export default (pluginContext) => {
                 defaultMessage: 'Identification number',
               },
             }),
-            required: true,
+            required: false,
             searchView: {
               type: TextInput,
             },
@@ -127,33 +67,6 @@ export default (pluginContext) => {
             },
           },
         },
-        title: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.media_common.title.name',
-                defaultMessage: 'Title',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
-          },
-        },
-        externalUrl: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.media_common.externalUrl.name',
-                defaultMessage: 'External URL',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
-          },
-        },
-        // TODO: Define measuredPartGroupList in a shared file (also used in collectionobject).
         measuredPartGroupList: {
           [config]: {
             view: {
@@ -347,7 +260,7 @@ export default (pluginContext) => {
 							[config]: {
 								messages: defineMessages({
 									name: {
-										id: 'field.bampfa_media.measuredPartNote.name',
+										id: 'field.media_bampfa.measuredPartNote.name',
 										defaultMessage: 'Note',
 									},
 								}),
@@ -358,105 +271,65 @@ export default (pluginContext) => {
 						},
           },
         },
-        contributor: {
+      },
+      'ns2:media_bampfa': {
+        [config]: {
+          service: {
+            ns: 'http://collectionspace.org/services/media',
+          },
+        },
+				primaryDisplay: {
+					[config]: {
+            dataType: DATA_TYPE_BOOL,
+						messages: defineMessages({
+							name: {
+								id: 'field.media_bampfa.primaryDisplay.name',
+								defaultMessage: 'Primary Display',
+							},
+						}),
+						view : {
+								type: CheckboxInput,
+						},
+					},
+        },
+				websiteDisplayLevel : {
+					[config]: {
+						messages: defineMessages({
+							name: {
+								id: 'field.media_bampfa.websiteDisplayLevel.name',
+								defaultMessage: 'Website Display Level',
+							},
+						}),
+						view : {
+							type: OptionPickerInput,
+							props: {
+								source: 'TEMP',
+							},
+						},
+					},
+        },
+        imageNumber: {
+					[config]: {
+            dataType: DATA_TYPE_INT,
+						messages: defineMessages({
+							name: {
+									id: 'field.media_bampfa.imageNumber.name',
+									defaultMessage: 'Image Number',
+							},
+            }), 
+            required: true,            
+						view: {
+							type: TextInput,
+						},
+					},
+        },
+        // Computed Fields
+        title: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.media_common.contributor.name',
-                defaultMessage: 'Contributor',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'person/local,person/shared,organization/local,organization/shared',
-              },
-            },
-          },
-        },
-        creator: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.media_common.creator.name',
-                defaultMessage: 'Creator',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'person/local,person/shared,organization/local,organization/shared',
-              },
-            },
-          },
-        },
-        languageList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          language: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.media_common.language.name',
-                  defaultMessage: 'Language',
-                },
-              }),
-              repeating: true,
-              view: {
-                type: TermPickerInput,
-                props: {
-                  source: 'languages',
-                },
-              },
-            },
-          },
-        },
-        publisher: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.media_common.publisher.name',
-                defaultMessage: 'Publisher',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'person/local,person/shared,organization/local,organization/shared',
-              },
-            },
-          },
-        },
-        relationList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          relation: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.media_common.relation.name',
-                  defaultMessage: 'Relation',
-                },
-              }),
-              repeating: true,
-              view: {
-                type: TextInput,
-              },
-            },
-          },
-        },
-        copyrightStatement: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.media_common.copyrightStatement.name',
-                defaultMessage: 'Copyright statement',
+                id: 'field.media_bampfa.title.name',
+                defaultMessage: 'Title',
               },
             }),
             view: {
@@ -464,36 +337,12 @@ export default (pluginContext) => {
             },
           },
         },
-        typeList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          type: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.media_common.type.name',
-                  defaultMessage: 'Type',
-                },
-              }),
-              repeating: true,
-              view: {
-                type: OptionPickerInput,
-                props: {
-                  source: 'mediaTypes',
-                },
-              },
-            },
-          },
-        },
-        coverage: {
+        titlesearch: { // App-layer only field
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.media_common.coverage.name',
-                defaultMessage: 'Coverage',
+                id: 'field.titleSearch.media_bampfa.name',
+                defaultMessage: 'Title Search',
               },
             }),
             view: {
@@ -501,33 +350,12 @@ export default (pluginContext) => {
             },
           },
         },
-        dateGroupList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          dateGroup: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.media_common.dateGroup.name',
-                  defaultMessage: 'Date',
-                },
-              }),
-              repeating: true,
-              view: {
-                type: StructuredDateInput,
-              },
-            },
-          },
-        },
-        source: {
+        computedOrderNumber: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.media_common.source.name',
-                defaultMessage: 'Source',
+                id: 'field.computedOrderNumber.media_bampfa.name',
+                defaultMessage: 'Computed Order Number',
               },
             }),
             view: {
@@ -535,56 +363,32 @@ export default (pluginContext) => {
             },
           },
         },
-        subjectList: {
+        pictionId: {
           [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          subject: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.media_common.subject.name',
-                  defaultMessage: 'Subject',
-                },
-              }),
-              repeating: true,
-              view: {
-                type: TextInput,
-              },
-            },
-          },
-        },
-        rightsHolder: {
-          [config]: {
+            dataType: DATA_TYPE_INT,
+            readOnly: true,
             messages: defineMessages({
               name: {
-                id: 'field.media_common.rightsHolder.name',
-                defaultMessage: 'Rights holder',
+                id: 'field.pictionId.media_bampfa.name',
+                defaultMessage: 'Piction Id',
               },
             }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'person/local,person/shared,organization/local,organization/shared',
-              },
-            },
+           view: {
+             type: TextInput,
+           }, 
           },
         },
-        description: {
+        pictionImageHash: {
           [config]: {
+            readOnly: true,
             messages: defineMessages({
               name: {
-                id: 'field.media_common.description.name',
-                defaultMessage: 'Description',
+                id: 'field.pictionImageHash.media_bampfa.name',
+                defaultMessage: 'Piction Image Hash',
               },
             }),
             view: {
               type: TextInput,
-              props: {
-                multiline: true,
-              },
             },
           },
         },

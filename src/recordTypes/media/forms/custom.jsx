@@ -18,29 +18,29 @@ const template = (pluginContext) => {
   return (
     <Field name="document">
       <Panel name="file" collapsible>
-        <Field name="imageNumber"/>
+        <Field name="imageNumber" subpath="ns2:media_bampfa" />
         <Subrecord name="blob" showDetachButton />
       </Panel>
 
       <Panel name="media" collapsible>
         <Row>
           <Field name="externalUrl" />
-          <Field name="primaryDisplay"/>
-          <Field name="websiteDisplayLevel"/>
+          <Field name="primaryDisplay" subpath="ns2:media_bampfa" />
+          <Field name="websiteDisplayLevel" subpath="ns2:media_bampfa" />
         </Row>
 
 
         {/* TODO: Break out measuredPartGroupList */}
 
         <Field name="measuredPartGroupList">
-          <Field name="measuredPartGroup">
+          <Field name="measuredPartGroup" >
             <Panel>
               <Row>
                 <Field name="measuredPart" />
                 <Field name="dimensionSummary" />
               </Row>
 
-              <Field name="dimensionSubGroupList">
+              <Field name="dimensionSubGroupList" >
                 <Field name="dimensionSubGroup">
                   <Field name="dimension" />
                   <Field name="value" />
@@ -48,7 +48,7 @@ const template = (pluginContext) => {
                   <Field name="valueQualifier" />
                 </Field>
               </Field>
-              <Field name="measuredPartNote"/>
+              <Field name="measuredPartNote" />
             </Panel>
           </Field>
         </Field>
