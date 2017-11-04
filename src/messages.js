@@ -11,6 +11,7 @@ export default {
       To send feedback, report bugs, or request support, email
       <a href="mailto:cspace-support@lists.berkeley.edu">cspace-support@lists.berkeley.edu</a>.
     </p>`,
+    /* Collection Objects Messages */
     'field.collectionobjects_common.physicalDescription.name': 'Medium',
     'field.collectionobjects_common.numberOfObjects.name': 'Item Count',
     'field.collectionobjects_common.objectProductionPeople.name': 'Organization',
@@ -19,8 +20,10 @@ export default {
     'field.collectionobjects_common..name': '',
     'field.collectionobjects_common..name': '',
     'field.collectionobjects_common..name': '',
+    'field.bampfa_collectionobjects.editionNumber.name': 'Edition',
+    'panel.collectionobject.hierarchy': 'Object Hierarchy',
 
-
+    /* Intake Messages */
     'field.intakes_common.entryNumber.name': 'TR Number',
     'field.intakes_common.entryNote.name': 'Intake note',
     'field.intakes_common.packingNote.name': 'Disposition',
@@ -32,17 +35,17 @@ export default {
     'field.intakes_common.entryDate.name': 'Date in',
     'field.intakes_common.despositorsRequirements.name': 'Address for Agenda',
    
-    'field.bampfa_collectionobjects.editionNumber.name': 'Edition',
-    'panel.collectionobject.hierarchy': 'Object Hierarchy',
    
+    /* Movements/Location Messages */
     'panel.movement.movement': 'Inventory/Movement Information',
     'field.movements_common.movementContact.name': 'Handler',
     'field.movements_common.reasonForMove.name': 'Reason',
     'field.movements_common.movementMethod.name': 'Method',
     'field.movements_common.currentLocation.name': 'Storage Location',
-    'inputTable.movement.currentLocation': 'Storage Location',
     'field.movements_common.locationDate.name': 'Inventory/Move Date',
+    'inputTable.movement.currentLocation': 'Storage Location',
 
+    /* Condition Check Messages */
     'field.conditionchecks_common.completeness.name': 'Completeness',
     'field.conditionchecks_common.completenessDate.name': 'Completeness Date',
     'field.conditionchecks_common.completenessNote.name': 'Completeness Note',
@@ -80,6 +83,7 @@ export default {
     'field.conditionchecks_common.conditionCheckNote.name': 'Condition Check/Assessment Note',
     'panel.conditioncheck.objectRequirementInfo': 'Object Requirement Information',
 
+    /* Media Messages */
     'field.media_common.measurementUnit.name': 'Dimension Unit',
     'field.media_common.valueQualifier.name': 'Value Qualifier',
     'field.media_common.type.name': 'Types' ,
@@ -87,5 +91,9 @@ export default {
     'field.media_common.relation.name': 'Relations',
     'field.media_common.subject.name': 'Subjects',
     'field.media_common.dateGroup.name': 'Dates',
+
+    /* Storage Location Messages */
+    'fields.locations_common.locationType.name' : 'Type',
+    // 'fields.locations_common.locTermGroup.name' : 'Location Term Groups',
     
   };
