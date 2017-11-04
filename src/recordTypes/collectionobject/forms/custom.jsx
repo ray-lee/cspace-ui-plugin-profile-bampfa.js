@@ -25,34 +25,34 @@ const template = (pluginContext) => {
             <Row>
               <Col>
                 <InputTable name="idNumberInfo">
-                  <Field name="accNumberPrefix" /> 
-                  <Field name="accNumberPart1" />
-                  <Field name="accNumberPart2" />
-                  <Field name="accNumberPart3" />
-                  <Field name="accNumberPart4" />
-                  <Field name="accNumberPart5" />
+                  <Field name="accNumberPrefix" subpath="ns2:collectionobjects_bampfa" /> 
+                  <Field name="accNumberPart1" subpath="ns2:collectionobjects_bampfa" />
+                  <Field name="accNumberPart2" subpath="ns2:collectionobjects_bampfa" />
+                  <Field name="accNumberPart3" subpath="ns2:collectionobjects_bampfa" />
+                  <Field name="accNumberPart4" subpath="ns2:collectionobjects_bampfa" />
+                  <Field name="accNumberPart5" subpath="ns2:collectionobjects_bampfa" />
                 </InputTable>
                 <Field name="objectNumber" />
               </Col>
               <Col>
-                <Field name="legalStatus" />
-                <Field name="legalStatusDateGroup" />
-                <Field name="itemClass" />
+                <Field name="legalStatus" subpath="ns2:collectionobjects_bampfa" />
+                <Field name="legalStatusDateGroup" subpath="ns2:collectionobjects_bampfa" />
+                <Field name="itemClass" subpath="ns2:collectionobjects_bampfa" />
               </Col>
             </Row>
           </div>
         </Row>
 
 
-        <Field name="bampfaObjectProductionPersonGroupList">
-          <Field name="bampfaObjectProductionPersonGroup">
+        <Field name="bampfaObjectProductionPersonGroupList" subpath="ns2:collectionobjects_bampfa" >
+          <Field name="bampfaObjectProductionPersonGroup" >
             <Field name="bampfaObjectProductionPerson" />
             <Field name="bampfaObjectProductionPersonRole" />
-            <Field name="bampfaObjectProductionPersonQualifier" />
+            <Field name="bampfaObjectProductionPersonQualifier"/>
           </Field>
-        
-        <Field name="artistDisplayOverride" />
         </Field>
+
+        <Field name="artistDisplayOverride" subpath="ns2:collectionobjects_bampfa" />
 
         <Field name="titleGroupList">
           <Field name="titleGroup">
@@ -66,7 +66,7 @@ const template = (pluginContext) => {
           </Field>
         </Field>
 
-        <Field name="seriesTitle" />
+        <Field name="seriesTitle" subpath="ns2:collectionobjects_bampfa" />
 
         <Field name="measuredPartGroupList">
           <Field name="measuredPartGroup">
@@ -92,11 +92,11 @@ const template = (pluginContext) => {
 
         <Row> 
           <Field name="physicalDescription" />
-          <Field name="creditLine" />
+          <Field name="creditLine" subpath="ns2:collectionobjects_bampfa" />
         </Row>
 
         <Row>
-          <Field name="otherNumberList">
+          <Field name="otherNumberList" subpath="ns2:collectionobjects_bampfa">
             <Field name="otherNumberGroup">
               <Field name="numberValue" />
               <Field name="numberType" />
@@ -104,10 +104,9 @@ const template = (pluginContext) => {
           </Field>
           <Col>
             <Field name="computedCurrentLocation" />
-            <Field name="currentBoxContainer" />
+            <Field name="computedCrate" subpath="ns2:collectionobjects_bampfa"/>
           </Col>
         </Row>
-
 
       </Panel>
 
@@ -115,29 +114,29 @@ const template = (pluginContext) => {
       <Panel name="detail" collapsible collapsed>
         <Row>
           <Col> 
-            <Field name="productionDate"/>
+            <Field name="productionDate" subpath="ns2:collectionobjects_bampfa" />
 
             <InputTable name="centuryEra">
-              <Field name="objectProductionDateCentury" />
-                <Field name="objectProductionDateEra" />
+              <Field name="objectProductionDateCentury" subpath="ns2:collectionobjects_bampfa" />
+                <Field name="objectProductionDateEra" subpath="ns2:collectionobjects_bampfa" />
             </InputTable>
 
           </Col>
           <Col>
-            <Field name="workDescription"/>
+            <Field name="workDescription" subpath="ns2:collectionobjects_bampfa"/>
           </Col>
         </Row>
         <Row>
-          <Field name="objectProductionDynasty"/>
+          <Field name="objectProductionDynasty" subpath="ns2:collectionobjects_bampfa" />
           <Col>
             <Row>
               <Field name="numberOfObjects"/>
-              <Field name="numberOfScans"/>
+              <Field name="numberOfScans" subpath="ns2:collectionobjects_bampfa" />
             </Row>
             </Col>
         </Row>
 
-        <Field name="productionPlace"/>
+        <Field name="productionPlace" subpath="ns2:collectionobjects_bampfa" />
 
         <Field name="objectProductionPeopleGroupList">
           <Field name="objectProductionPeopleGroup">
@@ -151,12 +150,12 @@ const template = (pluginContext) => {
         <Row>
           <div>
             <Field name="editionNumber" />
-            <Field name="stateGeneration"/>
+            <Field name="stateGeneration" subpath="ns2:collectionobjects_bampfa" />
           </div>
 
           <div>
-            <Field name="soundOrSilent"/>
-            <Field name="bwOrColor"/>
+            <Field name="soundOrSilent" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="bwOrColor" subpath="ns2:collectionobjects_bampfa" />
     
           </div>
         </Row>
@@ -166,7 +165,6 @@ const template = (pluginContext) => {
 
         <Field name="inscriptionContent" />
 
-        {/* <Panel name="textInscript" collapsible collapsed> */}
           <Field name="textualInscriptionGroupList">
             <Field name="textualInscriptionGroup">
               <Panel>
@@ -174,9 +172,7 @@ const template = (pluginContext) => {
               </Panel>
             </Field>
           </Field>
-        {/* </Panel> */}
 
-        {/* <Panel name="nonTextInscript" collapsible collapsed> */}
           <Field name="nonTextualInscriptionGroupList">
             <Field name="nonTextualInscriptionGroup">
               <Panel>
@@ -185,7 +181,6 @@ const template = (pluginContext) => {
               </Panel>
             </Field>
           </Field>
-        {/* </Panel> */}
       </Panel>
 
       {/* Item-specific acq info */}
@@ -193,47 +188,46 @@ const template = (pluginContext) => {
         
         <Row> 
           <div>
-            <Field name="acquisitionMethod"/>
-            <Field name="acquisitionDateGroup"/>
+            <Field name="acquisitionMethod" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="acquisitionDateGroup" subpath="ns2:collectionobjects_bampfa"/>
           </div>
           <div>
-            <Field name="provenance"/>
+            <Field name="provenance" subpath="ns2:collectionobjects_bampfa" />
           </div>
         </Row>
         <Row> 
           <div>
-          <Field name="acquisitionSource"/>
-          <Field name="bampfaAcquisitionReason"/>
+          <Field name="acquisitionSource" subpath="ns2:collectionobjects_bampfa" />
+          <Field name="bampfaAcquisitionReason" subpath="ns2:collectionobjects_bampfa" />
           </div>
           <div>
-          <Field name="acquisitionNote"/>
+          <Field name="acquisitionNote" subpath="ns2:collectionobjects_bampfa" />
           </div>
         </Row>
 
         <Row> 
           <div>
-            <Field name="acquisitionProvisos"/>
+            <Field name="acquisitionProvisos" subpath="ns2:collectionobjects_bampfa" />
           </div>
           <div>
-            <Field name="appraisalInfo"/>
+            <Field name="appraisalInfo" subpath="ns2:collectionobjects_bampfa" />
           </div>
         </Row>
 
-        <Field name="currentValueGroupList">
+        <Field name="currentValueGroupList" subpath="ns2:collectionobjects_bampfa">
           <Field name="currentValueGroup">
-            <Field name="currentValue"/>
-            <Field name="currentValueSource"/>
+            <Field name="currentValue" />
+            <Field name="currentValueSource" />
             <Field name="currentValueDateGroup"/>
           </Field>
         </Field>
 
-        {/* <Field name="initialValueGroupList"> */}
-          <Field name="initialValueGroup">
-            <Field name="initialValue"/>
-            <Field name="initialValueSource"/>
-            <Field name="initialValueDateGroup"/>
-          </Field> 
-        {/* </Field> */}
+        <Field name="initialValueGroup" subpath="ns2:collectionobjects_bampfa">
+          <Field name="initialValue" />
+          <Field name="initialValueSource" />
+          <Field name="initialValueDateGroup" />
+        </Field> 
+
 
       </Panel>
 
@@ -241,12 +235,12 @@ const template = (pluginContext) => {
       <Panel name="classification" collapsible collapsed>
         <Row> 
           <Col>
-            <Field name="bampfaCollection"/>
-            <Field name="subjectTheme"/>
-            <Field name="style"/>
+            <Field name="bampfaCollection" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="subjectTheme" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="style" subpath="ns2:collectionobjects_bampfa" />
           </Col>
           <Col>
-            <Field name="partOf"/>
+            <Field name="partOf" subpath="ns2:collectionobjects_bampfa" />
           </Col> 
           </Row>
 
@@ -256,13 +250,13 @@ const template = (pluginContext) => {
       <Panel name="copyright" collapsible collapsed>
         <Row> 
           <Col>
-            <Field name="copyrightCredit"/>
-            <Field name="copyrightNote"/>
+            <Field name="copyrightCredit" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="copyrightNote" subpath="ns2:collectionobjects_bampfa" />
           </Col>
           <Col>
-            <Field name="photoCredit"/>
-            <Field name="copyrightHolder"/>
-            <Field name="permissionToReproduce"/>
+            <Field name="photoCredit" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="copyrightHolder" subpath="ns2:collectionobjects_bampfa" />
+            <Field name="permissionToReproduce" subpath="ns2:collectionobjects_bampfa" />
           </Col> 
         </Row>
       </Panel>
@@ -270,7 +264,7 @@ const template = (pluginContext) => {
       {/* Condition/Conservation info */}
       <Panel name="condition" collapsible collapsed>
 
-        <Field name="conditionCheckGroupList">
+        <Field name="conditionCheckGroupList" subpath="ns2:collectionobjects_bampfa" >
           <Field name="conditionCheckGroup">
             <Panel>
               <Row>
@@ -299,25 +293,25 @@ const template = (pluginContext) => {
       {/* notes panel */}
       <Panel name="notes" collapsible collapsed>
         <div>
-          <Field name="comments"/>
+          <Field name="comments" subpath="ns2:collectionobjects_bampfa" />
         </div>
       </Panel>
 
       {/* collection text information */}
       <Panel name="collectinfo" collapsible collapsed>
-        <Field name="collectionTextGroupList">
+        <Field name="collectionTextGroupList" subpath="ns2:collectionobjects_bampfa" >
             <Field name="collectionTextGroup">
               <Panel>
                 <Row>
-                  <Field name="collectionTextType"/>
-                  <Field name="collectionTextDoNotPublish"/>
+                  <Field name="collectionTextType" />
+                  <Field name="collectionTextDoNotPublish" />
                 </Row>
-                <Field name="collectionText"/>
+                <Field name="collectionText" />
                 <Row>
-                  <Field name="collectionTextAuthor"/>
-                  <Field name="collectionTextDate"/>
+                  <Field name="collectionTextAuthor" />
+                  <Field name="collectionTextDate" />
                 </Row>
-                <Field name="collectionTextNote"/>
+                <Field name="collectionTextNote" />
               </Panel>
             </Field>
           </Field>
@@ -329,7 +323,7 @@ const template = (pluginContext) => {
 
       {/* Cataloger Information */}
       <Panel name="cataloger" collapsible collapsed>
-        <Field name="catalogerGroupList">
+        <Field name="catalogerGroupList" subpath="ns2:collectionobjects_bampfa">
           <Field name="catalogerGroup">
             <Field name="catalogerName" />
             <Field name="catalogNote"/>
