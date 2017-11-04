@@ -4,6 +4,7 @@ import movement from './movement';
 import collectionobject from './collectionobject';
 import conditioncheck from './conditioncheck';
 import media from './media';
+import person from './person';
 
 export default pluginContext => ({
   group: group(pluginContext),
@@ -12,4 +13,5 @@ export default pluginContext => ({
   movement: movement(pluginContext),
   conditioncheck: conditioncheck(pluginContext),
   media: media(pluginContext),
+  person: person(pluginContext),
 });
