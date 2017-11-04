@@ -11,6 +11,16 @@ export default {
       To send feedback, report bugs, or request support, email
       <a href="mailto:cspace-support@lists.berkeley.edu">cspace-support@lists.berkeley.edu</a>.
     </p>`,
+    'field.collectionobjects_common.physicalDescription.name': 'Medium',
+    'field.collectionobjects_common.numberOfObjects.name': 'Item Count',
+    'field.collectionobjects_common.objectProductionPeople.name': 'Organization',
+    'field.collectionobjects_common.objectProductionPeopleGroup.name': 'Production Organization',
+    'field.collectionobjects_common.editionNumber.name': 'Edition',
+    'field.collectionobjects_common..name': '',
+    'field.collectionobjects_common..name': '',
+    'field.collectionobjects_common..name': '',
+
+
     'field.intakes_common.entryNumber.name': 'TR Number',
     'field.intakes_common.entryNote.name': 'Intake note',
     'field.intakes_common.packingNote.name': 'Disposition',
