@@ -49,7 +49,7 @@ const template = (pluginContext) => {
         </Field>
 
         <Field name="entryNote" />
-        <Field name="disposition" />
+        <Field name="disposition" subpath='ns2:intakes_bampfa'/>
       </Panel>
 
       <Panel name="objectCollectionInfo" collapsible collapsed>

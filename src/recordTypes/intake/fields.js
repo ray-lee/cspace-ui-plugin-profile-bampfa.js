@@ -21,26 +21,17 @@ export default (pluginContext) => {
 
   return {
     document: {
-      [config]: {
-        view: {
-          type: CompoundInput,
-          props: {
-            defaultChildSubpath: 'ns2:intakes_common',
-            intakesBampfaSubpath: 'ns2:intakes_bampfa',
-          },
-        },
-      },
       'ns2:intakes_bampfa': {
         [config]: {
           service: {
-            ns: 'http://collectionspace.org/services/intake',
+            ns: 'http://collectionspace.org/services/intake/local/bampfa',
           },
         },
         intakeObject: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.intakes_common.intakeObject.name', 
+                id: 'field.intakes_bampfa.intakeObject.name', 
                 defaultMessage: 'Object (Artist/Title/Medium)',
               },
             }),
@@ -56,7 +47,7 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.intakes_common.receipt.name',
+                id: 'field.intakes_bampfa.receipt.name',
                 defaultMessage: 'Receipt',
               },
             }),
@@ -72,7 +63,7 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.intakes_common.addressForAgenda.name',
+                id: 'field.intakes_bampfa.sourceAddress.name',
                 defaultMessage: 'Address for agenda'
               },
             }),
@@ -82,6 +73,34 @@ export default (pluginContext) => {
                 multiline: true,
               },
             },
+          },
+        },
+        disposition: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.intakes_bampfa.disposition.name',
+                defaultMessage: 'Disposition',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+      },
+      'ns2:intakes_common': {
+        entryReason: {
+          [config]: {
+            view: {
+              type: TermPickerInput,
+              props: {
+                source: "intakepurpose",
+              },
+            }, 
           },
         },
       },
