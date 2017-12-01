@@ -101,7 +101,6 @@ const template = (pluginContext) => {
         </Row>
       </Panel>
 
-			{/* <Panel name="copyright" collapsible collapsed> */}
 			<Panel name="copyright" collapsible>	
 				<Cols>
 					<Col>

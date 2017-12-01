@@ -179,5 +179,5 @@ export default (pluginContext) => ({
           defaultMessage: 'Cataloger Information',
       },
     }),
-  }
+  },
 });
