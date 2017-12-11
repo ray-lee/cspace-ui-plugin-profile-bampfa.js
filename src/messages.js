@@ -115,5 +115,16 @@ export default {
   'field.concepts_common.termSourceID.name': 'Source ID',
   'field.concepts_common.termSourceNote.name': 'Source note',
 
+  /* Work Terms */
+  'field.works_common.termSource.name': 'Source',
+  'field.works_common.termSourceDetail.name': 'Source detail',
+  'field.works_common.termSourceID.name': 'Source ID',
+  'field.works_common.termSourceNote.name': 'Source note',
+
+  /* Place Terms */
+  'field.places_common.termSource.name': 'Source',
+  'field.places_common.termSourceDetail.name': 'Source detail',
+  'field.places_common.termSourceID.name': 'Source ID',
+  'field.places_common.termSourceNote.name': 'Source note',
 };
 
