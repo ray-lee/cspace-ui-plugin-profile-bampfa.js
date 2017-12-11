@@ -80,7 +80,7 @@ export default {
 
   /* Media Messages */
   'field.media_common.measurementUnit.name': 'Dimension Unit',
-  'field.media_common.valueQualifier.name': 'Value Qualifier',
+  'field.media_common.valueQualifier.name': 'Value qualifier',
   'field.media_common.type.name': 'Types',
   'field.media_common.language.name': 'Languages',
   'field.media_common.relation.name': 'Relations',
@@ -90,22 +90,30 @@ export default {
   /* Storage Location Messages */
   'fields.locations_common.locationType.name': 'Type',
   'field.locations_common.termSource.name': 'Source',
-  'field.locations_common.termSourceDetail.name': 'Source Detail',
+  'field.locations_common.termSourceDetail.name': 'Source detail',
   'field.locations_common.termSourceID.name': 'Source ID',
-  'field.locations_common.termSourceNote.name': 'Source Note',
+  'field.locations_common.termSourceNote.name': 'Source note',
 
 
   /* Organization Terms */
   'field.organizations_common.termSource.name': 'Source',
-  'field.organizations_common.termSourceDetail.name': 'Source Detail',
+  'field.organizations_common.termSourceDetail.name': 'Source detail',
   'field.organizations_common.termSourceID.name': 'Source ID',
-  'field.organizations_common.termSourceNote.name': 'Source Note',
+  'field.organizations_common.termSourceNote.name': 'Source note',
 
   /* Person Terms */
   'field.persons_common.termSource.name': 'Source',
-  'field.persons_common.termSourceDetail.name': 'Source Detail',
+  'field.persons_common.termSourceDetail.name': 'Source detail',
   'field.persons_common.termSourceID.name': 'Source ID',
-  'field.persons_common.termSourceNote.name': 'Source Note',
+  'field.persons_common.termSourceNote.name': 'Source note',
   'field.persons_common.termName.name': 'FML Name',
   'field.persons_common.birthPlace.name': 'Place of birth',
+
+  /* Concept Terms */
+  'field.concepts_common.termSource.name': 'Source',
+  'field.concepts_common.termSourceDetail.name': 'Source detail',
+  'field.concepts_common.termSourceID.name': 'Source ID',
+  'field.concepts_common.termSourceNote.name': 'Source note',
+
 };
+

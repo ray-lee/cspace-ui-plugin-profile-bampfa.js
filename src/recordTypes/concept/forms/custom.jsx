@@ -21,22 +21,18 @@ const template = (pluginContext) => {
         <Field name="conceptTermGroupList">
           <Field name="conceptTermGroup">
             <Panel>
-              <Row>
+              <InputTable>
                 <Field name="termDisplayName" />
-                <Field name="termName" />
                 <Field name="termQualifier" />
                 <Field name="termStatus" />
-              </Row>
+              </InputTable>
 
-              <Row>
-                <Field name="termType" />
-                <Field name="termFlag" />
-                <Field name="historicalStatus" />
+              <InputTable>
+                <Field name="termName" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
-              </Row>
-
-              <InputTable name="termSource">
+                <Field name="historicalStatus" />
+                <Field name="termType" />
                 <Field name="termSource" />
                 <Field name="termSourceDetail" />
                 <Field name="termSourceID" />
@@ -45,15 +41,6 @@ const template = (pluginContext) => {
             </Panel>
           </Field>
         </Field>
-
-        <Cols>
-          <Col>
-            <Field name="conceptRecordTypes">
-              <Field name="conceptRecordType" />
-            </Field>
-          </Col>
-          <Col />
-        </Cols>
 
         <InputTable name="scopeNote">
           <Field name="scopeNote" />
