@@ -9,7 +9,7 @@ export default {
       To send feedback, report bugs, or request support, email
       <a href="mailto:cspace-support@lists.berkeley.edu">cspace-support@lists.berkeley.edu</a>.
     </p>`,
-    /* Collection Objects Messages */
+  /* Collection Objects Messages */
   'field.collectionobjects_common.physicalDescription.name': 'Medium',
   'field.collectionobjects_common.numberOfObjects.name': 'Item Count',
   'field.collectionobjects_common.objectProductionPeople.name': 'Organization',
@@ -89,6 +89,11 @@ export default {
 
   /* Storage Location Messages */
   'fields.locations_common.locationType.name': 'Type',
+  'field.locations_common.termSource.name': 'Source',
+  'field.locations_common.termSourceDetail.name': 'Source Detail',
+  'field.locations_common.termSourceID.name': 'Source ID',
+  'field.locations_common.termSourceNote.name': 'Source Note',
+
 
   /* Organization Terms */
   'field.organizations_common.termSource.name': 'Source',

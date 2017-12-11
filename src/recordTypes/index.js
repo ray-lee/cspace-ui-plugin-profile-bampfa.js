@@ -6,6 +6,7 @@ import conditioncheck from './conditioncheck';
 import media from './media';
 import person from './person';
 import organization from './organization';
+import location from './location';
 
 export default pluginContext => ({
   group: group(pluginContext),
@@ -16,4 +17,5 @@ export default pluginContext => ({
   media: media(pluginContext),
   person: person(pluginContext),
   organization: organization(pluginContext),
+  location: location(pluginContext),
 });
