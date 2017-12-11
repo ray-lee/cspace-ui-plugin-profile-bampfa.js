@@ -7,6 +7,9 @@ import media from './media';
 import person from './person';
 import organization from './organization';
 import location from './location';
+import work from './work';
+import place from './place';
+import concept from './concept';
 
 export default pluginContext => ({
   group: group(pluginContext),
@@ -18,4 +21,7 @@ export default pluginContext => ({
   person: person(pluginContext),
   organization: organization(pluginContext),
   location: location(pluginContext),
+  work: work(pluginContext),
+  place: place(pluginContext),
+  concept: concept(pluginContext),
 });
