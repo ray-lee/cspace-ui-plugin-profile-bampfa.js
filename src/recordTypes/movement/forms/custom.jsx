@@ -28,7 +28,7 @@ const template = (pluginContext) => {
         <Cols>
           <Col>
             <Field name="locationDate" /> 
-            <Field name="reasonForMove" />
+            <Field name="reasonForMove" subpath="ns2:movements_bampfa"/>
 
             <Field name="movementMethods">
               <Field name="movementMethod" />

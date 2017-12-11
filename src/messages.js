@@ -22,6 +22,8 @@ export default {
     'field.collectionobjects_common..name': '',
     'field.bampfa_collectionobjects.editionNumber.name': 'Edition',
     'panel.collectionobject.hierarchy': 'Object Hierarchy',
+    'field.collectionobjects_common.computedCurrentLocation.name': 'Computed Storage Location',
+
 
     /* Intake Messages */
     'field.intakes_common.entryNumber.name': 'TR Number',
@@ -96,4 +98,18 @@ export default {
     'fields.locations_common.locationType.name' : 'Type',
     // 'fields.locations_common.locTermGroup.name' : 'Location Term Groups',
     
+    /* Organization Terms */ 
+    'field.organizations_common.termSource.name': 'Source',
+    'field.organizations_common.termSourceDetail.name': 'Source Detail',
+    'field.organizations_common.termSourceID.name': 'Source ID',
+    'field.organizations_common.termSourceNote.name': 'Source Note',
+
+    /* Person Terms */
+    'field.persons_common.termSource.name': 'Source',
+    'field.persons_common.termSourceDetail.name': 'Source Detail',
+    'field.persons_common.termSourceID.name': 'Source ID',
+    'field.persons_common.termSourceNote.name': 'Source Note',
+    'field.persons_common.termName.name': 'FML Name',
+    'field.persons_common.birthPlace.name': 'Place of birth',
+
   };

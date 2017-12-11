@@ -28,108 +28,36 @@ export default (pluginContext) => {
 
   return {
     document: {
-      [config]: {
-        view: {
-          type: CompoundInput,
-          props: {
-            defaultChildSubpath: 'ns2:collectionobjects_common',
-            collectionobjectBampfaSubpath: 'ns2:collectionobjects_bampfa',
-          },
-        },
-      },
-      // TODO: Define core fields in one place.
-      'ns2:collectionspace_core': {
-        createdAt: {
-          [config]: {
-            dataType: DATA_TYPE_DATETIME,
-            view: {
-              type: DateInput,
-            },
-          },
-        },
-        createdBy: {
-          [config]: {
-            view: {
-              type: TextInput,
-            },
-          },
-        },
-        updatedAt: {
-          [config]: {
-            dataType: DATA_TYPE_DATETIME,
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionspace_core.updatedAt.name',
-                defaultMessage: 'Last updated time',
-              },
-            }),
-            view: {
-              type: DateInput,
-            },
-          },
-        },
-        updatedBy: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionspace_core.updatedBy.name',
-                defaultMessage: 'Last updated by',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
-          },
-        },
-      },
-      'ns2:relations-common-list': {
-        [config]: {
-          service: {
-            ns: 'http://collectionspace.org/services/relation',
-          },
-        },
-        'relation-list-item': {
-          [config]: {
-            view: {
-              type: HierarchyInput,
-              props: {
-                parentTypeOptionListName: 'objectParentTypes',
-                childTypeOptionListName: 'objectChildTypes',
-                messages: defineMessages({
-                  parent: {
-                    id: 'hierarchyInput.collectionobject.parent',
-                    defaultMessage: 'Broader object',
-                  },
-                  parentType: {
-                    id: 'hierarchyInput.collectionobject.parentType',
-                    defaultMessage: 'Type',
-                  },
-                  children: {
-                    id: 'hierarchyInput.collectionobject.children',
-                    defaultMessage: 'Component objects',
-                  },
-                  child: {
-                    id: 'hierarchyInput.collectionobject.child',
-                    defaultMessage: 'Object',
-                  },
-                  childType: {
-                    id: 'hierarchyInput.collectionobject.childType',
-                    defaultMessage: 'Type',
-                  },
-                  siblings: {
-                    id: 'hierarchyInput.collectionobject.siblings',
-                    defaultMessage: 'Adjacent objects',
-                  },
-                }),
-              },
-            },
-          },
-        },
-      },
       'ns2:collectionobjects_common': {
         [config]: {
           service: {
             ns: 'http://collectionspace.org/services/collectionobject',
+          },
+        },
+        textualInscriptionGroupList: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.bampfa_collectionobjects.textualInscriptionGroupList.name',
+                defaultMessage: 'Textual Inscription',
+              },
+            }),
+            view: {
+              type: CompoundInput,
+            },
+          },
+        },
+        nonTextualInscriptionGroupList: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.bampfa_collectionobjects.nonTextualInscriptionGroupList.name',
+                defaultMessage: 'Non-Textual Inscription',
+              },
+            }),
+            view: {
+              type: CompoundInput,
+            },
           },
         },
         objectNumber: {
@@ -177,12 +105,6 @@ export default (pluginContext) => {
         },
         measuredPartGroupList: {
           [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionobjects_common.measuredPartGroupList.name',
-                defaultMessage: 'Dimensions',
-              },
-            }),
             view: {
               type: CompoundInput,
             },
@@ -211,6 +133,19 @@ export default (pluginContext) => {
                 },
               },
             },
+            dimensionNote: {
+              [config]: {
+                messages: defineMessages({
+                  name: {
+                    id: 'field.collectionobjects_common.dimensionNote.name',
+                    defaultMessage: 'Note',
+                  },
+                }),
+                view: {
+                  type: TextInput,
+                },
+              },
+            },
           },
         },
       },
@@ -220,6 +155,14 @@ export default (pluginContext) => {
             ns: 'http://collectionspace.org/services/collectionobject',
           },
         },
+        nametitle : {
+          [config]: {
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+
         accNumberPrefix: {
           [config]: {
             messages: defineMessages({
@@ -496,6 +439,14 @@ export default (pluginContext) => {
                   type: TextInput,
                 },
               },
+            },
+          },
+        },
+        objectProductionDateCirca: {
+          [config]: {
+            dataType: DATA_TYPE_BOOL,
+            view: {
+              type: CheckboxInput, // TO DO: CHECK IF THIS IS IT OR NOT
             },
           },
         },
@@ -1342,7 +1293,52 @@ export default (pluginContext) => {
             },
           },
         },
-        bampfaFormattedTitle: { // TO DO: Replace Title with this, ask Ray how
+        title : { // rich text field
+          [config]: {
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+        computedCurrentLocationSearch: {
+          [config]: {
+            view: {
+              type: AutocompleteInput,
+              props: {
+                source: 'location/location,location/offsite_sla,organization/organization',
+              },
+            },
+          },
+        },
+        computedCrateSearch: {
+          [config]: {
+            view: {
+              type: AutocompleteInput,
+              props: {
+                source: 'location/crate',
+              },
+            },
+          },
+        },
+        bampfaTitleSearch: {
+          [config]: {
+            readOnly: true,
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        physicalDescription: {
+          [config]: {
+            view: {
+              type: TextInput,
+            },
+          },
+        },
+        bampfaFormattedTitle: { // TO DO: Replace TITLE WITH RICH TEXT with this, ask Ray how
           [config]: {
             view: {
               type: TextInput,
@@ -1376,24 +1372,24 @@ export default (pluginContext) => {
             },
           },
         },
-        computedCurrentLocation: {
-          [config]: {
-            cloneable: false,
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionobjects_bampfa.computedCurrentLocation.name',
-                defaultMessage: 'Computed storage location',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'location/local,location/offsite,organization/local,organization/shared',
-                readOnly: true,
-              },
-            },
-          },
-        },
+        // computedCurrentLocation: {
+        //   [config]: {
+        //     cloneable: false,
+        //     messages: defineMessages({
+        //       name: {
+        //         id: 'field.collectionobjects_bampfa.computedCurrentLocation.name',
+        //         defaultMessage: 'Current Storage Location',
+        //       },
+        //     }),
+        //     view: {
+        //       type: AutocompleteInput,
+        //       props: {
+        //         source: 'location/local,location/offsite,organization/local,organization/shared',
+        //         readOnly: true,
+        //       },
+        //     },
+        //   },
+        // },
         currentBoxContainer: {
           [config]: {
             cloneable: false,
