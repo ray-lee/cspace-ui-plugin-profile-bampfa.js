@@ -21,80 +21,121 @@ const template = (pluginContext) => {
         <Field name="placeTermGroupList">
           <Field name="placeTermGroup">
             <Panel>
-              <Row>
+              <InputTable>
                 <Field name="termDisplayName" />
                 <Field name="termName" />
                 <Field name="termQualifier" />
-                <Field name="termStatus" />
-              </Row>
-
-              <Row>
                 <Field name="termType" />
-                <Field name="termFlag" />
-                <Field name="historicalStatus" />
-                <Field name="termLanguage" />
-                <Field name="termPrefForLang" />
-              </Row>
-
-              <InputTable name="nameDetail">
-                <Field name="nameAbbrev" />
-                <Field name="nameNote" />
-                <Field name="nameDateGroup" />
+                <Field name="termStatus" />
               </InputTable>
 
-              <InputTable name="termSource">
+              <InputTable>
+                <Field name="termLanguage" />
+                <Field name="termPrefForLang" />
                 <Field name="termSource" />
                 <Field name="termSourceDetail" />
                 <Field name="termSourceID" />
                 <Field name="termSourceNote" />
               </InputTable>
+
+              <InputTable name="nameDetail">
+                <Field name="nameAbbrev" />
+                <Field name="historicalStatus" />
+                <Field name="nameNote" />
+                <Field name="nameDateGroup" />
+              </InputTable>
             </Panel>
           </Field>
         </Field>
 
-        <Row>
-          <Field name="placeType" />
-          <Field name="placeSource" />
-        </Row>
+        <Cols>
+          <Col>
+            <Field name="placeType" />
+            <Field name="placeOwnerGroupList">
+              <Field name="placeOwnerGroup">
+                <Field name="owner" />
+                <Field name="ownershipDateGroup" />
+                <Field name="ownershipNote" />
+              </Field>
+            </Field>
+            <Field name="placeSource" />
+          </Col>
+          <Col>
+            <Field name="placeNote" />
+          </Col>
+        </Cols>
+      </Panel>
 
-        <Field name="placeOwnerGroupList">
-          <Field name="placeOwnerGroup">
-            <Field name="owner" />
-            <Field name="ownershipDateGroup" />
-            <Field name="ownershipNote" />
-          </Field>
-        </Field>
+      <Panel name="localityInfo" collapsible collapsed>
+        <Cols>
+          <Col>
+            <Field name="vCoordinates" />
+            <Field name="vElevation" />
+            <Field name="minElevationInMeters" />
+            <Field name="maxElevationInMeters" />
+          </Col>
 
-        <Field name="placeNote" />
+          <Col>
+            <Field name="vLatitude" />
+            <Field name="vDepth" />
+            <Field name="minDepthInMeters" />
+            <Field name="maxDepthInMeters" />
+          </Col>
 
-        {/* TODO: Break out address group */}
+          <Col>
+            <Field name="vLongitude" />
+            <Field name="vDistanceAboveSurface" />
+            <Field name="minDistanceAboveSurfaceMeters" />
+            <Field name="maxDistanceAboveSurfaceMeters" />
+          </Col>
 
-        <Field name="addrGroupList">
-          <Field name="addrGroup">
+          <Col>
+            <Field name="vCoordSys" />
+            <Field name="vUnitofMeasure" />
+            <Field name="vCoordSource" />
+          </Col>
+
+          <Col>
+            <Field name="vSpatialReferenceSystem" />
+            <Field name="vCoordSourceRefId" />
+          </Col>
+        </Cols>
+      </Panel>
+
+      <Panel name="geoRefInfo" collapsible collapsed>
+        <Field name="placeGeoRefGroupList">
+          <Field name="placeGeoRefGroup">
             <Panel>
               <Cols>
                 <Col>
-                  <Field name="addressPlace1" />
-                  <Field name="addressPlace2" />
-                  <Field name="addressMunicipality" />
-
+                  <Field name="decimalLatitude" />
+                  <Field name="pointRadiusSpatialFit" />
+                  <Field name="geoReferencedBy" />
+                  <Field name="geoRefRemarks" />
                 </Col>
 
                 <Col>
-                  <Row>
-                    <Field name="addressStateOrProvince" />
-                    <Field name="addressPostCode" />
-                  </Row>
+                  <Field name="decimalLongitude" />
+                  <Field name="footprintWKT" />
+                  <Field name="geoRefDateGroup" />
+                </Col>
 
-                  <Field name="addressCountry" />
+                <Col>
+                  <Field name="geodeticDatum" />
+                  <Field name="footprintSRS" />
+                  <Field name="geoRefProtocol" />
+                  <Field name="geoRefPlaceName" />
+                </Col>
 
-                  <Row>
-                    <Col>
-                      <Field name="addressType" />
-                    </Col>
+                <Col>
+                  <Field name="coordUncertaintyInMeters" />
+                  <Field name="footprintSpatialFit" />
+                  <Field name="geoRefSource" />
+                </Col>
 
-                    <Col />
-                  </Row>
+                <Col>
+                  <Field name="coordPrecision" />
+                  <Field name="geoRefVerificationStatus" />
                 </Col>
               </Cols>
             </Panel>
@@ -102,84 +143,7 @@ const template = (pluginContext) => {
         </Field>
       </Panel>
 
-      <Panel name="localityInfo" collapsible collapsed>
-        <Row>
-          <Field name="vCoordinates" />
-          <Field name="vLatitude" />
-          <Field name="vLongitude" />
-          <Field name="vCoordSys" />
-          <Field name="vSpatialReferenceSystem" />
-        </Row>
-
-        <Row>
-          <Field name="vElevation" />
-          <Field name="vDepth" />
-          <Field name="vDistanceAboveSurface" />
-          <Field name="vUnitofMeasure" />
-        </Row>
-
-        <Row>
-          <Col>
-            <Field name="minElevationInMeters" />
-            <Field name="maxElevationInMeters" />
-          </Col>
-
-          <Col>
-            <Field name="minDepthInMeters" />
-            <Field name="maxDepthInMeters" />
-          </Col>
-
-          <Col>
-            <Field name="minDistanceAboveSurfaceMeters" />
-            <Field name="maxDistanceAboveSurfaceMeters" />
-          </Col>
-
-          <Col />
-        </Row>
-
-        <Row>
-          <Field name="vCoordSource" />
-          <Field name="vCoordSourceRefId" />
-        </Row>
-      </Panel>
-
-      <Panel name="geoRefInfo" collapsible collapsed>
-        <Field name="placeGeoRefGroupList">
-          <Field name="placeGeoRefGroup">
-            <Panel>
-              <Row>
-                <Field name="decimalLatitude" />
-                <Field name="decimalLongitude" />
-                <Field name="geodeticDatum" />
-                <Field name="coordUncertaintyInMeters" />
-                <Field name="coordPrecision" />
-              </Row>
-
-              <Row>
-                <Field name="pointRadiusSpatialFit" />
-                <Field name="footprintWKT" />
-                <Field name="footprintSRS" />
-                <Field name="footprintSpatialFit" />
-              </Row>
-
-              <Row>
-                <Field name="geoReferencedBy" />
-                <Field name="geoRefDateGroup" />
-                <Field name="geoRefProtocol" />
-                <Field name="geoRefSource" />
-                <Field name="geoRefVerificationStatus" />
-              </Row>
-
-              <Row>
-                <Field name="geoRefRemarks" />
-                <Field name="geoRefPlaceName" />
-              </Row>
-            </Panel>
-          </Field>
-        </Field>
-      </Panel>
-
-      <Panel name="hierarchy" collapsible collapsed>
+      <Panel name="hierarchy" collapsible>
         <Field name="relation-list-item" subpath="ns2:relations-common-list" />
       </Panel>
     </Field>
