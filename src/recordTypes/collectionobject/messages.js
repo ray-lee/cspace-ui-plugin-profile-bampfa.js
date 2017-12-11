@@ -24,28 +24,28 @@ export default {
       defaultMessage: 'Object Identification Information',
     },
     detail: {
-        id: 'panel.collectionobject.detail',
-        defaultMessage: 'Details',
+      id: 'panel.collectionobject.detail',
+      defaultMessage: 'Details',
     },
     desc: {
       id: 'panel.collectionobject.desc',
       defaultMessage: 'Object Description Information',
     },
     acq: {
-        id: 'panel.collectionobject.acq',
-        defaultMessage: 'Item-Specific Acquisition Information',
+      id: 'panel.collectionobject.acq',
+      defaultMessage: 'Item-Specific Acquisition Information',
     },
     classification: {
-        id: 'panel.collectionobject.classification',
-        defaultMessage: 'Classification',
+      id: 'panel.collectionobject.classification',
+      defaultMessage: 'Classification',
     },
     copyright: {
-        id: 'panel.collectionobject.copyright',
-        defaultMessage: 'Copyright Information',
+      id: 'panel.collectionobject.copyright',
+      defaultMessage: 'Copyright Information',
     },
     condition: {
-        id: 'panel.collectionobject.condition',
-        defaultMessage: 'Condition/Conservation',
+      id: 'panel.collectionobject.condition',
+      defaultMessage: 'Condition/Conservation',
     },
     content: {
       id: 'panel.collectionobject.content',
@@ -84,12 +84,12 @@ export default {
       defaultMessage: 'Reference Information',
     },
     notes: {
-        id: 'panel.collectionobject.notes',
-        defaultMessage: 'Notes',
+      id: 'panel.collectionobject.notes',
+      defaultMessage: 'Notes',
     },
     collectinfo: {
-        id: 'panel.collectionobject.collectinfo',
-        defaultMessage: 'Collection Text Information',
+      id: 'panel.collectionobject.collectinfo',
+      defaultMessage: 'Collection Text Information',
     },
     collect: {
       id: 'panel.collectionobject.collect',
@@ -100,8 +100,8 @@ export default {
       defaultMessage: 'Hierarchy',
     },
     cataloger: {
-        id: 'panel.collectionobject.cataloger',
-        defaultMessage: 'Cataloger Information',
+      id: 'panel.collectionobject.cataloger',
+      defaultMessage: 'Cataloger Information',
     },
   }),
   inputTable: defineMessages({

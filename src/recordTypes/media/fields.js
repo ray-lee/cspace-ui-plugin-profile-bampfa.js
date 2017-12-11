@@ -2,15 +2,10 @@ import { defineMessages } from 'react-intl';
 
 export default (pluginContext) => {
   const {
-    AutocompleteInput,
     CompoundInput,
-    DateInput,
-    IDGeneratorInput,
     TextInput,
     OptionPickerInput,
-    StructuredDateInput,
-		TermPickerInput,
-		CheckboxInput,
+    CheckboxInput,
   } = pluginContext.inputComponents;
 
   const {
@@ -18,8 +13,6 @@ export default (pluginContext) => {
   } = pluginContext.configHelpers;
 
   const {
-    DATA_TYPE_FLOAT,
-    DATA_TYPE_DATE,
     DATA_TYPE_INT,
     DATA_TYPE_BOOL,
   } = pluginContext.dataTypes;
@@ -47,27 +40,26 @@ export default (pluginContext) => {
             dimensionSummary: {
               [config]: {
                 view: {
-									type: TextInput,
-									props: {
-										readOnly: true,
-									}
+                  type: TextInput,
+                  props: {
+                    readOnly: true,
+                  },
                 },
               },
             },
-						// ADDED FIELD BELOW
-						measuredPartNote: {
-							[config]: {
-								messages: defineMessages({
-									name: {
-										id: 'field.media_bampfa.measuredPartNote.name',
-										defaultMessage: 'Note',
-									},
-								}),
-								view: {
-									type: TextInput,
-								},
-							},
-						},
+            measuredPartNote: {
+              [config]: {
+                messages: defineMessages({
+                  name: {
+                    id: 'field.media_bampfa.measuredPartNote.name',
+                    defaultMessage: 'Note',
+                  },
+                }),
+                view: {
+                  type: TextInput,
+                },
+              },
+            },
           },
         },
       },
@@ -77,50 +69,50 @@ export default (pluginContext) => {
             ns: 'http://collectionspace.org/services/media',
           },
         },
-				primaryDisplay: {
-					[config]: {
+        primaryDisplay: {
+          [config]: {
             dataType: DATA_TYPE_BOOL,
-						messages: defineMessages({
-							name: {
-								id: 'field.media_bampfa.primaryDisplay.name',
-								defaultMessage: 'Primary Display',
-							},
-						}),
-						view : {
-								type: CheckboxInput,
-						},
-					},
+            messages: defineMessages({
+              name: {
+                id: 'field.media_bampfa.primaryDisplay.name',
+                defaultMessage: 'Primary Display',
+              },
+            }),
+            view: {
+              type: CheckboxInput,
+            },
+          },
         },
-				websiteDisplayLevel : {
-					[config]: {
-						messages: defineMessages({
-							name: {
-								id: 'field.media_bampfa.websiteDisplayLevel.name',
-								defaultMessage: 'Website Display Level',
-							},
-						}),
-						view : {
-							type: OptionPickerInput,
-							props: {
-								source: 'TEMP',
-							},
-						},
-					},
+        websiteDisplayLevel: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.media_bampfa.websiteDisplayLevel.name',
+                defaultMessage: 'Website Display Level',
+              },
+            }),
+            view: {
+              type: OptionPickerInput,
+              props: {
+                source: 'TEMP',
+              },
+            },
+          },
         },
         imageNumber: {
-					[config]: {
+          [config]: {
             dataType: DATA_TYPE_INT,
-						messages: defineMessages({
-							name: {
-									id: 'field.media_bampfa.imageNumber.name',
-									defaultMessage: 'Image Number',
-							},
-            }), 
-            required: true,            
-						view: {
-							type: TextInput,
-						},
-					},
+            messages: defineMessages({
+              name: {
+                id: 'field.media_bampfa.imageNumber.name',
+                defaultMessage: 'Image Number',
+              },
+            }),
+            required: true,
+            view: {
+              type: TextInput,
+            },
+          },
         },
         // Computed Fields
         title: {
@@ -172,9 +164,9 @@ export default (pluginContext) => {
                 defaultMessage: 'Piction Id',
               },
             }),
-           view: {
-             type: TextInput,
-           }, 
+            view: {
+              type: TextInput,
+            },
           },
         },
         pictionImageHash: {

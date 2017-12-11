@@ -1,8 +1,6 @@
+import { defineMessages } from 'react-intl';
 import forms from './forms';
 import fields from './fields';
-// import optionLists from './optionLists';
-
-import { defineMessages } from 'react-intl';
 
 export default (pluginContext) => ({
 
@@ -143,40 +141,40 @@ export default (pluginContext) => ({
           },
         }),
       },
-    },
+  },
   messages: {
     panel: defineMessages({
       detail: {
-          id: 'panel.collectionobject.detail',
-          defaultMessage: 'Detail',
+        id: 'panel.collectionobject.detail',
+        defaultMessage: 'Detail',
       },
       acq: {
-          id: 'panel.collectionobject.acq',
-          defaultMessage: 'Item-Specific Acquisition Information',
+        id: 'panel.collectionobject.acq',
+        defaultMessage: 'Item-Specific Acquisition Information',
       },
       classification: {
-          id: 'panel.collectionobject.classification',
-          defaultMessage: 'Classification',
+        id: 'panel.collectionobject.classification',
+        defaultMessage: 'Classification',
       },
       copyright: {
-          id: 'panel.collectionobject.copyright',
-          defaultMessage: 'Copyright Information',
+        id: 'panel.collectionobject.copyright',
+        defaultMessage: 'Copyright Information',
       },
       condition: {
-          id: 'panel.collectionobject.condition',
-          defaultMessage: 'Condition/Conservation',
+        id: 'panel.collectionobject.condition',
+        defaultMessage: 'Condition/Conservation',
       },
       notes: {
-          id: 'panel.collectionobject.notes',
-          defaultMessage: 'Notes',
+        id: 'panel.collectionobject.notes',
+        defaultMessage: 'Notes',
       },
       collectinfo: {
-          id: 'panel.collectionobject.collectinfo',
-          defaultMessage: 'Collection Text Information',
+        id: 'panel.collectionobject.collectinfo',
+        defaultMessage: 'Collection Text Information',
       },
       cataloger: {
-          id: 'panel.collectionobject.cataloger',
-          defaultMessage: 'Cataloger Information',
+        id: 'panel.collectionobject.cataloger',
+        defaultMessage: 'Cataloger Information',
       },
     }),
   },

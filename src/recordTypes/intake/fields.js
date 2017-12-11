@@ -2,22 +2,14 @@ import { defineMessages } from 'react-intl';
 
 export default (pluginContext) => {
   const {
-    CompoundInput,
-    DateInput,
     OptionPickerInput,
     TextInput,
-    AutocompleteInput,
-    IDGeneratorInput,
     TermPickerInput,
   } = pluginContext.inputComponents;
 
   const {
     configKey: config,
   } = pluginContext.configHelpers;
-
-  const {
-    DATA_TYPE_DATETIME,
-  } = pluginContext.dataTypes;
 
   return {
     document: {
@@ -31,7 +23,7 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.intakes_bampfa.intakeObject.name', 
+                id: 'field.intakes_bampfa.intakeObject.name',
                 defaultMessage: 'Object (Artist/Title/Medium)',
               },
             }),
@@ -55,7 +47,7 @@ export default (pluginContext) => {
               type: OptionPickerInput,
               props: {
                 source: 'receipt',
-              }, 
+              },
             },
           },
         },
@@ -64,7 +56,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.intakes_bampfa.sourceAddress.name',
-                defaultMessage: 'Address for agenda'
+                defaultMessage: 'Address for agenda',
               },
             }),
             view: {
@@ -98,14 +90,12 @@ export default (pluginContext) => {
             view: {
               type: TermPickerInput,
               props: {
-                source: "intakepurpose",
+                source: 'intakepurpose',
               },
-            }, 
+            },
           },
         },
       },
     },
   };
 };
-
-

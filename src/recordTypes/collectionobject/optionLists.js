@@ -4,8 +4,8 @@ import { defineMessages } from 'react-intl';
 export default {
   soundOrSilents: {
     values: [
-        'sound', 
-        'silent',
+      'sound',
+      'silent',
     ],
     messages: defineMessages({
       sound: {
@@ -50,51 +50,51 @@ export default {
       'unknown',
     ],
     messages: defineMessages({
-      appraisal : {
+      appraisal: {
         id: 'option.numberTypes.appraisal',
         defaultMessage: 'Appraisal',
       },
-      artist : {
+      artist: {
         id: 'option.numberTypes.artist',
         defaultMessage: 'Artist',
       },
-      auctionhouse : {
+      auctionhouse: {
         id: 'option.numberTypes.auctionhouse',
         defaultMessage: 'Auction House',
       },
-      donor : {
+      donor: {
         id: 'option.numberTypes.donor',
         defaultMessage: 'Donor',
       },
-      gallery : {
+      gallery: {
         id: 'option.numberTypes.gallery',
         defaultMessage: 'Gallery',
       },
-      lender : {
+      lender: {
         id: 'option.numberTypes.lender',
         defaultMessage: 'Lender',
       },
-      obsolete : {
+      obsolete: {
         id: 'option.numberTypes.obsolete',
         defaultMessage: 'Obsolete',
       },
-      previous : {
+      previous: {
         id: 'option.numberTypes.previous',
         defaultMessage: 'Previous',
       },
-      serial : {
+      serial: {
         id: 'option.numberTypes.serial',
         defaultMessage: 'Serial',
       },
-      uccollection : {
+      uccollection: {
         id: 'option.numberTypes.uccollection',
         defaultMessage: 'UC Collection',
       },
-      ucbcollection : {
+      ucbcollection: {
         id: 'option.numberTypes.ucbcollection',
         defaultMessage: 'UCB Collection',
       },
-      unknown : {
+      unknown: {
         id: 'option.numberTypes.unknown',
         defaultMessage: 'Unknown',
       },
@@ -110,27 +110,27 @@ export default {
       'pending',
     ],
     messages: defineMessages({
-      unknown : {
+      unknown: {
         id: 'option.permissionsToReproduce.unknown',
         defaultMessage: 'Unknown',
       },
-      yes : {
+      yes: {
         id: 'option.permissionsToReproduce.yes',
         defaultMessage: 'Yes',
       },
-      no : {
+      no: {
         id: 'option.permissionsToReproduce.no',
         defaultMessage: 'No',
       },
-      restricted : {
+      restricted: {
         id: 'option.permissionsToReproduce.restricted',
         defaultMessage: 'Restricted',
       },
-      publicdomain : {
+      publicdomain: {
         id: 'option.permissionsToReproduce.publicdomain',
         defaultMessage: 'Public Domain',
       },
-      pending : {
+      pending: {
         id: 'option.permissionsToReproduce.pending',
         defaultMessage: 'Pending',
       },

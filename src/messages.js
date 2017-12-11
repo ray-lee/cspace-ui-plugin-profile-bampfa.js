@@ -17,7 +17,7 @@ export default {
   'field.collectionobjects_common.editionNumber.name': 'Edition',
   'field.bampfa_collectionobjects.editionNumber.name': 'Edition',
   'panel.collectionobject.hierarchy': 'Object Hierarchy',
-  'field.collectionobjects_common.computedCurrentLocation.name': 'Computed Storage Location',
+  'field.collectionobjects_common.computedCurrentLocation.name': 'Current Storage Location',
 
   /* Intake Messages */
   'field.intakes_common.entryNumber.name': 'TR Number',

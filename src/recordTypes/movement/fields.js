@@ -3,10 +3,6 @@ import { defineMessages } from 'react-intl';
 export default (pluginContext) => {
   const {
     AutocompleteInput,
-    CompoundInput,
-    DateInput,
-    IDGeneratorInput,
-    OptionPickerInput,
     TextInput,
     TermPickerInput,
   } = pluginContext.inputComponents;
@@ -14,11 +10,6 @@ export default (pluginContext) => {
   const {
     configKey: config,
   } = pluginContext.configHelpers;
-
-  const {
-    DATA_TYPE_DATE,
-  } = pluginContext.dataTypes;
-
 
   return {
     document: {
@@ -87,22 +78,22 @@ export default (pluginContext) => {
         },
         movementContact: {
           [config]: {
-            messages: defineMessages ({
+            messages: defineMessages({
               name: {
-                id:'field.movements_bampfa.movementContact.name',
+                id: 'field.movements_bampfa.movementContact.name',
                 defaultMessage: 'Movement Contact',
               },
             }),
             view: {
-              type: AutocompleteInput
+              type: AutocompleteInput,
             },
           },
         },
         movementMethod: {
           [config]: {
-            messages: defineMessages ({
+            messages: defineMessages({
               name: {
-                id:'field.movements_bampfa.movementMethod.name',
+                id: 'field.movements_bampfa.movementMethod.name',
                 defaultMessage: 'Movement Method',
               },
             }),

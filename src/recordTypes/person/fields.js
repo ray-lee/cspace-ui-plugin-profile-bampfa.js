@@ -2,14 +2,8 @@ import { defineMessages } from 'react-intl';
 
 export default (pluginContext) => {
   const {
-    AutocompleteInput,
-    CheckboxInput,
-    CompoundInput,
-    HierarchyInput,
     OptionPickerInput,
-    StructuredDateInput,
     TextInput,
-    TermPickerInput,
   } = pluginContext.inputComponents;
 
   const {
@@ -26,10 +20,10 @@ export default (pluginContext) => {
         },
         birthCity: {
           [config]: {
-            messages: defineMessages ({
+            messages: defineMessages({
               name: {
-                  id: 'field.persons_bampfa.birthcity.name',
-                  defaultMessage: 'Birth City',
+                id: 'field.persons_bampfa.birthcity.name',
+                defaultMessage: 'Birth City',
               },
             }),
             view: {
@@ -39,20 +33,20 @@ export default (pluginContext) => {
         },
         otherRegionalInfo: {
           [config]: {
-              messages: defineMessages ({
-                  name: {
-                      id: 'field.persons_bampfa.otherRegionalInfo.name',
-                      defaultMessage: 'Other Regional Info',
-                  },
-              }),
-              view: {
-                  type: TextInput,
+            messages: defineMessages({
+              name: {
+                id: 'field.persons_bampfa.otherRegionalInfo.name',
+                defaultMessage: 'Other Regional Info',
               },
+            }),
+            view: {
+              type: TextInput,
+            },
           },
         },
         dynastyPeriod: {
           [config]: {
-            messages: defineMessages ({
+            messages: defineMessages({
               name: {
                 id: 'field.bampfa_persons.dynastyPeriod.name',
                 defaultMessage: 'Dynasty/Period',
@@ -64,17 +58,17 @@ export default (pluginContext) => {
           },
         },
         datesActive: {
-            [config]: {
-                messages: defineMessages ({
-                    name: {
-                        id: 'field.persons_bampfa.datesActive.name',
-                        defaultMessage: 'Dates Active',
-                    },
-                }),
-                view: {
-                    type: TextInput,
-                },
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.persons_bampfa.datesActive.name',
+                defaultMessage: 'Dates Active',
+              },
+            }),
+            view: {
+              type: TextInput,
             },
+          },
         },
         nameNote: {
           [config]: {
@@ -92,12 +86,12 @@ export default (pluginContext) => {
             },
           },
         },
-        copyrightCredit : {
+        copyrightCredit: {
           [config]: {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.copyrightCredit.name',
-                defaultMessage: 'Copyright Credit'
+                defaultMessage: 'Copyright Credit',
               },
             }),
             view: {
@@ -108,12 +102,12 @@ export default (pluginContext) => {
             },
           },
         },
-        copyrightNote : {
+        copyrightNote: {
           [config]: {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.copyrightNote.name',
-                defaultMessage: 'Copyright Note'
+                defaultMessage: 'Copyright Note',
               },
             }),
             view: {
@@ -124,12 +118,12 @@ export default (pluginContext) => {
             },
           },
         },
-        copyrightHolder : {
+        copyrightHolder: {
           [config]: {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.copyrightHolder.name',
-                defaultMessage: 'Copyright Holder'
+                defaultMessage: 'Copyright Holder',
               },
             }),
             view: {
@@ -137,7 +131,7 @@ export default (pluginContext) => {
             },
           },
         },
-        permissionToReproduce : {
+        permissionToReproduce: {
           [config]: {
             messages: defineMessages({
               name: {

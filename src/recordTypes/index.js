@@ -16,5 +16,4 @@ export default pluginContext => ({
   media: media(pluginContext),
   person: person(pluginContext),
   organization: organization(pluginContext),
-  
 });

@@ -25,7 +25,7 @@ const template = (pluginContext) => {
         </Row>
 
         <Cols>
-         <Col>
+          <Col>
             <Field name="completenessGroupList">
               <Field name="completenessGroup">
                 <Field name="completeness" />
@@ -49,7 +49,7 @@ const template = (pluginContext) => {
               </Field>
             </Field>
           </Col>
-          
+
           <Col>
             <Field name="conditionCheckGroupList">
               <Field name="conditionCheckGroup">

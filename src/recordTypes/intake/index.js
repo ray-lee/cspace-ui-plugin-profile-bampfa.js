@@ -1,13 +1,13 @@
+import { defineMessages } from 'react-intl';
 import forms from './forms';
 import fields from './fields';
-import { defineMessages } from 'react-intl';
 
 export default (pluginContext) => ({
-   optionLists: {
+  optionLists: {
     receipt: {
       values: [
-          'yes',
-          'no',
+        'yes',
+        'no',
       ],
       messages: defineMessages({
         yes: {

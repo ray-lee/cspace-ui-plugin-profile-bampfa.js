@@ -12,7 +12,6 @@ const template = (pluginContext) => {
 
   const {
     Field,
-    InputTable,
   } = pluginContext.recordComponents;
 
   return (
@@ -23,7 +22,7 @@ const template = (pluginContext) => {
           <Col>
             <Field name="entryNumber" />
             <Field name="entryDate" />
-            <Field name="intakeObject" subpath='ns2:intakes_bampfa' />
+            <Field name="intakeObject" subpath="ns2:intakes_bampfa" />
             <Field name="entryReason" />
 
             <Field name="entryMethods">
@@ -33,8 +32,8 @@ const template = (pluginContext) => {
 
           <Col>
             <Field name="currentOwner" />
-            <Field name="sourceAddress" subpath='ns2:intakes_bampfa' />
-            <Field name="receipt" subpath='ns2:intakes_bampfa' />
+            <Field name="sourceAddress" subpath="ns2:intakes_bampfa" />
+            <Field name="receipt" subpath="ns2:intakes_bampfa" />
 
           </Col>
         </Cols>
@@ -49,7 +48,7 @@ const template = (pluginContext) => {
         </Field>
 
         <Field name="entryNote" />
-        <Field name="disposition" subpath='ns2:intakes_bampfa'/>
+        <Field name="disposition" subpath="ns2:intakes_bampfa" />
       </Panel>
 
       <Panel name="objectCollectionInfo" collapsible collapsed>

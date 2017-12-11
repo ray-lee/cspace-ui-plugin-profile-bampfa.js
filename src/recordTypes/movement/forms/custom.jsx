@@ -7,7 +7,6 @@ const template = (pluginContext) => {
     Col,
     Cols,
     Panel,
-    Row,
   } = pluginContext.layoutComponents;
 
   const {
@@ -20,15 +19,15 @@ const template = (pluginContext) => {
       <Panel name="movement" collapsible>
         <InputTable name="currentLocation">
           <Field name="currentLocation" />
-          <Field name="crate" subpath="ns2:movements_bampfa"/>
+          <Field name="crate" subpath="ns2:movements_bampfa" />
           <Field name="currentLocationFitness" />
           <Field name="currentLocationNote" />
         </InputTable>
 
         <Cols>
           <Col>
-            <Field name="locationDate" /> 
-            <Field name="reasonForMove" subpath="ns2:movements_bampfa"/>
+            <Field name="locationDate" />
+            <Field name="reasonForMove" subpath="ns2:movements_bampfa" />
 
             <Field name="movementMethods">
               <Field name="movementMethod" />
@@ -38,7 +37,7 @@ const template = (pluginContext) => {
           <Col>
             <Field name="movementContact" />
             <Field name="movementNote" />
-          </Col> 
+          </Col>
         </Cols>
       </Panel>
     </Field>

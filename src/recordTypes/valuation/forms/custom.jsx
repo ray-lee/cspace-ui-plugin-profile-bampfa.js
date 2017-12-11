@@ -20,9 +20,9 @@ const template = (pluginContext) => {
         <Row>
           <Field name="valuationcontrolRefNumber" />
         </Row>
-        
+
         <Row>
-          <Col> 
+          <Col>
             <Field name="valueAmountsList">
               <Field name="valueAmounts">
                 <Field name="valueCurrency" />
@@ -30,10 +30,9 @@ const template = (pluginContext) => {
               </Field>
             </Field>
             <Field name="valueDate" />
-           <Field name="valueRenewalDate" />
-
+            <Field name="valueRenewalDate" />
           </Col>
-         
+
           <Col>
             <Field name="valueSource" />
             <Field name="valueType" />
