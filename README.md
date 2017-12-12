@@ -1,5 +1,7 @@
 # cspace-ui-plugin-profile-bampfa
 
+[![build status](https://travis-ci.org/cspace-deployment/cspace-ui-plugin-profile-bampfa.js.svg?branch=master)](https://travis-ci.org/cspace-deployment/cspace-ui-plugin-profile-bampfa.js)
+
 A cspace-ui plugin containing configuration for the UC Berkeley Art Museum and Pacific Film Archive.
 
 ## Installation
