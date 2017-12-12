@@ -11,17 +11,17 @@ import work from './work';
 import place from './place';
 import concept from './concept';
 
-export default pluginContext => ({
-  group: group(pluginContext),
-  intake: intake(pluginContext),
-  collectionobject: collectionobject(pluginContext),
-  movement: movement(pluginContext),
-  conditioncheck: conditioncheck(pluginContext),
-  media: media(pluginContext),
-  person: person(pluginContext),
-  organization: organization(pluginContext),
-  location: location(pluginContext),
-  work: work(pluginContext),
-  place: place(pluginContext),
-  concept: concept(pluginContext),
-});
+export default pluginContext => [
+  group(pluginContext),
+  intake(pluginContext),
+  collectionobject(pluginContext),
+  movement(pluginContext),
+  conditioncheck(pluginContext),
+  media(pluginContext),
+  person(pluginContext),
+  organization(pluginContext),
+  location(pluginContext),
+  work(pluginContext),
+  place(pluginContext),
+  concept(pluginContext),
+];

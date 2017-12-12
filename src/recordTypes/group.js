@@ -8,14 +8,18 @@ export default (pluginContext) => {
   } = pluginContext.configHelpers;
 
   return ({
-    fields: {
-      document: {
-        'ns2:groups_common': {
-          owner: {
-            [config]: {
-              view: {
-                type: TextInput,
-                props: null,
+    recordTypes: {
+      group: {
+        fields: {
+          document: {
+            'ns2:groups_common': {
+              owner: {
+                [config]: {
+                  view: {
+                    type: TextInput,
+                    props: null,
+                  },
+                },
               },
             },
           },

@@ -2,7 +2,13 @@ import { defineMessages } from 'react-intl';
 import forms from './forms';
 import fields from './fields';
 
-export default (pluginContext) => ({
+export default pluginContext => ({
+  recordTypes: {
+    intake: {
+      forms: forms(pluginContext),
+      fields: fields(pluginContext),
+    },
+  },
   optionLists: {
     receipt: {
       values: [
@@ -21,6 +27,4 @@ export default (pluginContext) => ({
       }),
     },
   },
-  forms: forms(pluginContext),
-  fields: fields(pluginContext),
 });

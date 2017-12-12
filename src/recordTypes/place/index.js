@@ -1,5 +1,9 @@
 import forms from './forms';
 
-export default (pluginContext) => ({
-  forms: forms(pluginContext),
+export default pluginContext => ({
+  recordTypes: {
+    place: {
+      forms: forms(pluginContext),
+    },
+  },
 });

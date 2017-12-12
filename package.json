@@ -41,6 +41,7 @@
     "test-selenium": "wdio wdio.conf.js"
   },
   "dependencies": {
+    "lodash": "^4.17.4",
     "react-intl": "^2.3.0"
   },
   "devDependencies": {
