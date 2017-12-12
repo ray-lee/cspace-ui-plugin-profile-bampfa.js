@@ -141,6 +141,9 @@ export default (pluginContext) => {
             }),
             view: {
               type: OptionPickerInput,
+              props: {
+                source: 'permissionToReproduce',
+              },
             },
           },
         },

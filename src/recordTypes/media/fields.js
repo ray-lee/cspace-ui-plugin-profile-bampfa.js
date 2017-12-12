@@ -94,7 +94,7 @@ export default (pluginContext) => {
             view: {
               type: OptionPickerInput,
               props: {
-                source: 'TEMP',
+                source: 'websiteDisplayLevel',
               },
             },
           },
