@@ -35,45 +35,26 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.bampfa_collectionobjects.textualInscriptionGroupList.name',
+                id: 'field.collectionobjects_common.textualInscriptionGroupList.name',
                 defaultMessage: 'Textual Inscription',
               },
             }),
-            view: {
-              type: CompoundInput,
-            },
           },
         },
         nonTextualInscriptionGroupList: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.bampfa_collectionobjects.nonTextualInscriptionGroupList.name',
+                id: 'field.collectionobjects_common.nonTextualInscriptionGroupList.name',
                 defaultMessage: 'Non-Textual Inscription',
               },
             }),
-            view: {
-              type: CompoundInput,
-            },
           },
         },
         objectNumber: {
           [config]: {
             cloneable: false,
             required: false,
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionobjects_common.objectNumber.name',
-                defaultMessage: 'ID number',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'TEMP',
-                readOnly: true,
-              },
-            },
           },
         },
         titleGroupList: {
@@ -150,7 +131,7 @@ export default (pluginContext) => {
       'ns2:collectionobjects_bampfa': {
         [config]: {
           service: {
-            ns: 'http://collectionspace.org/services/collectionobject',
+            ns: 'http://collectionspace.org/services/collectionobject/local/bampfa',
           },
         },
         nametitle: {

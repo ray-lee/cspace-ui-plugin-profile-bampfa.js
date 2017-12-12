@@ -18,7 +18,9 @@ export default {
   'field.bampfa_collectionobjects.editionNumber.name': 'Edition',
   'panel.collectionobject.hierarchy': 'Object Hierarchy',
   'field.collectionobjects_common.computedCurrentLocation.name': 'Current Storage Location',
+  'field.collectionobjects_common.nonTextualInscriptionGroupList.name': 'Non-Textual Inscription',
 
+        //         defaultMessage: 'Non-Textual Inscription',
   /* Intake Messages */
   'field.intakes_common.entryNumber.name': 'TR Number',
   'field.intakes_common.entryNote.name': 'Intake note',
