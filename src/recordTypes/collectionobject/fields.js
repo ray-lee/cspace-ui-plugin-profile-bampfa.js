@@ -60,9 +60,10 @@ export default (pluginContext) => {
         objectNumber: {
           [config]: {
             cloneable: false,
+            required: false,
             messages: defineMessages({
               name: {
-                id: 'field.bampfa_collectionobjects.objectNumber.name',
+                id: 'field.collectionobjects_common.objectNumber.name',
                 defaultMessage: 'ID number',
               },
             }),
@@ -227,6 +228,33 @@ export default (pluginContext) => {
             }),
             view: {
               type: TextInput,
+            },
+          },
+        },
+        objectNumber: {
+          [config]: {
+            cloneable: false,
+            required: true,
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.objectNumber.name',
+                defaultMessage: 'ID number',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                readOnly: true,
+              },
+            },
+            compute: (value, path, recordData) => {
+              const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
+              const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
+              const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
+              const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
+              const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
+              const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
+              return [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
             },
           },
         },

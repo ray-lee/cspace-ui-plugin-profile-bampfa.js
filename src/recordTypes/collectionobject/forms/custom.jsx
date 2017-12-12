@@ -31,7 +31,7 @@ const template = (pluginContext) => {
                   <Field name="accNumberPart4" subpath="ns2:collectionobjects_bampfa" />
                   <Field name="accNumberPart5" subpath="ns2:collectionobjects_bampfa" />
                 </InputTable>
-                <Field name="objectNumber" />
+                <Field name="objectNumber" subpath="ns2:collectionobjects_bampfa" />
               </Col>
               <Col>
                 <Field name="legalStatus" subpath="ns2:collectionobjects_bampfa" />
