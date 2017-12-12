@@ -1,6 +1,6 @@
 import forms from './forms';
 
-export default (pluginContext) => ({
+export default pluginContext => ({
   recordTypes: {
     concept: {
       forms: forms(pluginContext),
