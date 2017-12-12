@@ -88,10 +88,6 @@ export default {
   'field.media_common.dateGroup.name': 'Dates',
 
   /* Person Terms */
-  'field.persons_common.termSource.name': 'Source',
-  'field.persons_common.termSourceDetail.name': 'Source detail',
-  'field.persons_common.termSourceID.name': 'Source ID',
-  'field.persons_common.termSourceNote.name': 'Source note',
   'field.persons_common.termName.name': 'FML Name',
   'field.persons_common.birthPlace.name': 'Birth country',
 };
