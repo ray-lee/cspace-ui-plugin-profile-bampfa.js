@@ -10,6 +10,7 @@ import location from './location';
 import work from './work';
 import place from './place';
 import concept from './concept';
+import citation from './citation';
 
 export default pluginContext => [
   group(pluginContext),
@@ -24,4 +25,5 @@ export default pluginContext => [
   work(pluginContext),
   place(pluginContext),
   concept(pluginContext),
+  citation(pluginContext),
 ];

@@ -6,8 +6,6 @@ const template = (pluginContext) => {
   } = pluginContext.lib;
 
   const {
-    Col,
-    Cols,
     Panel,
     Row,
   } = pluginContext.layoutComponents;
