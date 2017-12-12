@@ -87,44 +87,12 @@ export default {
   'field.media_common.subject.name': 'Subjects',
   'field.media_common.dateGroup.name': 'Dates',
 
-  /* Storage Location Messages */
-  'fields.locations_common.locationType.name': 'Type',
-  'field.locations_common.termSource.name': 'Source',
-  'field.locations_common.termSourceDetail.name': 'Source detail',
-  'field.locations_common.termSourceID.name': 'Source ID',
-  'field.locations_common.termSourceNote.name': 'Source note',
-
-
-  /* Organization Terms */
-  'field.organizations_common.termSource.name': 'Source',
-  'field.organizations_common.termSourceDetail.name': 'Source detail',
-  'field.organizations_common.termSourceID.name': 'Source ID',
-  'field.organizations_common.termSourceNote.name': 'Source note',
-
   /* Person Terms */
   'field.persons_common.termSource.name': 'Source',
   'field.persons_common.termSourceDetail.name': 'Source detail',
   'field.persons_common.termSourceID.name': 'Source ID',
   'field.persons_common.termSourceNote.name': 'Source note',
   'field.persons_common.termName.name': 'FML Name',
-  'field.persons_common.birthPlace.name': 'Place of birth',
-
-  /* Concept Terms */
-  'field.concepts_common.termSource.name': 'Source',
-  'field.concepts_common.termSourceDetail.name': 'Source detail',
-  'field.concepts_common.termSourceID.name': 'Source ID',
-  'field.concepts_common.termSourceNote.name': 'Source note',
-
-  /* Work Terms */
-  'field.works_common.termSource.name': 'Source',
-  'field.works_common.termSourceDetail.name': 'Source detail',
-  'field.works_common.termSourceID.name': 'Source ID',
-  'field.works_common.termSourceNote.name': 'Source note',
-
-  /* Place Terms */
-  'field.places_common.termSource.name': 'Source',
-  'field.places_common.termSourceDetail.name': 'Source detail',
-  'field.places_common.termSourceID.name': 'Source ID',
-  'field.places_common.termSourceNote.name': 'Source note',
+  'field.persons_common.birthPlace.name': 'Birth country',
 };
 

@@ -1,3 +1,5 @@
+import { defineMessages } from 'react-intl';
+
 const template = (pluginContext) => {
   const {
     React,
@@ -5,6 +7,7 @@ const template = (pluginContext) => {
 
   const {
     Panel,
+    Row,
     Cols,
     Col,
   } = pluginContext.layoutComponents;
@@ -20,49 +23,84 @@ const template = (pluginContext) => {
         <Field name="placeTermGroupList">
           <Field name="placeTermGroup">
             <Panel>
-              <InputTable>
+              <Row>
                 <Field name="termDisplayName" />
                 <Field name="termName" />
                 <Field name="termQualifier" />
-                <Field name="termType" />
                 <Field name="termStatus" />
-              </InputTable>
+              </Row>
 
-              <InputTable>
+              <Row>
+                <Field name="termType" />
+                <Field name="historicalStatus" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
+              </Row>
+
+              <InputTable name="nameDetail">
+                <Field name="nameAbbrev" />
+                <Field name="nameNote" />
+                <Field name="nameDateGroup" />
+              </InputTable>
+
+              <InputTable name="termSource">
                 <Field name="termSource" />
                 <Field name="termSourceDetail" />
                 <Field name="termSourceID" />
                 <Field name="termSourceNote" />
               </InputTable>
-
-              <InputTable name="nameDetail">
-                <Field name="nameAbbrev" />
-                <Field name="historicalStatus" />
-                <Field name="nameNote" />
-                <Field name="nameDateGroup" />
-              </InputTable>
             </Panel>
           </Field>
         </Field>
 
-        <Cols>
-          <Col>
-            <Field name="placeType" />
-            <Field name="placeOwnerGroupList">
-              <Field name="placeOwnerGroup">
-                <Field name="owner" />
-                <Field name="ownershipDateGroup" />
-                <Field name="ownershipNote" />
-              </Field>
-            </Field>
-            <Field name="placeSource" />
-          </Col>
-          <Col>
-            <Field name="placeNote" />
-          </Col>
-        </Cols>
+        <Row>
+          <Field name="placeType" />
+          <Field name="placeSource" />
+        </Row>
+
+        <Field name="placeOwnerGroupList">
+          <Field name="placeOwnerGroup">
+            <Field name="owner" />
+            <Field name="ownershipDateGroup" />
+            <Field name="ownershipNote" />
+          </Field>
+        </Field>
+
+        <Field name="placeNote" />
+
+        {/* TODO: Break out address group */}
+
+        <Field name="addrGroupList">
+          <Field name="addrGroup">
+            <Panel>
+              <Cols>
+                <Col>
+                  <Field name="addressPlace1" />
+                  <Field name="addressPlace2" />
+                  <Field name="addressMunicipality" />
+
+                </Col>
+
+                <Col>
+                  <Row>
+                    <Field name="addressStateOrProvince" />
+                    <Field name="addressPostCode" />
+                  </Row>
+
+                  <Field name="addressCountry" />
+
+                  <Row>
+                    <Col>
+                      <Field name="addressType" />
+                    </Col>
+
+                    <Col />
+                  </Row>
+                </Col>
+              </Cols>
+            </Panel>
+          </Field>
+        </Field>
       </Panel>
 
       <Panel name="localityInfo" collapsible collapsed>
@@ -142,13 +180,19 @@ const template = (pluginContext) => {
         </Field>
       </Panel>
 
-      <Panel name="hierarchy" collapsible>
-        <Field name="relation-list-item" subpath="ns2:relations-common-list" />
+      <Panel name="hierarchy" collapsible collapsed>
+        <Field name="relation-list-item" subpath="rel:relations-common-list" />
       </Panel>
     </Field>
   );
 };
 
 export default pluginContext => ({
+  messages: defineMessages({
+    name: {
+      id: 'form.place.default.name',
+      defaultMessage: 'Standard Template',
+    },
+  }),
   template: template(pluginContext),
 });

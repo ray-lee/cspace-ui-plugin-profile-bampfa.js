@@ -1,3 +1,5 @@
+import { defineMessages } from 'react-intl';
+
 const template = (pluginContext) => {
   const {
     React,
@@ -5,6 +7,7 @@ const template = (pluginContext) => {
 
   const {
     Panel,
+    Row,
     Cols,
     Col,
   } = pluginContext.layoutComponents;
@@ -21,17 +24,21 @@ const template = (pluginContext) => {
         <Field name="orgTermGroupList">
           <Field name="orgTermGroup">
             <Panel>
-              <InputTable>
+              <Row>
                 <Field name="termDisplayName" />
-                <Field name="termQualifier" />
-                <Field name="termType" />
-                <Field name="termStatus" />
-              </InputTable>
-
-              <InputTable>
                 <Field name="termName" />
+                <Field name="termQualifier" />
+                <Field name="termStatus" />
+              </Row>
+
+              <Row>
+                <Field name="termType" />
+                <Field name="termFlag" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
+              </Row>
+
+              <InputTable name="termSource">
                 <Field name="termSource" />
                 <Field name="termSourceDetail" />
                 <Field name="termSourceID" />
@@ -42,6 +49,7 @@ const template = (pluginContext) => {
                 <Field name="mainBodyName" />
                 <Field name="additionsToName" />
               </InputTable>
+
             </Panel>
           </Field>
         </Field>
@@ -75,12 +83,18 @@ const template = (pluginContext) => {
       <Subrecord name="contact" />
 
       <Panel name="hierarchy" collapsible collapsed>
-        <Field name="relation-list-item" subpath="ns2:relations-common-list" />
+        <Field name="relation-list-item" subpath="rel:relations-common-list" />
       </Panel>
     </Field>
   );
 };
 
 export default pluginContext => ({
+  messages: defineMessages({
+    name: {
+      id: 'form.organization.default.name',
+      defaultMessage: 'Standard Template',
+    },
+  }),
   template: template(pluginContext),
 });

@@ -1,3 +1,5 @@
+import { defineMessages } from 'react-intl';
+
 const template = (pluginContext) => {
   const {
     React,
@@ -6,6 +8,7 @@ const template = (pluginContext) => {
   const {
     Col,
     Panel,
+    Row,
     Cols,
   } = pluginContext.layoutComponents;
 
@@ -21,7 +24,20 @@ const template = (pluginContext) => {
         <Field name="personTermGroupList">
           <Field name="personTermGroup">
             <Panel>
-              <InputTable name="nameDetail" >
+              <Row>
+                <Field name="termDisplayName" />
+                <Field name="termName" />
+                <Field name="termQualifier" />
+                <Field name="termStatus" />
+              </Row>
+
+              <Row>
+                <Field name="termType" />
+                <Field name="termLanguage" />
+                <Field name="termPrefForLang" />
+              </Row>
+
+              <InputTable name="nameDetail">
                 <Field name="salutation" />
                 <Field name="title" />
                 <Field name="foreName" />
@@ -31,25 +47,12 @@ const template = (pluginContext) => {
                 <Field name="initials" />
               </InputTable>
 
-              <InputTable>
-                <Field name="termDisplayName" />
-                <Field name="termName" />
-                <Field name="termQualifier" />
-                <Field name="termType" />
-                <Field name="termStatus" />
-              </InputTable>
-
-
-              {/* TO DO: how to embed termPrefForLang in a field */}
               <InputTable name="termSource">
-                <Field name="termLanguage" />
-                <Field name="termPrefForLang" />
                 <Field name="termSource" />
                 <Field name="termSourceDetail" />
                 <Field name="termSourceID" />
                 <Field name="termSourceNote" />
               </InputTable>
-
             </Panel>
           </Field>
         </Field>
@@ -113,12 +116,18 @@ const template = (pluginContext) => {
       <Subrecord name="contact" />
 
       <Panel name="hierarchy" collapsible collapsed>
-        <Field name="relation-list-item" subpath="ns2:relations-common-list" />
+        <Field name="relation-list-item" subpath="rel:relations-common-list" />
       </Panel>
     </Field>
   );
 };
 
 export default pluginContext => ({
+  messages: defineMessages({
+    name: {
+      id: 'form.person.default.name',
+      defaultMessage: 'Standard Template',
+    },
+  }),
   template: template(pluginContext),
 });

@@ -1,10 +1,15 @@
+import { defineMessages } from 'react-intl';
+
 const template = (pluginContext) => {
   const {
     React,
   } = pluginContext.lib;
 
   const {
+    Col,
+    Cols,
     Panel,
+    Row,
   } = pluginContext.layoutComponents;
 
   const {
@@ -18,18 +23,21 @@ const template = (pluginContext) => {
         <Field name="conceptTermGroupList">
           <Field name="conceptTermGroup">
             <Panel>
-              <InputTable>
+              <Row>
                 <Field name="termDisplayName" />
+                <Field name="termName" />
                 <Field name="termQualifier" />
                 <Field name="termStatus" />
-              </InputTable>
+              </Row>
 
-              <InputTable>
-                <Field name="termName" />
+              <Row>
+                <Field name="termType" />
+                <Field name="historicalStatus" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
-                <Field name="historicalStatus" />
-                <Field name="termType" />
+              </Row>
+
+              <InputTable name="termSource">
                 <Field name="termSource" />
                 <Field name="termSourceDetail" />
                 <Field name="termSourceID" />
@@ -63,12 +71,18 @@ const template = (pluginContext) => {
       </Panel>
 
       <Panel name="hierarchy" collapsible collapsed>
-        <Field name="relation-list-item" subpath="ns2:relations-common-list" />
+        <Field name="relation-list-item" subpath="rel:relations-common-list" />
       </Panel>
     </Field>
   );
 };
 
 export default pluginContext => ({
+  messages: defineMessages({
+    name: {
+      id: 'form.concept.default.name',
+      defaultMessage: 'Standard Template',
+    },
+  }),
   template: template(pluginContext),
 });
