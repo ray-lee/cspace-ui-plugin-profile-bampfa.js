@@ -40,7 +40,10 @@
     "test": "cross-env NODE_ENV=test karma start --singleRun=true",
     "test-selenium": "wdio wdio.conf.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "react-intl": "^2.3.0"
+  },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
