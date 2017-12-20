@@ -17,6 +17,5 @@ export default {
     serviceConfig: {
       servicePath: 'urn:cspace:name(crate)',
     },
-    sortOrder: 2,
   },
 };
