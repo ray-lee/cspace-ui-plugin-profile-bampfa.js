@@ -60,7 +60,7 @@
     "chai-immutable": "^1.6.0",
     "coveralls": "^2.13.3",
     "cross-env": "^2.0.0",
-    "cspace-ui": "^0.13.8",
+    "cspace-ui": "^0.13.10",
     "css-loader": "^0.28.7",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^12.0.0",
