@@ -1,13 +1,11 @@
-.common :global(.cspace-ui-PublicPage--common),
-.common :global(.cspace-ui-Logo--common) {
+.common :global(.cspace-ui-Logo--common) > a > div {
   background-image: url(../../images/logo.svg);
 }
 
-.common :global(.cspace-ui-PublicPage--common) {
-  background-size: auto 66px;
+.common :global(.cspace-ui-PublicPage--common) :global(.cspace-ui-Logo--common) > a > div {
+  height: 66px;
 }
 
 .common :global(.cspace-ui-Logo--common) {
   width: 44px;
 }
-

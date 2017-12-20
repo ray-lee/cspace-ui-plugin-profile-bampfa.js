@@ -1,5 +1,5 @@
 export default {
-  'about.title': 'CollectionSpace - BAMPFA',
+  'about.title': 'BAMPFA CollectionSpace',
   'about.contentHTML': `
     <p>
       Collections management system of the UC Berkeley Art Museum and Pacific Film Archive.
