@@ -65,7 +65,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.movements_bampfa.crate.reasonForMove.name',
-                defaultMessage: 'Reason for move',
+                defaultMessage: 'Reason',
               },
             }),
             view: {
