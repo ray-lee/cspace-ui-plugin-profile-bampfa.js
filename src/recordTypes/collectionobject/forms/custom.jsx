@@ -57,7 +57,7 @@ const template = (pluginContext) => {
             <Panel>
               <Row>
                 <div>
-                  <Field name="bampfaTitle" />
+                  <Field name="bampfaFormattedTitle" />
                 </div>
               </Row>
             </Panel>

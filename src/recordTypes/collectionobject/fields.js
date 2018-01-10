@@ -9,6 +9,7 @@ export default (pluginContext) => {
     StructuredDateInput,
     TextInput,
     CheckboxInput,
+    RichTextInput,
     TermPickerInput,
   } = pluginContext.inputComponents;
 
@@ -70,6 +71,16 @@ export default (pluginContext) => {
                 type: CompoundInput,
               },
             },
+            bampfaFormattedTitle: {
+              [config]: {
+                view: {
+                  type: RichTextInput,
+                  props: {
+                    multiline: true,
+                  },
+                },
+              },
+            },
             bampfaTitle: {
               [config]: {
                 view: {
@@ -77,6 +88,19 @@ export default (pluginContext) => {
                   props: {
                     multiline: true,
                   },
+                },
+                compute: (value, path, recordData) => {
+                  const titles = recordData.getIn(['document', 'ns2:collectionobjects_common', 'titleGroupList', 'titleGroup']);
+                  let title = null;
+                  for (let t of titles) {
+                    if (t !== undefined) {
+                      if (t.getIn(['bampfaFormattedTitle']) !== '') {
+                        title = t;
+                        break;
+                      }
+                    }
+                  }
+                  return title.getIn(['bampfaFormattedTitle']);
                 },
               },
             },
@@ -1338,24 +1362,6 @@ export default (pluginContext) => {
         },
         physicalDescription: {
           [config]: {
-            view: {
-              type: TextInput,
-            },
-          },
-        },
-        bampfaFormattedTitle: { // TO DO: Replace TITLE WITH RICH TEXT with this, ask Ray how
-          [config]: {
-            view: {
-              type: TextInput,
-              props: {
-                multiline: true,
-              },
-            },
-          },
-        },
-        bampfaTitle: {
-          [config]: {
-            readOnly: true,
             view: {
               type: TextInput,
             },
