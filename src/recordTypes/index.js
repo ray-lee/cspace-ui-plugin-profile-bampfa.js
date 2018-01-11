@@ -2,7 +2,6 @@ import merge from 'lodash/merge';
 import citation from './citation';
 import collectionobject from './collectionobject';
 import concept from './concept';
-import conditioncheck from './conditioncheck';
 import group from './group';
 import intake from './intake';
 import location from './location';
@@ -17,7 +16,6 @@ export default pluginContext => [
   citation,
   collectionobject,
   concept,
-  conditioncheck,
   group,
   intake,
   location,
