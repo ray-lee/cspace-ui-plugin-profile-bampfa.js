@@ -1,5 +1,4 @@
 import merge from 'lodash/merge';
-
 import messages from './messages';
 import recordTypes from './recordTypes';
 import logo from '../images/logo.svg';

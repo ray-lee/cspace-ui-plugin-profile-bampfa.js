@@ -16,7 +16,6 @@ const template = (pluginContext) => {
 
   return (
     <Field name="document">
-
       <Panel name="objectEntryInfo" collapsible>
         <Cols>
           <Col>
@@ -34,13 +33,11 @@ const template = (pluginContext) => {
             <Field name="currentOwner" />
             <Field name="sourceAddress" subpath="ns2:intakes_bampfa" />
             <Field name="receipt" subpath="ns2:intakes_bampfa" />
-
           </Col>
         </Cols>
 
         <Field name="currentLocationGroupList">
           <Field name="currentLocationGroup">
-            { /* TODO fix currentLocation field source */ }
             <Field name="currentLocation" />
             <Field name="currentLocationFitness" />
             <Field name="currentLocationNote" />
@@ -87,7 +84,6 @@ const template = (pluginContext) => {
           <Field name="valuer" />
           <Field name="valuationReferenceNumber" />
         </Row>
-
       </Panel>
 
       <Panel name="insurance" collapsible>

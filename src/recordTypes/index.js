@@ -1,5 +1,4 @@
 import merge from 'lodash/merge';
-
 import citation from './citation';
 import collectionobject from './collectionobject';
 import concept from './concept';

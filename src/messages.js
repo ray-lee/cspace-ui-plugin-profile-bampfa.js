@@ -22,16 +22,12 @@ export default {
 
         //         defaultMessage: 'Non-Textual Inscription',
   /* Intake Messages */
-  'field.intakes_common.entryNumber.name': 'TR Number',
+  'field.intakes_common.entryNumber.name': 'TR number',
   'field.intakes_common.entryNote.name': 'Intake note',
   'field.intakes_common.packingNote.name': 'Disposition',
   'field.intakes_common.entryReason.name': 'Purpose',
   'field.intakes_common.currentOwner.name': 'Source',
-  'field.intakes_common.currentLocation.name': 'Current location',
-  'field.intakes_common.currentLocationFitness.name': 'Current location fitness',
-  'field.intakes_common.currentLocationNote.name': 'Current location note',
   'field.intakes_common.entryDate.name': 'Date in',
-  'field.intakes_common.despositorsRequirements.name': 'Address for Agenda',
 
   /* Movements/Location Messages */
   'panel.movement.movement': 'Inventory/Movement Information',

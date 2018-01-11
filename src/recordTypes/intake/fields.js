@@ -24,7 +24,23 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.intakes_bampfa.intakeObject.name',
-                defaultMessage: 'Object (Artist/Title/Medium)',
+                defaultMessage: 'Object (artist/title/medium)',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+        sourceAddress: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.intakes_bampfa.sourceAddress.name',
+                defaultMessage: 'Address for agenda',
               },
             }),
             view: {
@@ -46,23 +62,7 @@ export default (pluginContext) => {
             view: {
               type: OptionPickerInput,
               props: {
-                source: 'receipt',
-              },
-            },
-          },
-        },
-        sourceAddress: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.intakes_bampfa.sourceAddress.name',
-                defaultMessage: 'Address for agenda',
-              },
-            }),
-            view: {
-              type: TextInput,
-              props: {
-                multiline: true,
+                source: 'receiptStatuses',
               },
             },
           },
