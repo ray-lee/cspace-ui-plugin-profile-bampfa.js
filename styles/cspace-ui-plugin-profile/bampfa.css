@@ -1,9 +1,5 @@
-.common :global(.cspace-ui-Logo--common) > a > div {
-  background-image: url(../../images/logo.svg);
-}
-
-.common :global(.cspace-ui-PublicPage--common) :global(.cspace-ui-Logo--common) > a > div {
-  height: 66px;
+.common :global(.cspace-ui-PublicPage--common) :global(.cspace-ui-Logo--common) {
+  width: 88px;
 }
 
 .common :global(.cspace-ui-Logo--common) {
