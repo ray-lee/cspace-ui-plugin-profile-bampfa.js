@@ -32,6 +32,7 @@ const template = (pluginContext) => {
 
               <Row>
                 <Field name="termType" />
+                <Field name="termFlag" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
               </Row>
