@@ -91,16 +91,15 @@ export default (pluginContext) => {
                 },
                 compute: (value, path, recordData) => {
                   const titles = recordData.getIn(['document', 'ns2:collectionobjects_common', 'titleGroupList', 'titleGroup']);
-                  let title = null;
-                  for (let t of titles) {
-                    if (t !== undefined) {
-                      if (t.getIn(['bampfaFormattedTitle']) !== '') {
-                        title = t;
-                        break;
+                  const titleList = [];
+                  for (const title of titles) {
+                    if (title !== undefined) {
+                      if (title.getIn(['bampfaFormattedTitle']) !== '') {
+                        titleList.push(title.getIn(['bampfaFormattedTitle']));
                       }
                     }
                   }
-                  return title.getIn(['bampfaFormattedTitle']);
+                  return titleList.join('\n');
                 },
               },
             },
