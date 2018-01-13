@@ -7,11 +7,38 @@ export default (pluginContext) => {
   } = pluginContext.inputComponents;
 
   const {
+    Immutable,
+  } = pluginContext.lib;
+
+  const {
     configKey: config,
   } = pluginContext.configHelpers;
 
   return {
     document: {
+      'ns2:persons_common': {
+        personTermGroupList: {
+          personTermGroup: {
+            [config]: {
+              compute: (data) => {
+                const forename = data.get('foreName');
+                const middle = data.get('middleName');
+                const surname = data.get('surName');
+                const additions = data.get('nameAdditions');
+
+                const termDisplayName = [surname, forename, middle, additions].filter(part => !!part).join(', ');
+                const termName = [forename, middle, surname, additions].filter(part => !!part).join(' ');
+
+                return Immutable.Map({
+                  termDisplayName,
+                  termName,
+                });
+                // return data.set(['termName', 'termDisplayName'], displayName);
+              },
+            },
+          },
+        },
+      },
       'ns2:persons_bampfa': {
         [config]: {
           service: {
