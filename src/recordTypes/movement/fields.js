@@ -24,6 +24,31 @@ export default (pluginContext) => {
             required: true,
           },
         },
+        movementMethods: {
+          movementMethod: {
+            [config]: {
+              messages: defineMessages({
+                name: {
+                  id: 'field.movements_bampfa.movementMethod.name',
+                  defaultMessage: 'Movement Method',
+                },
+              }),
+              view: {
+                type: TermPickerInput,
+                props: {
+                  source: 'movemethod',
+                },
+              },
+            },
+          },
+        },
+        movementContact: {
+          [config]: {
+            view: {
+              type: TextInput,
+            },
+          },
+        },
       },
       'ns2:movements_bampfa': {
         [config]: {
@@ -47,10 +72,47 @@ export default (pluginContext) => {
             },
           },
         },
-        [config]: {
-          readOnly: true,
-          view: {
-            type: TextInput,
+        computedSummary: {
+          [config]: {
+            view: {
+              type: TextInput,
+              props: {
+                readOnly: true,
+              },
+            },
+            compute: (value, path, recordData) => {
+              let summary = '';
+              let date = recordData.getIn(['document', 'ns2:movements_common', 'locationDate']);
+              let reason = recordData.getIn(['document', 'ns2:movements_bampfa', 'reasonForMove']);
+
+              if (typeof (date) === 'undefined') {
+                date = '';
+              }
+
+              if (typeof (reason) === 'undefined') {
+                reason = '';
+              }
+
+              /* Remove timestamp of the date */
+              const index = date.indexOf('T');
+              if (index > -1) {
+                date = date.substring(0, index);
+              }
+
+              /* Convert the reason URN into a string */
+              if (reason !== '') {
+                reason = reason.slice(reason.indexOf("'") + 1, reason.length - 1);
+              }
+
+              if (date && reason) {
+                summary = `${date} (${reason})`;
+              } else if (date) {
+                summary = date;
+              } else if (reason) {
+                summary = reason;
+              }
+              return summary;
+            },
           },
         },
         movementReferenceNumber: {
@@ -86,22 +148,6 @@ export default (pluginContext) => {
             }),
             view: {
               type: AutocompleteInput,
-            },
-          },
-        },
-        movementMethod: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.movements_bampfa.movementMethod.name',
-                defaultMessage: 'Movement Method',
-              },
-            }),
-            view: {
-              type: TermPickerInput,
-              props: {
-                source: 'movemethod',
-              },
             },
           },
         },
