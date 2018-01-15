@@ -30,7 +30,6 @@ export default {
   'panel.movements.movement': 'Inventory/Movement Information',
   'field.movements_common.movementContact.name': 'Handler',
   'field.movements_common.movementMethod.name': 'Method',
-  'field.movements_common.currentLocation.name': 'Storage Location',
   'field.movements_common.locationDate.name': 'Inventory/Move Date',
   'inputTable.movement.currentLocation': 'Storage Location',
 
