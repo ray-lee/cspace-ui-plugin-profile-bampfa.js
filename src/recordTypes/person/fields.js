@@ -21,17 +21,15 @@ export default (pluginContext) => {
           personTermGroup: {
             [config]: {
               compute: (data, path, recordData) => {
-                let foreName = data.get('foreName');
-                let middleName = data.get('middleName');
-                let surName = data.get('surName');
+                const namePartsFML = [];
+                const namePartsLMF = [];
                 const nameAdditions = data.get('nameAdditions');
                 const nationalities = recordData.getIn(['document', 'ns2:persons_common', 'nationalities', 'nationality']);
                 const title = data.get('title');
-
                 let nationality = '';
-
-                const namePartsFML = [];
-                const namePartsLMF = [];
+                let foreName = data.get('foreName');
+                let middleName = data.get('middleName');
+                let surName = data.get('surName');
 
                 /* Calculate First-Middle-Last Name */
                 if (nationalities && nationalities.size > 0) {
