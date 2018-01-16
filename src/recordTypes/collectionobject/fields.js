@@ -130,7 +130,6 @@ export default (pluginContext) => {
                   type: TextInput,
                   props: {
                     readOnly: true,
-                    source: 'measuredPart',
                   },
                 },
               },
@@ -1273,13 +1272,112 @@ export default (pluginContext) => {
             view: {
               type: TextInput,
             },
+            compute: (value, path, recordData) => {
+              const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
+              const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
+              const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
+              const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
+              const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
+              const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
+              const parts = [prefix, partOne, partTwo,
+                partThree, partFour, partFive].filter(part => !!part);
+
+              const sortableParts = [];
+              const isNumericRegExp = /^\d+$/;
+
+              for (let i = 0; i < parts.length; i += 1) {
+                let part = parts[i];
+
+                if (isNumericRegExp.test(part)) {
+                  const len = part.length;
+                  part = (new Array(len + 1).join('0') + part).slice(-len);
+                } else {
+                  part = part.toLowerCase();
+                }
+                sortableParts.push(part);
+              }
+              return sortableParts.join(' ');
+            },
           },
         },
         effectiveObjectNumber: {
           [config]: {
-            readOnly: true,
             view: {
               type: TextInput,
+              props: {
+                readOnly: true,
+              },
+            },
+            compute: (value, path, recordData) => {
+              // ui-args="objectNumber,otherNumber" ui-func="bampfa.computeEffectiveObjectNumber"
+              const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
+              const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
+              const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
+              const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
+              const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
+              const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
+              const otherNumber = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'otherNumberList']);
+
+              const objectNumber = [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
+
+              // The effective object number is the objectNumber, if it exists. Otherwise,
+              // fall back to the primary otherNumber.
+
+              console.log(otherNumber);
+
+              let effectiveObjectNumber = objectNumber;
+
+              if (!effectiveObjectNumber) {
+                let fallbackNumber = null;
+
+                if (otherNumber.size > 0) {
+                  for (let i = 0; i < otherNumber.size; i += 1) {
+                    let candidateNumber = otherNumber[i];
+
+                    if (candidateNumber) {
+                      fallbackNumber = candidateNumber.numberValue;
+                      break;
+                    }
+                  }
+                }
+                effectiveObjectNumber = fallbackNumber;
+              }
+
+              console.log(effectiveObjectNumber);
+
+
+
+
+
+
+
+
+
+            // bampfa.computeEffectiveObjectNumber = function(objectNumber, otherNumber) {
+            //   The effective object number is the objectNumber, if it exists. Otherwise,
+            //   fall back to the primary otherNumber.
+          
+            //   var effectiveObjectNumber = objectNumber;
+          
+            //   if (!effectiveObjectNumber) {
+            //     var fallbackNumber = null;
+          
+            //     if (otherNumber.length > 0) {
+            //       for (var i=0; i<otherNumber.length; i++) {
+            //         var candidateNumber = otherNumber[i];
+          
+            //         if (candidateNumber["_primary"]) {
+            //           fallbackNumber = candidateNumber.numberValue;
+            //           break;
+            //         }
+            //       }
+            //     }
+          
+            //     effectiveObjectNumber = fallbackNumber;
+            //   }
+          
+            //   return effectiveObjectNumber;
+            // }
             },
           },
         },
@@ -1294,6 +1392,9 @@ export default (pluginContext) => {
           [config]: {
             view: {
               type: TextInput, // TO DO: Double check
+              priops: {
+                readOnly: true,
+              },
             },
           },
         },
