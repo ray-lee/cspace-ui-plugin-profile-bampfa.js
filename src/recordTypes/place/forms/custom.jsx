@@ -32,6 +32,7 @@ const template = (pluginContext) => {
 
               <Row>
                 <Field name="termType" />
+                <Field name="termFlag" />
                 <Field name="historicalStatus" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
@@ -104,77 +105,77 @@ const template = (pluginContext) => {
       </Panel>
 
       <Panel name="localityInfo" collapsible collapsed>
-        <Cols>
+        <Row>
+          <Field name="vCoordinates" />
+          <Field name="vLatitude" />
+          <Field name="vLongitude" />
+          <Field name="vCoordSys" />
+          <Field name="vSpatialReferenceSystem" />
+        </Row>
+
+        <Row>
+          <Field name="vElevation" />
+          <Field name="vDepth" />
+          <Field name="vDistanceAboveSurface" />
+          <Field name="vUnitofMeasure" />
+        </Row>
+
+        <Row>
           <Col>
-            <Field name="vCoordinates" />
-            <Field name="vElevation" />
             <Field name="minElevationInMeters" />
             <Field name="maxElevationInMeters" />
           </Col>
 
           <Col>
-            <Field name="vLatitude" />
-            <Field name="vDepth" />
             <Field name="minDepthInMeters" />
             <Field name="maxDepthInMeters" />
           </Col>
 
           <Col>
-            <Field name="vLongitude" />
-            <Field name="vDistanceAboveSurface" />
             <Field name="minDistanceAboveSurfaceMeters" />
             <Field name="maxDistanceAboveSurfaceMeters" />
           </Col>
 
-          <Col>
-            <Field name="vCoordSys" />
-            <Field name="vUnitofMeasure" />
-            <Field name="vCoordSource" />
-          </Col>
+          <Col />
+        </Row>
 
-          <Col>
-            <Field name="vSpatialReferenceSystem" />
-            <Field name="vCoordSourceRefId" />
-          </Col>
-        </Cols>
+        <Row>
+          <Field name="vCoordSource" />
+          <Field name="vCoordSourceRefId" />
+        </Row>
       </Panel>
 
       <Panel name="geoRefInfo" collapsible collapsed>
         <Field name="placeGeoRefGroupList">
           <Field name="placeGeoRefGroup">
             <Panel>
-              <Cols>
-                <Col>
-                  <Field name="decimalLatitude" />
-                  <Field name="pointRadiusSpatialFit" />
-                  <Field name="geoReferencedBy" />
-                  <Field name="geoRefRemarks" />
-                </Col>
+              <Row>
+                <Field name="decimalLatitude" />
+                <Field name="decimalLongitude" />
+                <Field name="geodeticDatum" />
+                <Field name="coordUncertaintyInMeters" />
+                <Field name="coordPrecision" />
+              </Row>
 
-                <Col>
-                  <Field name="decimalLongitude" />
-                  <Field name="footprintWKT" />
-                  <Field name="geoRefDateGroup" />
-                </Col>
+              <Row>
+                <Field name="pointRadiusSpatialFit" />
+                <Field name="footprintWKT" />
+                <Field name="footprintSRS" />
+                <Field name="footprintSpatialFit" />
+              </Row>
 
-                <Col>
-                  <Field name="geodeticDatum" />
-                  <Field name="footprintSRS" />
-                  <Field name="geoRefProtocol" />
-                  <Field name="geoRefPlaceName" />
-                </Col>
+              <Row>
+                <Field name="geoReferencedBy" />
+                <Field name="geoRefDateGroup" />
+                <Field name="geoRefProtocol" />
+                <Field name="geoRefSource" />
+                <Field name="geoRefVerificationStatus" />
+              </Row>
 
-                <Col>
-                  <Field name="coordUncertaintyInMeters" />
-                  <Field name="footprintSpatialFit" />
-                  <Field name="geoRefSource" />
-                </Col>
-
-                <Col>
-                  <Field name="coordPrecision" />
-                  <Field name="geoRefVerificationStatus" />
-                </Col>
-              </Cols>
+              <Row>
+                <Field name="geoRefRemarks" />
+                <Field name="geoRefPlaceName" />
+              </Row>
             </Panel>
           </Field>
         </Field>

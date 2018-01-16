@@ -1,3 +1,5 @@
+import { defineMessages } from 'react-intl';
+
 const template = (pluginContext) => {
   const {
     React,
@@ -30,6 +32,7 @@ const template = (pluginContext) => {
 
               <Row>
                 <Field name="termType" />
+                <Field name="termFlag" />
                 <Field name="termLanguage" />
                 <Field name="termPrefForLang" />
               </Row>
@@ -73,6 +76,40 @@ const template = (pluginContext) => {
             </Field>
           </Col>
         </Cols>
+
+        {/* TODO: Break out address group */}
+
+        <Field name="addrGroupList">
+          <Field name="addrGroup">
+            <Panel>
+              <Cols>
+                <Col>
+                  <Field name="addressPlace1" />
+                  <Field name="addressPlace2" />
+                  <Field name="addressMunicipality" />
+
+                </Col>
+
+                <Col>
+                  <Row>
+                    <Field name="addressStateOrProvince" />
+                    <Field name="addressPostCode" />
+                  </Row>
+
+                  <Field name="addressCountry" />
+
+                  <Row>
+                    <Col>
+                      <Field name="addressType" />
+                    </Col>
+
+                    <Col />
+                  </Row>
+                </Col>
+              </Cols>
+            </Panel>
+          </Field>
+        </Field>
       </Panel>
 
       <Panel name="hierarchy" collapsible collapsed>
@@ -83,5 +120,11 @@ const template = (pluginContext) => {
 };
 
 export default pluginContext => ({
+  messages: defineMessages({
+    name: {
+      id: 'form.work.default.name',
+      defaultMessage: 'Standard Template',
+    },
+  }),
   template: template(pluginContext),
 });
