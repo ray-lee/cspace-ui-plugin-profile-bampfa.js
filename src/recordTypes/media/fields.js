@@ -13,10 +13,6 @@ export default (pluginContext) => {
   } = pluginContext.configHelpers;
 
   const {
-    Immutable,
-  } = pluginContext.lib;
-
-  const {
     DATA_TYPE_INT,
     DATA_TYPE_BOOL,
   } = pluginContext.dataTypes;
@@ -131,7 +127,7 @@ export default (pluginContext) => {
                   }
 
                   // Join all measurement descriptions with x
-                  let measurementSummary = orderedMeasurementDescriptions.join(" x ");
+                  let measurementSummary = orderedMeasurementDescriptions.join(' x ');
 
                   // If there is a common unit, append it
                   if (hasCommonUnit) {
