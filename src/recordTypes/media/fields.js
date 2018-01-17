@@ -265,9 +265,8 @@ export default (pluginContext) => {
               type: TextInput,
             },
             compute: (value, path, recordData) => {
-              const primaryDisplay = recordData.getIn(['document', 'ns2:media_bampfa', 'websiteDisplayLevel']);
+              const primaryDisplay = recordData.getIn(['document', 'ns2:media_bampfa', 'primaryDisplay']);
               let imageNumber = recordData.getIn(['document', 'ns2:media_bampfa', 'imageNumber']);
-
               const len = imageNumber.length;
               if (len <= 5) {
                 imageNumber = (new Array(6).join('0') + imageNumber).slice(-len);
