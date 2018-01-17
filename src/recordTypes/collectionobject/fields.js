@@ -38,7 +38,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_common.textualInscriptionGroupList.name',
-                defaultMessage: 'Textual Inscription',
+                defaultMessage: 'Textual inscription',
               },
             }),
           },
@@ -48,7 +48,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_common.nonTextualInscriptionGroupList.name',
-                defaultMessage: 'Non-Textual Inscription',
+                defaultMessage: 'Non-Textual inscription',
               },
             }),
           },
@@ -259,7 +259,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.legalStatus.name',
-                defaultMessage: 'Legal Status',
+                defaultMessage: 'Legal status',
               },
             }),
             view: {
@@ -270,12 +270,25 @@ export default (pluginContext) => {
             },
           },
         },
+        accessionDateGroup: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.accessionDateGroup.name',
+                defaultMessage: 'Accession date',
+              },
+            }),
+            view: {
+              type: StructuredDateInput,
+            },
+          },
+        },
         legalStatusDateGroup: {
           [config]: {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.legalStatusDateGroup.name',
-                defaultMessage: 'Status Date',
+                defaultMessage: 'Status date',
               },
             }),
             view: {
@@ -288,7 +301,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.productionDate.name',
-                defaultMessage: 'Prodiction Date',
+                defaultMessage: 'Prodiction date',
               },
             }),
             view: {
@@ -301,7 +314,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.bampfaObjectProductionPersonGroupList.name',
-                defaultMessage: 'Artist or Maker',
+                defaultMessage: 'Artist or maker',
               },
             }),
             view: {
@@ -373,7 +386,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.artistDisplayOverride.name',
-                defaultMessage: 'Artist Display Override',
+                defaultMessage: 'Artist display override',
               },
             }),
             view: {
@@ -386,7 +399,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.seriesTitle.name',
-                defaultMessage: 'Series Title',
+                defaultMessage: 'Series title',
               },
             }),
             view: {
@@ -399,7 +412,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.creditLine.name',
-                defaultMessage: 'Credit Line',
+                defaultMessage: 'Credit line',
               },
             }),
             view: {
@@ -415,7 +428,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.otherNumberList.name',
-                defaultMessage: 'T.R. / Other Number',
+                defaultMessage: 'T.R. / Other number',
               },
             }),
             view: {
@@ -437,7 +450,7 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.numberType.name',
-                    defaultMessage: 'Number Type',
+                    defaultMessage: 'Number type',
                   },
                 }),
                 view: {
@@ -453,7 +466,7 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.numberValue.name',
-                    defaultMessage: 'T.R. / Other Number',
+                    defaultMessage: 'T.R. / Other number',
                   },
                 }),
                 view: {
@@ -518,7 +531,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.workDescription.name',
-                defaultMessage: 'Description of Work',
+                defaultMessage: 'Description of work',
               },
             }),
             view: {
@@ -535,7 +548,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.acquisitionDateGroup.name',
-                defaultMessage: 'Acquisition Date',
+                defaultMessage: 'Acquisition date',
               },
             }),
             repeating: true,
@@ -550,7 +563,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.numberOfScans.name',
-                defaultMessage: 'Number of Scans',
+                defaultMessage: 'Number of scans',
               },
             }),
             view: {
@@ -563,7 +576,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.productionPlace.name',
-                defaultMessage: 'Production Place',
+                defaultMessage: 'Production place',
               },
             }),
             repeating: true,
@@ -609,7 +622,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.bwOrColor.name',
-                defaultMessage: 'Black & White or Color',
+                defaultMessage: 'Black & white or color',
               },
             }),
             view: {
@@ -625,7 +638,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.acquisitionMethod.name',
-                defaultMessage: 'Acquisition Method',
+                defaultMessage: 'Acquisition method',
               },
             }),
             view: {
@@ -672,7 +685,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.acquisitionProvisos.name',
-                defaultMessage: 'Acquisition Terms',
+                defaultMessage: 'Acquisition terms',
               },
             }),
             view: {
@@ -704,7 +717,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.acquisitionNote.name',
-                defaultMessage: 'Acquisition Note',
+                defaultMessage: 'Acquisition note',
               },
             }),
             view: {
@@ -736,7 +749,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.currentValueGroupList.name',
-                defaultMessage: 'Current Value',
+                defaultMessage: 'Current value',
               },
             }),
             view: {
@@ -800,7 +813,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.initialValueGroup.name',
-                defaultMessage: 'Initial Value',
+                defaultMessage: 'Initial value',
               },
             }),
             view: {
@@ -907,7 +920,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.partOf.name',
-                defaultMessage: 'Part Of',
+                defaultMessage: 'Part of',
               },
             }),
             view: {
@@ -920,7 +933,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.copyrightCredit.name',
-                defaultMessage: 'Copyright Credit',
+                defaultMessage: 'Copyright credit',
               },
             }),
             view: {
@@ -936,7 +949,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.copyrightNote.name',
-                defaultMessage: 'Copyright Note',
+                defaultMessage: 'Copyright note',
               },
             }),
             view: {
@@ -952,7 +965,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.photoCredit.name',
-                defaultMessage: 'Photo Credit',
+                defaultMessage: 'Photo credit',
               },
             }),
             view: {
@@ -968,7 +981,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.copyrightHolder.name',
-                defaultMessage: 'Copyright Holder',
+                defaultMessage: 'Copyright holder',
               },
             }),
             view: {
@@ -980,7 +993,7 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.collectionobjects_bampfa..name',
+                id: 'field.collectionobjects_bampfa.permissionToReproduce.name',
                 defaultMessage: 'Permission to reproduce granted for noncommercial uses',
               },
             }),
@@ -997,7 +1010,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.conditionCheckGroupList.name',
-                defaultMessage: 'Condition Check',
+                defaultMessage: 'Condition check',
               },
             }),
             view: {
@@ -1016,7 +1029,7 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.conditionNote.name',
-                    defaultMessage: 'Condition Note',
+                    defaultMessage: 'Condition note',
                   },
                 }),
                 view: {
@@ -1032,7 +1045,7 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.conservationNote.name',
-                    defaultMessage: 'Conservation Note',
+                    defaultMessage: 'Conservation note',
                   },
                 }),
                 view: {
@@ -1048,7 +1061,7 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.conditionCheckBy.name',
-                    defaultMessage: 'Checked By',
+                    defaultMessage: 'Checked by',
                   },
                 }),
                 view: {
@@ -1127,7 +1140,7 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.collectionTextDoNotPublish.name',
-                    defaultMessage: 'Do Not Publish',
+                    defaultMessage: 'Do not publish',
                   },
                 }),
                 view: {
@@ -1200,7 +1213,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.catalogerGroupList.name',
-                defaultMessage: 'Cataloger Infoirmation',
+                defaultMessage: 'Cataloger infoirmation',
               },
             }),
             view: {
@@ -1261,9 +1274,11 @@ export default (pluginContext) => {
         },
         sortableObjectNumber: {
           [config]: {
-            readOnly: true,
             view: {
               type: TextInput,
+              props: {
+                readOnly: true,
+              },
             },
             compute: (value, path, recordData) => {
               const parts = computeObjectNumber(recordData).split('.');
@@ -1307,8 +1322,8 @@ export default (pluginContext) => {
         objectNumberSearch: {
           [config]: {
             view: {
-              type: TextInput, // TO DO: Double check
-              priops: {
+              type: TextInput,
+              props: {
                 readOnly: true,
               },
             },
@@ -1316,9 +1331,11 @@ export default (pluginContext) => {
         },
         sortableEffectiveObjectNumber: {
           [config]: {
-            readOnly: true,
             view: {
               type: TextInput,
+              props: {
+                readOnly: true,
+              },
             },
             compute: (value, path, recordData) => {
               const effectiveObjectNumberParts = computeEffectiveObjectNumber(recordData).split('.');
@@ -1345,7 +1362,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.computedCrate.name',
-                defaultMessage: 'Current Box or Container',
+                defaultMessage: 'Current box or container',
               },
             }),
             view: {
@@ -1388,9 +1405,11 @@ export default (pluginContext) => {
         },
         bampfaTitleSearch: {
           [config]: {
-            readOnly: true,
             view: {
               type: TextInput,
+              props: {
+                readOnly: true,
+              },
             },
           },
         },
@@ -1406,7 +1425,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.itemClass.name',
-                defaultMessage: 'Item Class',
+                defaultMessage: 'Item class',
               },
             }),
             view: {
@@ -1417,25 +1436,6 @@ export default (pluginContext) => {
             },
           },
         },
-        currentBoxContainer: {
-          [config]: {
-            cloneable: false,
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionobjects_bampfa.currentBoxContainer.name',
-                defaultMessage: 'Current box or container',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
-              props: {
-                source: 'TEMP',
-                readOnly: true,
-              },
-            },
-          },
-        },
-
       },
     },
   };
