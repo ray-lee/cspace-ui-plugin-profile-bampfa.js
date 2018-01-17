@@ -1,4 +1,5 @@
 import { defineMessages } from 'react-intl';
+import { computeEffectiveObjectNumber, computeObjectNumber } from '../../utils';
 
 export default (pluginContext) => {
   const {
@@ -250,15 +251,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: (value, path, recordData) => {
-              const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
-              const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
-              const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
-              const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
-              const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
-              const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
-              return [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part && part !== '').join('.');
-            },
+            compute: (value, path, recordData) => computeObjectNumber(recordData),
           },
         },
         legalStatus: {
@@ -1273,14 +1266,7 @@ export default (pluginContext) => {
               type: TextInput,
             },
             compute: (value, path, recordData) => {
-              const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
-              const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
-              const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
-              const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
-              const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
-              const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
-              const parts = [prefix, partOne, partTwo,
-                partThree, partFour, partFive].filter(part => !!part);
+              const parts = computeObjectNumber(recordData).split('.');
 
               const sortableParts = [];
               const isNumericRegExp = /^\d+$/;
@@ -1308,42 +1294,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: (value, path, recordData) => {
-              const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
-              const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
-              const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
-              const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
-              const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
-              const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
-              let otherNumber = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'otherNumberList', 'otherNumberGroup']);
-
-              if (otherNumber) {
-                otherNumber = otherNumber.toArray();
-              } else {
-                otherNumber = [];
-              }
-              const objectNumber = [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
-              // The effective object number is the objectNumber, if it exists. Otherwise,
-              // fall back to the primary otherNumber.
-              let effectiveObjectNumber = objectNumber;
-
-              if (!effectiveObjectNumber) {
-                let fallbackNumber = null;
-
-                if (otherNumber.length > 0) {
-                  for (let i = 0; i < otherNumber.length; i += 1) {
-                    const candidateNumber = otherNumber[i];
-
-                    if (candidateNumber) {
-                      fallbackNumber = candidateNumber.get('numberValue');
-                      break;
-                    }
-                  }
-                }
-                effectiveObjectNumber = fallbackNumber;
-              }
-              return effectiveObjectNumber;
-            },
+            compute: (value, path, recordData) => computeEffectiveObjectNumber(recordData),
           },
         },
         objectNumberRangeSearch: {
@@ -1370,13 +1321,12 @@ export default (pluginContext) => {
               type: TextInput,
             },
             compute: (value, path, recordData) => {
-              const parts = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'effectiveObjectNumber']).split('.');
-
+              const effectiveObjectNumberParts = computeEffectiveObjectNumber(recordData).split('.');
               const sortableParts = [];
               const isNumericRegExp = /^\d+$/;
 
-              for (let i = 0; i < parts.length; i += 1) {
-                let part = parts[i];
+              for (let i = 0; i < effectiveObjectNumberParts.length; i += 1) {
+                let part = effectiveObjectNumberParts[i];
 
                 if (isNumericRegExp.test(part)) {
                   const len = part.length;
