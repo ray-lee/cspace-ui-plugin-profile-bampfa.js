@@ -60,8 +60,8 @@
     "chai-immutable": "^1.6.0",
     "coveralls": "^2.13.3",
     "cross-env": "^2.0.0",
-    "cspace-ui": "^0.13.15",
-    "css-loader": "^0.28.8",
+    "cspace-ui": "^0.13.18",
+    "css-loader": "^0.28.9",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^12.0.0",
     "eslint-plugin-import": "^1.12.0",
@@ -91,9 +91,9 @@
     "wdio-sauce-service": "^0.4.6",
     "wdio-selenium-standalone-service": "0.0.9",
     "wdio-spec-reporter": "^0.1.3",
-    "webdriverio": "^4.10.0",
+    "webdriverio": "^4.10.1",
     "webpack": "^3.10.0",
-    "webpack-dev-server": "^2.10.1"
+    "webpack-dev-server": "^2.11.0"
   },
   "nyc": {
     "include": [
