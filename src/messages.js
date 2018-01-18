@@ -19,18 +19,24 @@ export default {
   'field.collectionobjects_common.computedCurrentLocation.name': 'Current Storage Location',
 
   /* Intake Messages */
+
   'field.intakes_common.currentOwner.name': 'Source',
   'field.intakes_common.entryDate.name': 'Date in',
   'field.intakes_common.entryNote.name': 'Intake note',
   'field.intakes_common.entryNumber.name': 'TR number',
   'field.intakes_common.entryReason.name': 'Purpose',
 
-  /* Movements/Location Messages */
-  'panel.movements.movement': 'Inventory/Movement Information',
+  /* Movement Messages */
+
+  'field.movements_common.currentLocation.fullName': 'Storage location',
+  'field.movements_common.locationDate.name': 'Inventory/move date',
   'field.movements_common.movementContact.name': 'Handler',
   'field.movements_common.movementMethod.name': 'Method',
-  'field.movements_common.locationDate.name': 'Inventory/Move Date',
-  'inputTable.movement.currentLocation': 'Storage Location',
+  'field.movements_common.reasonForMove.name': 'Reason',
+  'inputTable.movement.currentLocation': 'Storage location',
+  'panel.movement.movement': 'Inventory/Movement Information',
+  'record.movement.name': 'Inventory/Movement',
+  'record.movement.collectionName': 'Inventory/Movement',
 
   /* Media Messages */
   'field.media_common.measurementUnit.name': 'Dimension Unit',

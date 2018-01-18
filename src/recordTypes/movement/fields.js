@@ -14,25 +14,24 @@ export default (pluginContext) => {
   return {
     document: {
       'ns2:movements_common': {
-        [config]: {
-          service: {
-            ns: 'http://collectionspace.org/services/movement',
-          },
-        },
         locationDate: {
           [config]: {
             required: true,
           },
         },
+        reasonForMove: {
+          [config]: {
+            view: {
+              type: TermPickerInput,
+              props: {
+                source: 'movereason',
+              },
+            },
+          },
+        },
         movementMethods: {
           movementMethod: {
             [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.movements_bampfa.movementMethod.name',
-                  defaultMessage: 'Movement Method',
-                },
-              }),
               view: {
                 type: TermPickerInput,
                 props: {
@@ -46,6 +45,7 @@ export default (pluginContext) => {
           [config]: {
             view: {
               type: TextInput,
+              props: null,
             },
           },
         },
@@ -61,25 +61,19 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.movements_bampfa.crate.name',
-                defaultMessage: 'Box or Container',
+                defaultMessage: 'Box or container',
               },
             }),
             view: {
               type: AutocompleteInput,
               props: {
-                source: 'location-crate',
+                source: 'location/crate',
               },
             },
           },
         },
         computedSummary: {
           [config]: {
-            view: {
-              type: TextInput,
-              props: {
-                readOnly: true,
-              },
-            },
             compute: (value, path, recordData) => {
               let summary = '';
               let date = recordData.getIn(['document', 'ns2:movements_common', 'locationDate']);
@@ -112,42 +106,6 @@ export default (pluginContext) => {
                 summary = reason;
               }
               return summary;
-            },
-          },
-        },
-        movementReferenceNumber: {
-          [config]: {
-            view: {
-              type: TextInput,
-            },
-          },
-        },
-        reasonForMove: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.movements_bampfa.crate.reasonForMove.name',
-                defaultMessage: 'Reason',
-              },
-            }),
-            view: {
-              type: TermPickerInput,
-              props: {
-                source: 'movereason',
-              },
-            },
-          },
-        },
-        movementContact: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.movements_bampfa.movementContact.name',
-                defaultMessage: 'Movement Contact',
-              },
-            }),
-            view: {
-              type: AutocompleteInput,
             },
           },
         },
