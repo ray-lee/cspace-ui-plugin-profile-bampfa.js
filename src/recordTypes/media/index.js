@@ -12,9 +12,9 @@ export default pluginContext => ({
   optionLists: {
     websiteDisplayLevel: {
       values: [
-        'noPublicDisplay',
-        'displayThumbnailOnly',
-        'displayLargerSize',
+        'No public display',
+        'Display thumbnail only',
+        'Display larger size',
       ],
       messages: defineMessages({
         noPublicDisplay: {
@@ -27,7 +27,7 @@ export default pluginContext => ({
         },
         displayLargerSize: {
           id: 'option.websiteDisplayLevel.displayLargerSize',
-          defaultMessage: 'Display larger sizer',
+          defaultMessage: 'Display larger size',
         },
       }),
     },

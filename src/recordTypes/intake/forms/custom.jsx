@@ -79,14 +79,14 @@ const template = (pluginContext) => {
         </Cols>
       </Panel>
 
-      <Panel name="valuation" collapsible>
+      <Panel name="valuation" collapsible collapsed>
         <Row>
           <Field name="valuer" />
           <Field name="valuationReferenceNumber" />
         </Row>
       </Panel>
 
-      <Panel name="insurance" collapsible>
+      <Panel name="insurance" collapsible collapsed>
         <Cols>
           <Col>
             <Field name="insurers">
