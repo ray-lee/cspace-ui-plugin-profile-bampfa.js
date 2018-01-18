@@ -44,3 +44,11 @@ export const computeObjectNumber = (recordData) => {
   const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
   return [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
 };
+
+export const zeroPad = (str, len) => {
+  if (str.length >= len) {
+    return (str);
+  }
+
+  return (new Array(len + 1).join('0') + str).slice(-len);
+};
