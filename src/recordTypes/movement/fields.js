@@ -77,7 +77,7 @@ export default (pluginContext) => {
             compute: (value, path, recordData) => {
               let summary = '';
               let date = recordData.getIn(['document', 'ns2:movements_common', 'locationDate']);
-              let reason = recordData.getIn(['document', 'ns2:movements_bampfa', 'reasonForMove']);
+              let reason = recordData.getIn(['document', 'ns2:movements_common', 'reasonForMove']);
 
               if (typeof (date) === 'undefined') {
                 date = '';
