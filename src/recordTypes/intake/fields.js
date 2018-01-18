@@ -13,6 +13,18 @@ export default (pluginContext) => {
 
   return {
     document: {
+      'ns2:intakes_common': {
+        entryReason: {
+          [config]: {
+            view: {
+              type: TermPickerInput,
+              props: {
+                source: 'intakepurpose',
+              },
+            },
+          },
+        },
+      },
       'ns2:intakes_bampfa': {
         [config]: {
           service: {
@@ -79,18 +91,6 @@ export default (pluginContext) => {
               type: TextInput,
               props: {
                 multiline: true,
-              },
-            },
-          },
-        },
-      },
-      'ns2:intakes_common': {
-        entryReason: {
-          [config]: {
-            view: {
-              type: TermPickerInput,
-              props: {
-                source: 'intakepurpose',
               },
             },
           },
