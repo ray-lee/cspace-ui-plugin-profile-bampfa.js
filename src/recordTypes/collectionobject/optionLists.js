@@ -4,135 +4,135 @@ import { defineMessages } from 'react-intl';
 export default {
   soundOrSilents: {
     values: [
-      'sound',
-      'silent',
+      'Sound',
+      'Silent',
     ],
     messages: defineMessages({
-      sound: {
-        id: 'option.soundOrSilents.sound',
-        defaultMessage: 'Sound',
+      Sound: {
+        id: 'option.soundOrSilents.Sound',
+        defaultMessage: 'sound',
       },
-      silent: {
-        id: 'option.soundOrSilents.silent',
-        defaultMessage: 'Silent',
+      Silent: {
+        id: 'option.soundOrSilents.Silent',
+        defaultMessage: 'silent',
       },
     }),
   },
   bwOrColors: {
     values: [
-      'blacknwhite',
-      'color',
+      'Black &amp; white',
+      'Color',
     ],
     messages: defineMessages({
-      blacknwhite: {
-        id: 'option.bwOrColors.blacknwhite',
-        defaultMessage: 'Black & White',
+      'Black &amp; white': {
+        id: 'option.bwOrColors.Black &amp; white',
+        defaultMessage: 'black & white',
       },
-      color: {
-        id: 'option.bwOrColors.color',
-        defaultMessage: 'Color',
+      Color: {
+        id: 'option.bwOrColors.Color',
+        defaultMessage: 'color',
       },
     }),
   },
   numberTypes: {
     values: [
-      'appraisal',
-      'artist',
-      'auctionhouse',
-      'donor',
-      'gallery',
+      'Appraisal',
+      'Artist',
+      'Auction House',
+      'Donor',
+      'Gallery',
       'lender',
       'obsolete',
       'previous',
       'serial',
-      'uccollection',
-      'ucbcollection',
+      'UCB Collection',
+      'UCB Inventory',
       'unknown',
     ],
     messages: defineMessages({
       appraisal: {
-        id: 'option.numberTypes.appraisal',
-        defaultMessage: 'Appraisal',
+        id: 'option.numberTypes.Appraisal',
+        defaultMessage: 'appraisal',
       },
       artist: {
-        id: 'option.numberTypes.artist',
-        defaultMessage: 'Artist',
+        id: 'option.numberTypes.Artist',
+        defaultMessage: 'artist',
       },
-      auctionhouse: {
-        id: 'option.numberTypes.auctionhouse',
-        defaultMessage: 'Auction House',
+      'Auction House': {
+        id: 'option.numberTypes.Auction House',
+        defaultMessage: 'auction house',
       },
       donor: {
-        id: 'option.numberTypes.donor',
-        defaultMessage: 'Donor',
+        id: 'option.numberTypes.Donor',
+        defaultMessage: 'donor',
       },
       gallery: {
-        id: 'option.numberTypes.gallery',
-        defaultMessage: 'Gallery',
+        id: 'option.numberTypes.Gallery',
+        defaultMessage: 'gallery',
       },
       lender: {
         id: 'option.numberTypes.lender',
-        defaultMessage: 'Lender',
+        defaultMessage: 'lender',
       },
       obsolete: {
         id: 'option.numberTypes.obsolete',
-        defaultMessage: 'Obsolete',
+        defaultMessage: 'obsolete',
       },
       previous: {
         id: 'option.numberTypes.previous',
-        defaultMessage: 'Previous',
+        defaultMessage: 'previous',
       },
       serial: {
         id: 'option.numberTypes.serial',
-        defaultMessage: 'Serial',
+        defaultMessage: 'serial',
       },
-      uccollection: {
-        id: 'option.numberTypes.uccollection',
-        defaultMessage: 'UC Collection',
+      'UCB Collection': {
+        id: 'option.numberTypes.UCBCollection',
+        defaultMessage: 'UC collection',
       },
-      ucbcollection: {
-        id: 'option.numberTypes.ucbcollection',
-        defaultMessage: 'UCB Collection',
+      'UCB Inventory': {
+        id: 'option.numberTypes.UCBInventory',
+        defaultMessage: 'UCB inventory',
       },
       unknown: {
         id: 'option.numberTypes.unknown',
-        defaultMessage: 'Unknown',
+        defaultMessage: 'unknown',
       },
     }),
   },
-  permissionsToReproduce: {
+  permissionToReproduce: {
     values: [
-      'unknown',
+      'Unknown',
       'yes',
-      'no',
-      'restricted',
-      'publicdomain',
+      'No',
+      'Restricted',
+      'Public Domain',
       'pending',
     ],
     messages: defineMessages({
-      unknown: {
-        id: 'option.permissionsToReproduce.unknown',
-        defaultMessage: 'Unknown',
+      Unknown: {
+        id: 'option.permissionToReproduce.Unknown',
+        defaultMessage: 'unknown',
       },
-      yes: {
-        id: 'option.permissionsToReproduce.yes',
-        defaultMessage: 'Yes',
+      Yes: {
+        id: 'option.permissionToReproduce.Yes',
+        defaultMessage: 'yes',
       },
-      no: {
-        id: 'option.permissionsToReproduce.no',
-        defaultMessage: 'No',
+      No: {
+        id: 'option.permissionToReproduce.No',
+        defaultMessage: 'no',
       },
-      restricted: {
-        id: 'option.permissionsToReproduce.restricted',
-        defaultMessage: 'Restricted',
+      Restricted: {
+        id: 'option.permissionToReproduce.Restricted',
+        defaultMessage: 'restricted',
       },
-      publicdomain: {
-        id: 'option.permissionsToReproduce.publicdomain',
-        defaultMessage: 'Public Domain',
+      'Public Domain': {
+        id: 'option.permissionToReproduce.Public Domain',
+        defaultMessage: 'public domain',
       },
-      pending: {
-        id: 'option.permissionsToReproduce.pending',
-        defaultMessage: 'Pending',
+      Pending: {
+        id: 'option.permissionToReproduce.Pending',
+        defaultMessage: 'pending',
       },
     }),
   },

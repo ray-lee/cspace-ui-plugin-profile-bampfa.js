@@ -164,7 +164,6 @@ export default (pluginContext) => {
             },
           },
         },
-
         accNumberPrefix: {
           [config]: {
             messages: defineMessages({
