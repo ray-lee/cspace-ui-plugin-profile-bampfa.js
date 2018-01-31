@@ -1,6 +1,7 @@
 import columns from './columns';
 import forms from './forms';
 import fields from './fields';
+import advancedSearch from './advancedSearch';
 
 export default pluginContext => ({
   recordTypes: {
@@ -8,6 +9,7 @@ export default pluginContext => ({
       columns: columns(pluginContext),
       forms: forms(pluginContext),
       fields: fields(pluginContext),
+      advancedSearch: advancedSearch(pluginContext),
     },
   },
 });
