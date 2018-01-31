@@ -25,7 +25,7 @@ global.testParams = {
     ['procedure',   'intake',             'Intake',                        'Intakes'                    ],
     ['procedure',   'loanin',             'Loan In',                       'Loans In'                   ],
     ['procedure',   'loanout',            'Loan Out',                      'Loans Out'                  ],
-    ['procedure',   'movement',           'Location/Movement/Inventory',   'Location/Movement/Inventory'],
+    ['procedure',   'movement',           'Inventory/Movement',            'Inventory/Movement'         ],
     ['procedure',   'media',              'Media Handling',                'Media Handling'             ],
     ['procedure',   'valuation',          'Valuation Control',             'Valuation Controls'         ],
     ['authority',   'citation',           'Citation',                      'Citations'                  ],
