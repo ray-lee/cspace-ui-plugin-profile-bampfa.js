@@ -74,7 +74,7 @@ export default (pluginContext) => {
         },
         computedSummary: {
           [config]: {
-            compute: (value, path, recordData) => {
+            compute: ({ recordData }) => {
               let summary = '';
               let date = recordData.getIn(['document', 'ns2:movements_common', 'locationDate']);
               let reason = recordData.getIn(['document', 'ns2:movements_common', 'reasonForMove']);

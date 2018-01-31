@@ -90,7 +90,7 @@ export default (pluginContext) => {
                     multiline: true,
                   },
                 },
-                compute: (value, path, recordData) => {
+                compute: ({ recordData }) => {
                   const titles = recordData.getIn(['document', 'ns2:collectionobjects_common', 'titleGroupList', 'titleGroup']);
                   const titleList = [];
                   for (const title of titles) {
@@ -251,7 +251,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: (value, path, recordData) => computeObjectNumber(recordData),
+            compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
         legalStatus: {
@@ -1280,7 +1280,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: (value, path, recordData) => {
+            compute: ({ recordData }) => {
               const parts = computeObjectNumber(recordData).split('.');
 
               const sortableParts = [];
@@ -1309,7 +1309,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: (value, path, recordData) => computeEffectiveObjectNumber(recordData),
+            compute: ({ recordData }) => computeEffectiveObjectNumber(recordData),
           },
         },
         objectNumberRangeSearch: {
@@ -1337,7 +1337,7 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: (value, path, recordData) => {
+            compute: ({ recordData }) => {
               const effectiveObjectNumberParts = computeEffectiveObjectNumber(recordData).split('.');
               const sortableParts = [];
               const isNumericRegExp = /^\d+$/;

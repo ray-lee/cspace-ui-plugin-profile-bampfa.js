@@ -52,7 +52,7 @@ export default (pluginContext) => {
                     readOnly: true,
                   },
                 },
-                compute: (data, path, recordData) => {
+                compute: ({ path, recordData }) => {
                   const measurements = {};
                   const pathCopy = Object.assign([], path);
 
@@ -264,7 +264,7 @@ export default (pluginContext) => {
             view: {
               type: TextInput,
             },
-            compute: (value, path, recordData) => {
+            compute: ({ recordData }) => {
               const primaryDisplay = recordData.getIn(['document', 'ns2:media_bampfa', 'primaryDisplay']);
               let imageNumber = recordData.getIn(['document', 'ns2:media_bampfa', 'imageNumber']);
               const len = imageNumber.length;

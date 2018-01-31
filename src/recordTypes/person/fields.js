@@ -20,7 +20,7 @@ export default (pluginContext) => {
         personTermGroupList: {
           personTermGroup: {
             [config]: {
-              compute: (data, path, recordData) => {
+              compute: ({ data, recordData }) => {
                 const namePartsFML = [];
                 const namePartsLMF = [];
                 const nameAdditions = data.get('nameAdditions');
