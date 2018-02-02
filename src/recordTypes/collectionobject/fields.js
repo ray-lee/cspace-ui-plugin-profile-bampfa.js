@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeEffectiveObjectNumber, computeObjectNumber } from '../../utils';
+import { computeEffectiveObjectNumber, computeObjectNumber, computeDimensionSummary } from '../../utils';
 
 export default (pluginContext) => {
   const {
@@ -119,6 +119,13 @@ export default (pluginContext) => {
                 type: CompoundInput,
               },
             },
+            measuredPart: {
+              [config]: {
+                view: {
+                  type: TextInput,
+                },
+              },
+            },
             dimensionSummary: {
               [config]: {
                 messages: defineMessages({
@@ -133,9 +140,10 @@ export default (pluginContext) => {
                     readOnly: true,
                   },
                 },
+                compute: ({ path, recordData }) => computeDimensionSummary(path, recordData),
               },
             },
-            dimensionNote: {
+            measuredPartNote: {
               [config]: {
                 messages: defineMessages({
                   name: {
