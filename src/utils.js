@@ -155,3 +155,7 @@ export const computeDimensionSummary = (path, recordData) => {
   return joinedParts;
 };
 
+export const computeFilename = (subrecordData) => {
+  const blobs = subrecordData.getIn(['blob', 'document', 'ns2:blobs_common']);
+  return blobs.get('name').filter(part => !!part);
+};

@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeDimensionSummary } from '../../utils';
+import { computeDimensionSummary, computeFilename } from '../../utils';
 
 export default (pluginContext) => {
   const {
@@ -29,6 +29,11 @@ export default (pluginContext) => {
         identificationNumber: {
           [config]: {
             required: false,
+          },
+        },
+        title: {
+          [config]: {
+            compute: ({ subrecordData }) => computeFilename(subrecordData),
           },
         },
         measuredPartGroupList: {
@@ -123,31 +128,18 @@ export default (pluginContext) => {
             },
           },
         },
-        // Computed Fields
-        title: {
+        titleSearch: {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.media_bampfa.title.name',
-                defaultMessage: 'Title IS RIGHT HERE',
+                id: 'field.media_bampfa.titleSearch.name',
+                defaultMessage: 'File name',
               },
             }),
             view: {
               type: TextInput,
             },
-          },
-        },
-        titlesearch: { // App-layer only field
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.titleSearch.media_bampfa.name',
-                defaultMessage: 'Title Search',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
+            compute: ({ subrecordData }) => computeFilename(subrecordData),
           },
         },
         computedOrderNumber: {
