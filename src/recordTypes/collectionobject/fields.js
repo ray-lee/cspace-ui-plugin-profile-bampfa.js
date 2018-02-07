@@ -12,6 +12,7 @@ export default (pluginContext) => {
     CheckboxInput,
     RichTextInput,
     TermPickerInput,
+    ReadOnlyInput,
   } = pluginContext.inputComponents;
 
   const {
@@ -56,7 +57,15 @@ export default (pluginContext) => {
         objectNumber: {
           [config]: {
             cloneable: false,
-            required: false,
+            required: true,
+            searchView: {
+              type: TextInput,
+            },
+            readOnly: true,
+            view: {
+              type: ReadOnlyInput,
+            },
+            compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
         titleGroupList: {
@@ -123,6 +132,7 @@ export default (pluginContext) => {
               [config]: {
                 view: {
                   type: TextInput,
+                  props: null,
                 },
               },
             },
@@ -147,7 +157,7 @@ export default (pluginContext) => {
               [config]: {
                 messages: defineMessages({
                   name: {
-                    id: 'field.collectionobjects_common.dimensionNote.name',
+                    id: 'field.collectionobjects_bampfa.measuredPartNote.name',
                     defaultMessage: 'Note',
                   },
                 }),
@@ -240,25 +250,6 @@ export default (pluginContext) => {
             view: {
               type: TextInput,
             },
-          },
-        },
-        objectNumber: {
-          [config]: {
-            cloneable: false,
-            required: true,
-            messages: defineMessages({
-              name: {
-                id: 'field.collectionobjects_bampfa.objectNumber.name',
-                defaultMessage: 'ID number',
-              },
-            }),
-            view: {
-              type: TextInput,
-              props: {
-                readOnly: true,
-              },
-            },
-            compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
         legalStatus: {

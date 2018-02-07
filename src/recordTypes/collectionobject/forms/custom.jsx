@@ -31,7 +31,7 @@ const template = (pluginContext) => {
                   <Field name="accNumberPart4" subpath="ns2:collectionobjects_bampfa" />
                   <Field name="accNumberPart5" subpath="ns2:collectionobjects_bampfa" />
                 </InputTable>
-                <Field name="objectNumber" subpath="ns2:collectionobjects_bampfa" />
+                <Field name="objectNumber" />
               </Col>
               <Col>
                 <Field name="legalStatus" subpath="ns2:collectionobjects_bampfa" />
@@ -83,7 +83,7 @@ const template = (pluginContext) => {
                 </Field>
               </Field>
 
-              <Field name="dimensionNote" />
+              <Field name="measuredPartNote" />
             </Panel>
           </Field>
         </Field>
@@ -159,7 +159,7 @@ const template = (pluginContext) => {
 
 
         {/* TODO: Break out measuredPartGroupList */}
-        <Field name="inscriptionContent" />
+        {/* <Field name="inscriptionContent" /> */}
 
         <Field name="textualInscriptionGroupList">
           <Field name="textualInscriptionGroup">

@@ -47,6 +47,7 @@ export default (pluginContext) => {
               [config]: {
                 view: {
                   type: TextInput,
+                  props: null,
                 },
               },
             },
