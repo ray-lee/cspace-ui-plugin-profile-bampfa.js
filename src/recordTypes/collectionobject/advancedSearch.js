@@ -25,14 +25,12 @@ export default (pluginContext) => {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/itemClass',
       },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/legalStatus',
-      },
+      /* eslint-disable max-len */
       {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/bampfaObjectProductionPersonGroupList/bampfaObjectProductionPersonGroup/bampfaObjectProductionPerson',
       },
+      /* eslint-enable max-len */
       {
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/bampfaTitleGroupList/bampfaTitleGroup/bampfaTitle',
@@ -53,28 +51,30 @@ export default (pluginContext) => {
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/creditLine',
       },
-      // {
-      //   op: OP_EQ,
-      //   path: 'ns2:collectionobjects_bampfa/computedCurrentLocationSearch',
-      // },
       {
-        op: OP_RANGE, // productionDate
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/computedCurrentLocationSearch',
+      },
+      {
+        op: OP_RANGE,
         path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
       },
-      // {
-      //   op: OP_CONTAIN, //currentBoxContainer
-      //   path: 'ns2:collectionobjects_bampfa/computedCrate',
-      // },
-      // { // Might be wrong one cos $prodOrg
-      //   op: OP_CONTAIN,
-      //   path: 'ns2:collectionobjects_common/objectProductionPeopleGroupList/objectProductionPeopleGroup/objectProductionPeople',
-      // },
       {
-        op: OP_CONTAIN, // prodPlace
-        path: 'ns2:collectionobjects_common/objectProductionPlaceGroupList/objectProductionPlaceGroup/objectProductionPlace',
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_bampfa/computedCrateSearch',
+      },
+      /* eslint-disable max-len */
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_common/objectProductionPeopleGroupList/objectProductionPeopleGroup/objectProductionPeople',
       },
       {
-        op: OP_CONTAIN, // stateGen
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_common/objectProductionPlaceGroupList/objectProductionPlaceGroup/objectProductionPlace',
+      },
+      /* eslint-enable max-len */
+      {
+        op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/stateGeneration',
       },
       {
@@ -110,7 +110,7 @@ export default (pluginContext) => {
         path: 'ns2:collectionobjects_bampfa/subjectTheme',
       },
       {
-        op: OP_EQ, // KEEP
+        op: OP_EQ,
         path: 'ns2:collectionobjects_common/collection',
       },
       {
@@ -118,29 +118,25 @@ export default (pluginContext) => {
         path: 'ns2:collectionobjects_bampfa/partOf',
       },
       {
-        op: OP_CONTAIN, // KEEP
+        op: OP_CONTAIN, // period/Style
         path: 'ns2:collectionobjects_common/styles/style',
       },
       /* eslint-disable max-len */
-      // { // ADD
-      //   op: OP_RANGE,
-      //   path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
-      // },
+      {
+        op: OP_RANGE,
+        path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
+      },
       /* eslint-enable max-len */
       {
-        op: OP_CONTAIN, // KEEP
-        path: 'ns2:collectionobjects_common/objectProductionPeopleGroupList/objectProductionPeopleGroup/objectProductionPeople',
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/permissionToReproduce',
       },
       {
-        op: OP_EQ, // KEEP
-        path: 'ns2:collectionobjects_common/objectProductionPersonGroupList/objectProductionPersonGroup/objectProductionPerson',
-      },
-      { // KEEP
-        op: OP_CONTAIN, // KEEP
+        op: OP_CONTAIN,
         path: 'ns2:collectionspace_core/updatedBy',
       },
-      { // KEEP
-        op: OP_RANGE, // KEEP
+      {
+        op: OP_RANGE,
         path: 'ns2:collectionspace_core/updatedAt',
       },
     ],

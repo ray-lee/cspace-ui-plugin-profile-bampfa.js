@@ -68,53 +68,6 @@ export default (pluginContext) => {
             compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
-        // titleGroupList: {
-        //   [config]: {
-        //     view: {
-        //       type: CompoundInput,
-        //     },
-        //   },
-        //   titleGroup: {
-        //     [config]: {
-        //       repeating: true,
-        //       view: {
-        //         type: CompoundInput,
-        //       },
-        //     },
-        //     bampfaFormattedTitle: {
-        //       [config]: {
-        //         view: {
-        //           type: RichTextInput,
-        //           props: {
-        //             multiline: true,
-        //           },
-        //         },
-        //       },
-        //     },
-        //     bampfaTitle: {
-        //       [config]: {
-        //         view: {
-        //           type: TextInput,
-        //           props: {
-        //             multiline: true,
-        //           },
-        //         },
-        //         compute: ({ recordData }) => {
-        //           const titles = recordData.getIn(['document', 'ns2:collectionobjects_common', 'titleGroupList', 'titleGroup']);
-        //           const titleList = [];
-        //           for (const title of titles) {
-        //             if (title !== undefined) {
-        //               if (title.getIn(['bampfaFormattedTitle']) !== '') {
-        //                 titleList.push(title.getIn(['bampfaFormattedTitle']));
-        //               }
-        //             }
-        //           }
-        //           return titleList.join('\n');
-        //         },
-        //       },
-        //     },
-        //   },
-        // },
         measuredPartGroupList: {
           [config]: {
             view: {
@@ -453,27 +406,6 @@ export default (pluginContext) => {
                 },
               },
             },
-            // bampfaTitleSearch: {
-            //   [config]: {
-            //     messages: defineMessages({
-            //       name: {
-            //         id: 'field.collectionobjects_bampfa.bampfaTitleSearch.name',
-            //         defaultMessage: 'Title',
-            //       },
-            //     }),
-            //     view: {
-            //       type: TextInput,
-            //       props: {
-            //         readOnly: true,
-            //       },
-            //     },
-            //     searchView: {
-            //       type: TextInput,
-            //       props: null,
-            //     },
-            //     compute: ({ recordData }) => recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'bampfaTitleGroupList', 'bampfaTitleGroup', 'bampfaTitle']),
-            //   },
-            // },
           },
         },
         seriesTitle: {
@@ -1424,11 +1356,7 @@ export default (pluginContext) => {
             }),
             view: {
               type: TextInput,
-              // props: {
-              //   readOnly: true,
-              // },
             },
-            // compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
         sortableEffectiveObjectNumber: {
@@ -1475,7 +1403,7 @@ export default (pluginContext) => {
             },
           },
         },
-        title: { // rich text field
+        title: { // TODO: double check this is needed
           [config]: {
             view: {
               type: TextInput,
@@ -1487,6 +1415,12 @@ export default (pluginContext) => {
         },
         computedCurrentLocationSearch: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.computedCurrentLocationSearch.name',
+                defaultMessage: 'Current storage location',
+              },
+            }),
             view: {
               type: AutocompleteInput,
               props: {
@@ -1497,6 +1431,12 @@ export default (pluginContext) => {
         },
         computedCrateSearch: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.computedCrateSearch.name',
+                defaultMessage: 'Current box or container',
+              },
+            }),
             view: {
               type: AutocompleteInput,
               props: {
