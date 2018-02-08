@@ -2,6 +2,7 @@ import { defineMessages } from 'react-intl';
 import forms from './forms';
 import fields from './fields';
 import optionLists from './optionLists';
+import advancedSearch from './advancedSearch';
 
 export default pluginContext => ({
   optionLists,
@@ -9,6 +10,7 @@ export default pluginContext => ({
     collectionobject: {
       forms: forms(pluginContext),
       fields: fields(pluginContext),
+      advancedSearch: advancedSearch(pluginContext),
       messages: {
         panel: defineMessages({
           detail: {

@@ -56,8 +56,8 @@ export default (pluginContext) => {
         },
         objectNumber: {
           [config]: {
-            cloneable: false,
             required: true,
+            cloneable: false,
             searchView: {
               type: TextInput,
             },
@@ -68,53 +68,53 @@ export default (pluginContext) => {
             compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
-        titleGroupList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          titleGroup: {
-            [config]: {
-              repeating: true,
-              view: {
-                type: CompoundInput,
-              },
-            },
-            bampfaFormattedTitle: {
-              [config]: {
-                view: {
-                  type: RichTextInput,
-                  props: {
-                    multiline: true,
-                  },
-                },
-              },
-            },
-            bampfaTitle: {
-              [config]: {
-                view: {
-                  type: TextInput,
-                  props: {
-                    multiline: true,
-                  },
-                },
-                compute: ({ recordData }) => {
-                  const titles = recordData.getIn(['document', 'ns2:collectionobjects_common', 'titleGroupList', 'titleGroup']);
-                  const titleList = [];
-                  for (const title of titles) {
-                    if (title !== undefined) {
-                      if (title.getIn(['bampfaFormattedTitle']) !== '') {
-                        titleList.push(title.getIn(['bampfaFormattedTitle']));
-                      }
-                    }
-                  }
-                  return titleList.join('\n');
-                },
-              },
-            },
-          },
-        },
+        // titleGroupList: {
+        //   [config]: {
+        //     view: {
+        //       type: CompoundInput,
+        //     },
+        //   },
+        //   titleGroup: {
+        //     [config]: {
+        //       repeating: true,
+        //       view: {
+        //         type: CompoundInput,
+        //       },
+        //     },
+        //     bampfaFormattedTitle: {
+        //       [config]: {
+        //         view: {
+        //           type: RichTextInput,
+        //           props: {
+        //             multiline: true,
+        //           },
+        //         },
+        //       },
+        //     },
+        //     bampfaTitle: {
+        //       [config]: {
+        //         view: {
+        //           type: TextInput,
+        //           props: {
+        //             multiline: true,
+        //           },
+        //         },
+        //         compute: ({ recordData }) => {
+        //           const titles = recordData.getIn(['document', 'ns2:collectionobjects_common', 'titleGroupList', 'titleGroup']);
+        //           const titleList = [];
+        //           for (const title of titles) {
+        //             if (title !== undefined) {
+        //               if (title.getIn(['bampfaFormattedTitle']) !== '') {
+        //                 titleList.push(title.getIn(['bampfaFormattedTitle']));
+        //               }
+        //             }
+        //           }
+        //           return titleList.join('\n');
+        //         },
+        //       },
+        //     },
+        //   },
+        // },
         measuredPartGroupList: {
           [config]: {
             view: {
@@ -336,6 +336,10 @@ export default (pluginContext) => {
                     id: 'field.collectionobjects_bampfa.bampfaObjectProductionPerson.name',
                     defaultMessage: 'Name',
                   },
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.fullName',
+                    defaultMessage: 'Artist or maker',
+                  },
                 }),
                 view: {
                   type: AutocompleteInput,
@@ -390,6 +394,86 @@ export default (pluginContext) => {
             view: {
               type: TextInput,
             },
+          },
+        },
+        bampfaTitleGroupList: {
+          [config]: {
+            view: {
+              type: CompoundInput,
+            },
+          },
+          bampfaTitleGroup: {
+            [config]: {
+              repeating: true,
+              messages: defineMessages({
+                name: {
+                  id: 'field.collectionobjects_common.bampfaTitleGroup.name',
+                  defaultMessage: 'Title',
+                },
+              }),
+              view: {
+                type: CompoundInput,
+              },
+            },
+            bampfaFormattedTitle: {
+              [config]: {
+                view: {
+                  type: RichTextInput,
+                  props: {
+                    multiline: true,
+                  },
+                },
+              },
+            },
+            bampfaTitle: {
+              [config]: {
+                messages: defineMessages({
+                  name: {
+                    id: 'field.collectionobjects_bampfa.bampfaTitle.name',
+                    defaultMessage: 'Title',
+                  },
+                }),
+                view: {
+                  type: TextInput,
+                  props: {
+                    multiline: true,
+                  },
+                },
+                compute: ({ recordData }) => {
+                  const titles = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'bampfaTitleGroupList', 'bampfaTitleGroup']);
+                  const titleList = [];
+                  for (const title of titles) {
+                    if (title !== undefined) {
+                      if (title.getIn(['bampfaFormattedTitle']) !== '') {
+                        titleList.push(title.getIn(['bampfaFormattedTitle']));
+                      }
+                    }
+                  }
+                  return titleList.join('\n');
+                },
+              },
+            },
+            // bampfaTitleSearch: {
+            //   [config]: {
+            //     messages: defineMessages({
+            //       name: {
+            //         id: 'field.collectionobjects_bampfa.bampfaTitleSearch.name',
+            //         defaultMessage: 'Title',
+            //       },
+            //     }),
+            //     view: {
+            //       type: TextInput,
+            //       props: {
+            //         readOnly: true,
+            //       },
+            //     },
+            //     searchView: {
+            //       type: TextInput,
+            //       props: null,
+            //     },
+            //     compute: ({ recordData }) => recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'bampfaTitleGroupList', 'bampfaTitleGroup', 'bampfaTitle']),
+            //   },
+            // },
           },
         },
         seriesTitle: {
@@ -464,7 +548,11 @@ export default (pluginContext) => {
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.numberValue.name',
-                    defaultMessage: 'T.R. / Other number',
+                    defaultMessage: 'Number',
+                  },
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.numberValue.fullName',
+                    defaultMessage: 'T.R/Other number',
                   },
                 }),
                 view: {
@@ -1272,11 +1360,14 @@ export default (pluginContext) => {
         },
         sortableObjectNumber: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.sortableObjectNumber.name',
+                defaultMessage: 'Identification number ',
+              },
+            }),
             view: {
               type: TextInput,
-              props: {
-                readOnly: true,
-              },
             },
             compute: ({ recordData }) => {
               const parts = computeObjectNumber(recordData).split('.');
@@ -1312,6 +1403,12 @@ export default (pluginContext) => {
         },
         objectNumberRangeSearch: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.objectNumberRangeSearch.name',
+                defaultMessage: 'Identification number',
+              },
+            }),
             view: {
               type: TextInput,
             },
@@ -1319,12 +1416,19 @@ export default (pluginContext) => {
         },
         objectNumberSearch: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.objectNumberSearch.name',
+                defaultMessage: 'Id number',
+              },
+            }),
             view: {
               type: TextInput,
-              props: {
-                readOnly: true,
-              },
+              // props: {
+              //   readOnly: true,
+              // },
             },
+            // compute: ({ recordData }) => computeObjectNumber(recordData),
           },
         },
         sortableEffectiveObjectNumber: {
@@ -1397,16 +1501,6 @@ export default (pluginContext) => {
               type: AutocompleteInput,
               props: {
                 source: 'location/crate',
-              },
-            },
-          },
-        },
-        bampfaTitleSearch: {
-          [config]: {
-            view: {
-              type: TextInput,
-              props: {
-                readOnly: true,
               },
             },
           },

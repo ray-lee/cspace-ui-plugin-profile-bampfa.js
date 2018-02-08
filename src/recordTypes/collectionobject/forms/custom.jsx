@@ -52,8 +52,8 @@ const template = (pluginContext) => {
 
         <Field name="artistDisplayOverride" subpath="ns2:collectionobjects_bampfa" />
 
-        <Field name="titleGroupList">
-          <Field name="titleGroup">
+        <Field name="bampfaTitleGroupList" subpath="ns2:collectionobjects_bampfa" >
+          <Field name="bampfaTitleGroup" >
             <Panel>
               <Row>
                 <div>
@@ -159,7 +159,6 @@ const template = (pluginContext) => {
 
 
         {/* TODO: Break out measuredPartGroupList */}
-        {/* <Field name="inscriptionContent" /> */}
 
         <Field name="textualInscriptionGroupList">
           <Field name="textualInscriptionGroup">
