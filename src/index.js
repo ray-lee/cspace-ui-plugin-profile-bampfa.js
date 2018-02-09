@@ -10,7 +10,6 @@ module.exports = () => pluginContext => merge(
     messages,
     className: styles.common,
     prettyUrls: true,
-    serverTimeZone: 'America/Los_Angeles',
     tenantId: '55',
   },
   recordTypes(pluginContext),
