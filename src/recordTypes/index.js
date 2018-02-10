@@ -1,5 +1,4 @@
 import merge from 'lodash/merge';
-import citation from './citation';
 import collectionobject from './collectionobject';
 import group from './group';
 import intake from './intake';
@@ -11,7 +10,6 @@ import person from './person';
 import work from './work';
 
 export default pluginContext => [
-  citation,
   collectionobject,
   group,
   intake,
