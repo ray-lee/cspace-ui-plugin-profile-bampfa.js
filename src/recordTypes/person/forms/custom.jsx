@@ -24,19 +24,6 @@ const template = (pluginContext) => {
         <Field name="personTermGroupList">
           <Field name="personTermGroup">
             <Panel>
-              <Row>
-                <Field name="termDisplayName" />
-                <Field name="termName" />
-                <Field name="termQualifier" />
-                <Field name="termStatus" />
-              </Row>
-
-              <Row>
-                <Field name="termType" />
-                <Field name="termLanguage" />
-                <Field name="termPrefForLang" />
-              </Row>
-
               <InputTable name="nameDetail">
                 <Field name="salutation" />
                 <Field name="title" />
@@ -46,6 +33,20 @@ const template = (pluginContext) => {
                 <Field name="nameAdditions" />
                 <Field name="initials" />
               </InputTable>
+
+              <Row>
+                <Field name="termDisplayName" />
+                <Field name="termName" />
+                <Field name="termQualifier" />
+                <Field name="termStatus" />
+              </Row>
+
+              <Row>
+                <Field name="termType" />
+                <Field name="termFlag" />
+                <Field name="termLanguage" />
+                <Field name="termPrefForLang" />
+              </Row>
 
               <InputTable name="termSource">
                 <Field name="termSource" />
@@ -60,19 +61,24 @@ const template = (pluginContext) => {
         <Cols>
           <Col>
             <Field name="gender" />
+
             <Field name="occupations">
               <Field name="occupation" />
             </Field>
+
             <Field name="schoolsOrStyles">
               <Field name="schoolOrStyle" />
             </Field>
+
             <Field name="groups">
               <Field name="group" />
             </Field>
+
             <Field name="nationalities">
               <Field name="nationality" />
             </Field>
-            <Field name="nameNote" subpath="ns2:persons_bampfa" />
+
+            <Field name="nameNote" />
           </Col>
 
           <Col>
@@ -88,18 +94,16 @@ const template = (pluginContext) => {
                 <Field name="deathPlace" />
                 <Field name="otherRegionalInfo" subpath="ns2:persons_bampfa" />
               </Col>
-
             </Cols>
 
             <Field name="dynastyPeriod" subpath="ns2:persons_bampfa" />
             <Field name="datesActive" subpath="ns2:persons_bampfa" />
             <Field name="bioNote" />
           </Col>
-
         </Cols>
       </Panel>
 
-      <Panel name="copyright" collapsible>
+      <Panel name="copyright" collapsible collapsed>
         <Cols>
           <Col>
             <Field name="copyrightCredit" subpath="ns2:persons_bampfa" />
@@ -123,11 +127,5 @@ const template = (pluginContext) => {
 };
 
 export default pluginContext => ({
-  messages: defineMessages({
-    name: {
-      id: 'form.person.default.name',
-      defaultMessage: 'Standard Template',
-    },
-  }),
   template: template(pluginContext),
 });

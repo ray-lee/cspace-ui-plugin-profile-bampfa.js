@@ -1,5 +1,6 @@
 import merge from 'lodash/merge';
 import messages from './messages';
+import optionLists from './optionLists';
 import recordTypes from './recordTypes';
 import logo from '../images/logo.svg';
 import styles from '../styles/cspace-ui-plugin-profile/bampfa.css';
@@ -9,6 +10,7 @@ module.exports = () => pluginContext => merge(
     logo,
     messages,
     className: styles.common,
+    optionLists,
     prettyUrls: true,
     tenantId: '55',
   },

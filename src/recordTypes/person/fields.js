@@ -1,14 +1,11 @@
 import { defineMessages } from 'react-intl';
+import { computePersonNames } from '../../utils';
 
 export default (pluginContext) => {
   const {
     OptionPickerInput,
     TextInput,
   } = pluginContext.inputComponents;
-
-  const {
-    Immutable,
-  } = pluginContext.lib;
 
   const {
     configKey: config,
@@ -20,97 +17,7 @@ export default (pluginContext) => {
         personTermGroupList: {
           personTermGroup: {
             [config]: {
-              compute: ({ data, recordData }) => {
-                const namePartsFML = [];
-                const namePartsLMF = [];
-                const nameAdditions = data.get('nameAdditions');
-                const nationalities = recordData.getIn(['document', 'ns2:persons_common', 'nationalities', 'nationality']);
-                const title = data.get('title');
-                let nationality = '';
-                let foreName = data.get('foreName');
-                let middleName = data.get('middleName');
-                let surName = data.get('surName');
-
-                /* Calculate First-Middle-Last Name */
-                if (nationalities && nationalities.size > 0) {
-                  for (const candidateNationality of nationalities) {
-                    if (candidateNationality !== '' && candidateNationality !== undefined) {
-                      nationality = candidateNationality;
-                      break;
-                    }
-                  }
-                }
-                if (surName && surName.toLowerCase() === 'unknown') {
-                  namePartsFML.push(surName);
-                  if (nationality) {
-                    namePartsFML.push(`(${nationality})`);
-                  }
-                } else {
-                  if (title) {
-                    namePartsFML.push(title);
-                  }
-                  if (foreName) {
-                    namePartsFML.push(foreName);
-                  }
-                  if (middleName) {
-                    namePartsFML.push(middleName);
-                  }
-                  if (surName) {
-                    namePartsFML.push(surName);
-                  }
-                  if (nameAdditions) {
-                    namePartsFML.push(nameAdditions);
-                  }
-                }
-                /* Calculate Last-middleName-First Name */
-                if (surName && surName.toLowerCase() === 'unknown') {
-                  namePartsLMF.push(surName);
-                  if (nationality) {
-                    namePartsLMF.push(`(${nationality})`);
-                  }
-                } else if (!surName) {
-                  namePartsLMF.push(foreName);
-                } else if (!foreName) {
-                  namePartsLMF.push(surName);
-                } else if (!middleName) {
-                  if (nationality && nationality.toLowerCase().indexOf('china') < 0) {
-                    surName = `${surName},`;
-                  }
-                  namePartsLMF.push(surName);
-
-                  if (nameAdditions) {
-                    foreName = `${foreName},`;
-                  }
-                  namePartsLMF.push(foreName);
-
-                  if (nameAdditions) {
-                    namePartsLMF.push(nameAdditions);
-                  }
-                } else {
-                  if (nationality && nationality.toLowerCase().indexOf('china') < 0) {
-                    surName = `${surName},`;
-                  }
-                  namePartsLMF.push(surName);
-                  namePartsLMF.push(foreName);
-
-                  if (nameAdditions) {
-                    middleName = `${middleName},`;
-                  }
-
-                  namePartsLMF.push(middleName);
-
-                  if (nameAdditions) {
-                    namePartsLMF.push(nameAdditions);
-                  }
-                }
-                const nameLMFName = namePartsLMF.join(' ');
-                const nameFMLName = namePartsFML.join(' ');
-
-                return Immutable.Map({
-                  termDisplayName: nameLMFName,
-                  termName: nameFMLName,
-                });
-              },
+              compute: computePersonNames,
             },
           },
         },
@@ -125,8 +32,8 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.persons_bampfa.birthcity.name',
-                defaultMessage: 'Birth City',
+                id: 'field.persons_bampfa.birthCity.name',
+                defaultMessage: 'Birth city',
               },
             }),
             view: {
@@ -139,7 +46,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.otherRegionalInfo.name',
-                defaultMessage: 'Other Regional Info',
+                defaultMessage: 'Other regional info',
               },
             }),
             view: {
@@ -151,8 +58,8 @@ export default (pluginContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.bampfa_persons.dynastyPeriod.name',
-                defaultMessage: 'Dynasty/Period',
+                id: 'field.persons_bampfa.dynastyPeriod.name',
+                defaultMessage: 'Dynasty/period',
               },
             }),
             view: {
@@ -165,27 +72,11 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.datesActive.name',
-                defaultMessage: 'Dates Active',
+                defaultMessage: 'Dates active',
               },
             }),
             view: {
               type: TextInput,
-            },
-          },
-        },
-        nameNote: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.persons_bampfa.nameNote.name',
-                defaultMessage: 'Name note',
-              },
-            }),
-            view: {
-              type: TextInput,
-              props: {
-                multiline: true,
-              },
             },
           },
         },
@@ -194,7 +85,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.copyrightCredit.name',
-                defaultMessage: 'Copyright Credit',
+                defaultMessage: 'Copyright credit',
               },
             }),
             view: {
@@ -210,7 +101,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.copyrightNote.name',
-                defaultMessage: 'Copyright Note',
+                defaultMessage: 'Copyright note',
               },
             }),
             view: {
@@ -226,7 +117,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.persons_bampfa.copyrightHolder.name',
-                defaultMessage: 'Copyright Holder',
+                defaultMessage: 'Copyright holder',
               },
             }),
             view: {
@@ -245,7 +136,7 @@ export default (pluginContext) => {
             view: {
               type: OptionPickerInput,
               props: {
-                source: 'permissionToReproduce',
+                source: 'reproductionPermissionLevels',
               },
             },
           },

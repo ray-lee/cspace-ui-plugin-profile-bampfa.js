@@ -43,6 +43,7 @@ export default {
   'field.media_common.valueQualifier.name': 'Value qualifier',
 
   /* Person Terms */
-  'field.persons_common.termName.name': 'FML Name',
+  'field.persons_common.termName.name': 'FML name',
+  'field.persons_common.termQualifier.name': 'Term qualifier',
   'field.persons_common.birthPlace.name': 'Birth country',
 };

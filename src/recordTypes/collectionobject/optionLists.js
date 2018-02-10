@@ -1,6 +1,5 @@
 import { defineMessages } from 'react-intl';
 
-
 export default {
   soundOrSilents: {
     values: [
@@ -97,42 +96,6 @@ export default {
       unknown: {
         id: 'option.numberTypes.unknown',
         defaultMessage: 'unknown',
-      },
-    }),
-  },
-  permissionToReproduce: {
-    values: [
-      'Unknown',
-      'yes',
-      'No',
-      'Restricted',
-      'Public Domain',
-      'pending',
-    ],
-    messages: defineMessages({
-      Unknown: {
-        id: 'option.permissionToReproduce.Unknown',
-        defaultMessage: 'unknown',
-      },
-      Yes: {
-        id: 'option.permissionToReproduce.Yes',
-        defaultMessage: 'yes',
-      },
-      No: {
-        id: 'option.permissionToReproduce.No',
-        defaultMessage: 'no',
-      },
-      Restricted: {
-        id: 'option.permissionToReproduce.Restricted',
-        defaultMessage: 'restricted',
-      },
-      'Public Domain': {
-        id: 'option.permissionToReproduce.Public Domain',
-        defaultMessage: 'public domain',
-      },
-      Pending: {
-        id: 'option.permissionToReproduce.Pending',
-        defaultMessage: 'pending',
       },
     }),
   },
