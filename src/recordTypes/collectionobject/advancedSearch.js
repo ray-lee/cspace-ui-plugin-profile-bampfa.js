@@ -45,7 +45,7 @@ export default (pluginContext) => {
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/otherNumberList/otherNumberGroup/numberValue',
+        path: 'ns2:collectionobjects_common/otherNumberList/otherNumber/numberValue',
       },
       {
         op: OP_CONTAIN,
@@ -55,7 +55,7 @@ export default (pluginContext) => {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/computedCurrentLocationSearch',
       },
-      {
+      { // This range thing doesnt work
         op: OP_RANGE,
         path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
       },

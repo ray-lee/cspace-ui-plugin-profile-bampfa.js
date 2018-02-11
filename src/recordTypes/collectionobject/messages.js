@@ -117,5 +117,13 @@ export default {
       id: 'inputTable.collectionobject.ownershipExchange',
       defaultMessage: 'Ownership exchange',
     },
+    initialValues: {
+      id: 'inputTable.collectionobject.initialValueGroup',
+      defaultMessage: 'Initial value',
+    },
+    idNumberInfo: {
+      id: 'inputTable.collectionobject.idNumberInfo',
+      defaultMessage: 'Id number information',
+    },
   }),
 };

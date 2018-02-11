@@ -18,6 +18,9 @@ export default {
   'field.collectionobjects_common.editionNumber.name': 'Edition',
   'panel.collectionobject.hierarchy': 'Object Hierarchy',
   'field.collectionobjects_common.computedCurrentLocation.name': 'Current storage location',
+  'field.collectionobjects_common.briefDescription.name': 'Description of work',
+  'field.collectionobjects_common.comment.name': 'Notes',
+
   /* Intake Messages */
 
   'field.intakes_common.currentOwner.name': 'Source',
