@@ -1,5 +1,3 @@
-import { defineMessages } from 'react-intl';
-
 const template = (pluginContext) => {
   const {
     React,
