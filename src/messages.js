@@ -11,12 +11,15 @@ export default {
     </p>`,
   /* Collection Objects Messages */
   'field.collectionobjects_common.physicalDescription.name': 'Medium',
-  'field.collectionobjects_common.numberOfObjects.name': 'Item Count',
+  'field.collectionobjects_common.numberOfObjects.name': 'Item count',
   'field.collectionobjects_common.objectProductionPeople.name': 'Organization',
-  'field.collectionobjects_common.objectProductionPeopleGroup.name': 'Production Organization',
+  'field.collectionobjects_common.objectProductionPeopleGroup.name': 'Production organization',
+  'field.collectionobjects_common.objectProductionPeople.fullName': 'Production organization',
   'field.collectionobjects_common.editionNumber.name': 'Edition',
   'panel.collectionobject.hierarchy': 'Object Hierarchy',
-  'field.collectionobjects_common.computedCurrentLocation.name': 'Current Storage Location',
+  'field.collectionobjects_common.computedCurrentLocation.name': 'Current storage location',
+  'field.collectionobjects_common.briefDescription.name': 'Description of work',
+  'field.collectionobjects_common.comment.name': 'Notes',
 
   /* Intake Messages */
 
@@ -34,7 +37,7 @@ export default {
   'field.movements_common.movementMethod.name': 'Method',
   'field.movements_common.reasonForMove.name': 'Reason',
   'inputTable.movement.currentLocation': 'Storage location',
-  'panel.movement.movement': 'Inventory/Movement Information',
+  'panel.movement.movement': 'Inventory/Movement information',
   'record.movement.name': 'Inventory/Movement',
   'record.movement.collectionName': 'Inventory/Movement',
 
