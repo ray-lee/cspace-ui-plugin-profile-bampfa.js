@@ -3,7 +3,6 @@ import { computeDimensionSummary, computeMediaOrderNumber, computeMediaTitle } f
 
 export default (pluginContext) => {
   const {
-    CompoundInput,
     TextInput,
     OptionPickerInput,
     CheckboxInput,
