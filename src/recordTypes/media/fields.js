@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeDimensionSummary, computeFilename } from '../../utils';
+import { computeDimensionSummary, computeMediaOrderNumber, computeMediaTitle } from '../../utils';
 
 export default (pluginContext) => {
   const {
@@ -21,11 +21,6 @@ export default (pluginContext) => {
   return {
     document: {
       'ns2:media_common': {
-        [config]: {
-          service: {
-            ns: 'http://collectionspace.org/services/media',
-          },
-        },
         identificationNumber: {
           [config]: {
             required: false,
@@ -33,15 +28,10 @@ export default (pluginContext) => {
         },
         title: {
           [config]: {
-            compute: ({ subrecordData }) => computeFilename(subrecordData),
+            compute: computeMediaTitle,
           },
         },
         measuredPartGroupList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
           measuredPartGroup: {
             measuredPart: {
               [config]: {
@@ -54,19 +44,18 @@ export default (pluginContext) => {
             dimensionSummary: {
               [config]: {
                 view: {
-                  type: TextInput,
                   props: {
                     readOnly: true,
                   },
                 },
-                compute: ({ path, recordData }) => computeDimensionSummary(path, recordData),
+                compute: computeDimensionSummary,
               },
             },
             measuredPartNote: {
               [config]: {
                 messages: defineMessages({
                   name: {
-                    id: 'field.media_bampfa.measuredPartNote.name',
+                    id: 'field.media_common.measuredPartNote.name',
                     defaultMessage: 'Note',
                   },
                 }),
@@ -90,7 +79,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.media_bampfa.primaryDisplay.name',
-                defaultMessage: 'Primary Display',
+                defaultMessage: 'Primary display',
               },
             }),
             view: {
@@ -103,13 +92,13 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.media_bampfa.websiteDisplayLevel.name',
-                defaultMessage: 'Website Display Level',
+                defaultMessage: 'Website display level',
               },
             }),
             view: {
               type: OptionPickerInput,
               props: {
-                source: 'websiteDisplayLevel',
+                source: 'websiteDisplayLevels',
               },
             },
           },
@@ -120,7 +109,7 @@ export default (pluginContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.media_bampfa.imageNumber.name',
-                defaultMessage: 'Image Number',
+                defaultMessage: 'Image number',
               },
             }),
             required: true,
@@ -129,73 +118,20 @@ export default (pluginContext) => {
             },
           },
         },
-        titleSearch: {
-          [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.media_bampfa.titleSearch.name',
-                defaultMessage: 'File name',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
-            compute: ({ subrecordData }) => computeFilename(subrecordData),
-          },
-        },
         computedOrderNumber: {
           [config]: {
-            messages: defineMessages({
-              name: {
-                id: 'field.computedOrderNumber.media_bampfa.name',
-                defaultMessage: 'Computed Order Number',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
-            compute: ({ recordData }) => {
-              const primaryDisplay = recordData.getIn(['document', 'ns2:media_bampfa', 'primaryDisplay']);
-              let imageNumber = recordData.getIn(['document', 'ns2:media_bampfa', 'imageNumber']);
-              const len = imageNumber.length;
-              if (len <= 5) {
-                imageNumber = (new Array(6).join('0') + imageNumber).slice(-len);
-              }
-
-              if (!primaryDisplay) {
-                imageNumber = `alt ${imageNumber}`;
-              }
-              return imageNumber;
-            },
+            compute: computeMediaOrderNumber,
           },
         },
         pictionId: {
           [config]: {
             dataType: DATA_TYPE_INT,
             readOnly: true,
-            messages: defineMessages({
-              name: {
-                id: 'field.pictionId.media_bampfa.name',
-                defaultMessage: 'Piction Id',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
           },
         },
         pictionImageHash: {
           [config]: {
             readOnly: true,
-            messages: defineMessages({
-              name: {
-                id: 'field.pictionImageHash.media_bampfa.name',
-                defaultMessage: 'Piction Image Hash',
-              },
-            }),
-            view: {
-              type: TextInput,
-            },
           },
         },
       },

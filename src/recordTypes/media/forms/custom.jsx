@@ -17,18 +17,20 @@ const template = (pluginContext) => {
 
   return (
     <Field name="document">
-      <Panel name="file" collapsible>
-        <Field name="imageNumber" subpath="ns2:media_bampfa" />
-        <Subrecord name="blob" showDetachButton />
-      </Panel>
-
       <Panel name="media" collapsible>
         <Row>
-          <Field name="externalUrl" />
+          <Field name="imageNumber" subpath="ns2:media_bampfa" />
           <Field name="primaryDisplay" subpath="ns2:media_bampfa" />
-          <Field name="websiteDisplayLevel" subpath="ns2:media_bampfa" />
         </Row>
 
+        <Panel name="file" collapsible>
+          <Subrecord name="blob" showDetachButton />
+        </Panel>
+
+        <Row>
+          <Field name="externalUrl" />
+          <Field name="websiteDisplayLevel" subpath="ns2:media_bampfa" />
+        </Row>
 
         {/* TODO: Break out measuredPartGroupList */}
 

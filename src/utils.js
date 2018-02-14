@@ -53,7 +53,7 @@ export const zeroPad = (str, len) => {
   return (new Array(len + 1).join('0') + str).slice(-len);
 };
 
-export const computeDimensionSummary = (path, recordData) => {
+export const computeDimensionSummary = ({ path, recordData }) => {
   const measurements = {};
   const pathCopy = Object.assign([], path);
   /* Perform a series of pops and pushes to a path to get the correct values */
@@ -155,9 +155,34 @@ export const computeDimensionSummary = (path, recordData) => {
   return joinedParts;
 };
 
-export const computeFilename = (subrecordData) => {
-  const blobs = subrecordData.getIn(['blob', 'document', 'ns2:blobs_common']);
-  return blobs.get('name').filter(part => !!part);
+export const computeMediaOrderNumber = ({ recordData }) => {
+  const part = recordData.getIn(['document', 'ns2:media_bampfa']);
+  const primaryDisplay = part.get('primaryDisplay');
+  const imageNumber = part.get('imageNumber');
+
+  if (!imageNumber) {
+    return null;
+  }
+
+  const paddedImageNumber = imageNumber.padStart(5, '0');
+
+  return (primaryDisplay ? paddedImageNumber : `alt ${paddedImageNumber}`);
+};
+
+export const computeMediaTitle = ({ subrecordData }) => {
+  const blobData = subrecordData.get('blob');
+
+  if (blobData) {
+    const fileList = blobData.getIn(['document', 'ns2:blobs_common', 'file']);
+
+    if (fileList && fileList.length > 0) {
+      return fileList[0].name;
+    }
+
+    return null;
+  }
+
+  return undefined;
 };
 
 export const computePersonNames = ({ data, recordData }) => {

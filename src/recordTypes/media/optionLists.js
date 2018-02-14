@@ -1,7 +1,7 @@
 import { defineMessages } from 'react-intl';
 
 export default {
-  websiteDisplayLevel: {
+  websiteDisplayLevels: {
     values: [
       'No public display',
       'Display thumbnail only',
@@ -9,15 +9,15 @@ export default {
     ],
     messages: defineMessages({
       'No public display': {
-        id: 'option.websiteDisplayLevel.No public display',
+        id: 'option.websiteDisplayLevels.No public display',
         defaultMessage: 'no public display',
       },
       'Display thumbnail only': {
-        id: 'option.websiteDisplayLevel.Display thumbnail only',
+        id: 'option.websiteDisplayLevels.Display thumbnail only',
         defaultMessage: 'display thumbnail only',
       },
       'Display larger size': {
-        id: 'option.websiteDisplayLevel.Display larger size',
+        id: 'option.websiteDisplayLevels.Display larger size',
         defaultMessage: 'display larger size',
       },
     }),
