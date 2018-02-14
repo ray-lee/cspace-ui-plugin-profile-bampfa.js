@@ -55,7 +55,7 @@ export default (pluginContext) => {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/computedCurrentLocationSearch',
       },
-      { // This range thing doesnt work
+      {
         op: OP_RANGE,
         path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
       },
@@ -64,7 +64,7 @@ export default (pluginContext) => {
         path: 'ns2:collectionobjects_bampfa/computedCrateSearch',
       },
       /* eslint-disable max-len */
-      {
+      { // This needs to be named production organization
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_common/objectProductionPeopleGroupList/objectProductionPeopleGroup/objectProductionPeople',
       },
@@ -89,9 +89,9 @@ export default (pluginContext) => {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/soundOrSilent',
       },
-      {
+      { // TO DO: Fix API Error
         op: OP_RANGE,
-        path: 'ns2:collectionobjects_bampfa/acquisitionDateGroup',
+        path: 'ns2:collectionobjects_bampfa/acquisitionDateGroupList/acquisitionDateGroup',
       },
       {
         op: OP_EQ,
@@ -99,34 +99,28 @@ export default (pluginContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/bampfaAcquisitionReason',
+        path: 'ns2:collectionobjects_bampfa/bampfaAcquisitionReasonList/bampfaAcquisitionReason',
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/acquisitionSource',
+        path: 'ns2:collectionobjects_bampfa/acquisitionSources/acquisitionSource',
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/subjectTheme',
+        path: 'ns2:collectionobjects_bampfa/subjectThemes/subjectTheme',
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_common/collection',
+        path: 'ns2:collectionobjects_bampfa/bampfaCollectionList/bampfaCollection',
       },
       {
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/partOf',
       },
       {
-        op: OP_CONTAIN, // period/Style
+        op: OP_CONTAIN,
         path: 'ns2:collectionobjects_common/styles/style',
       },
-      /* eslint-disable max-len */
-      {
-        op: OP_RANGE,
-        path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
-      },
-      /* eslint-enable max-len */
       {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/permissionToReproduce',
