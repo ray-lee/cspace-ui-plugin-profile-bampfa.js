@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeEffectiveObjectNumber, computeObjectNumber, computeDimensionSummary } from '../../../utils';
+import { computeEffectiveObjectNumber, computeObjectNumber } from '../../../utils';
 
 export default (pluginContext) => {
   const {
