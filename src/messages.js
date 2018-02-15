@@ -29,6 +29,10 @@ export default {
   'field.intakes_common.entryNumber.name': 'TR number',
   'field.intakes_common.entryReason.name': 'Purpose',
 
+  /* Media */
+
+  'field.media_common.title.name': 'Filename',
+
   /* Movement Messages */
 
   'field.movements_common.currentLocation.fullName': 'Storage location',

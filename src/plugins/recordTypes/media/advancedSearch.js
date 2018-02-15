@@ -6,6 +6,10 @@ export default (pluginContext) => {
     OP_RANGE,
   } = pluginContext.searchOperators;
 
+  const {
+    extensions,
+  } = pluginContext.config;
+
   return {
     op: OP_OR,
     value: [
@@ -15,19 +19,11 @@ export default (pluginContext) => {
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:media_bampfa/titleSearch',
-      },
-      {
-        op: OP_CONTAIN,
-        path: 'ns2:media_common/identificationNumber',
+        path: 'ns2:media_common/title',
       },
       {
         op: OP_EQ,
         path: 'ns2:media_common/creator',
-      },
-      {
-        op: OP_RANGE,
-        path: 'ns2:media_common/dateGroupList/dateGroup',
       },
       {
         op: OP_EQ,
@@ -39,7 +35,11 @@ export default (pluginContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:media_common/rightsHolder',
+        path: 'ns2:media_common/typeList/type',
+      },
+      {
+        op: OP_RANGE,
+        path: 'ns2:media_common/dateGroupList/dateGroup',
       },
       {
         op: OP_CONTAIN,
@@ -51,16 +51,9 @@ export default (pluginContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:media_common/typeList/type',
+        path: 'ns2:media_common/rightsHolder',
       },
-      {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionspace_core/updatedBy',
-      },
-      {
-        op: OP_RANGE,
-        path: 'ns2:collectionspace_core/updatedAt',
-      },
+      ...extensions.core.advancedSearch,
     ],
   };
 };
