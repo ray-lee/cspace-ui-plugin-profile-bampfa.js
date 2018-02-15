@@ -1,18 +1,30 @@
-import merge from 'lodash/merge';
 import messages from './messages';
-import optionLists from './optionLists';
-import recordTypes from './recordTypes';
+import plugins from './plugins';
 import logo from '../images/logo.svg';
 import styles from '../styles/cspace-ui-plugin-profile/bampfa.css';
 
-module.exports = () => pluginContext => merge(
-  {
-    logo,
-    messages,
-    className: styles.common,
-    optionLists,
-    prettyUrls: true,
-    tenantId: '55',
+module.exports = () => ({
+  logo,
+  messages,
+  className: styles.common,
+  prettyUrls: true,
+  tenantId: '55',
+  plugins: plugins.map(plugin => plugin()),
+  recordTypes: {
+    acquisition: {
+      disabled: true,
+    },
+    claim: {
+      disabled: true,
+    },
+    conservation: {
+      disabled: true,
+    },
+    exhibition: {
+      disabled: true,
+    },
+    objectexit: {
+      disabled: true,
+    },
   },
-  recordTypes(pluginContext),
-);
+});
