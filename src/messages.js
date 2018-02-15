@@ -41,10 +41,6 @@ export default {
   'record.movement.name': 'Inventory/Movement',
   'record.movement.collectionName': 'Inventory/Movement',
 
-  /* Media Messages */
-  'field.media_common.measurementUnit.name': 'Dimension Unit',
-  'field.media_common.valueQualifier.name': 'Value qualifier',
-
   /* Person Terms */
   'field.persons_common.termName.name': 'FML name',
   'field.persons_common.termQualifier.name': 'Term qualifier',
