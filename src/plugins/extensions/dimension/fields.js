@@ -10,6 +10,10 @@ export default (pluginContext) => {
     configKey: config,
   } = pluginContext.configHelpers;
 
+  const {
+    DATA_TYPE_STRING,
+  } = pluginContext.dataTypes;
+
   return {
     measuredPartGroupList: {
       measuredPartGroup: {
@@ -29,6 +33,15 @@ export default (pluginContext) => {
               },
             },
             compute: computeDimensionSummary,
+          },
+        },
+        dimensionSubGroupList: {
+          dimensionSubGroup: {
+            value: {
+              [config]: {
+                dataType: DATA_TYPE_STRING,
+              },
+            },
           },
         },
         measuredPartNote: {
