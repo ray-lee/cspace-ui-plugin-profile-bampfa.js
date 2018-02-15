@@ -16,6 +16,10 @@ export default (pluginContext) => {
   } = pluginContext.inputComponents;
 
   const {
+    extensions,
+  } = pluginContext.config;
+
+  const {
     configKey: config,
   } = pluginContext.configHelpers;
 
@@ -66,59 +70,6 @@ export default (pluginContext) => {
               type: ReadOnlyInput,
             },
             compute: ({ recordData }) => computeObjectNumber(recordData),
-          },
-        },
-        measuredPartGroupList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          measuredPartGroup: {
-            [config]: {
-              repeating: true,
-              view: {
-                type: CompoundInput,
-              },
-            },
-            measuredPart: {
-              [config]: {
-                view: {
-                  type: TextInput,
-                  props: null,
-                },
-              },
-            },
-            dimensionSummary: {
-              [config]: {
-                messages: defineMessages({
-                  name: {
-                    id: 'field.collectionobjects_common.dimensionSummary.name',
-                    defaultMessage: 'Summary',
-                  },
-                }),
-                view: {
-                  type: TextInput,
-                  props: {
-                    readOnly: true,
-                  },
-                },
-                compute: ({ path, recordData }) => computeDimensionSummary(path, recordData),
-              },
-            },
-            measuredPartNote: {
-              [config]: {
-                messages: defineMessages({
-                  name: {
-                    id: 'field.collectionobjects_bampfa.measuredPartNote.name',
-                    defaultMessage: 'Note',
-                  },
-                }),
-                view: {
-                  type: TextInput,
-                },
-              },
-            },
           },
         },
         otherNumberList: {
@@ -189,6 +140,7 @@ export default (pluginContext) => {
             },
           },
         },
+        ...extensions.dimension.fields,
       },
       'ns2:collectionobjects_bampfa': {
         [config]: {

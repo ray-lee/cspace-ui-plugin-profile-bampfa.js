@@ -16,6 +16,10 @@ const template = (pluginContext) => {
     InputTable,
   } = pluginContext.recordComponents;
 
+  const {
+    extensions,
+  } = pluginContext.config;
+
   return (
     <Field name="document">
       <Panel name="id" collapsible>
@@ -66,27 +70,7 @@ const template = (pluginContext) => {
 
         <Field name="seriesTitle" subpath="ns2:collectionobjects_bampfa" />
 
-        <Field name="measuredPartGroupList">
-          <Field name="measuredPartGroup">
-            <Panel>
-              <Row>
-                <Field name="measuredPart" />
-                <Field name="dimensionSummary" />
-              </Row>
-
-              <Field name="dimensionSubGroupList">
-                <Field name="dimensionSubGroup">
-                  <Field name="dimension" />
-                  <Field name="value" />
-                  <Field name="measurementUnit" />
-                  <Field name="valueQualifier" />
-                </Field>
-              </Field>
-
-              <Field name="measuredPartNote" />
-            </Panel>
-          </Field>
-        </Field>
+        {extensions.dimension.form}
 
         <Row>
           <Field name="physicalDescription" />
