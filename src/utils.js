@@ -1,4 +1,4 @@
-export const computeEffectiveObjectNumber = (recordData) => {
+export const computeEffectiveObjectNumber = ({ recordData }) => {
   const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
   const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
   const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
@@ -35,7 +35,7 @@ export const computeEffectiveObjectNumber = (recordData) => {
   return effectiveObjectNumber;
 };
 
-export const computeObjectNumber = (recordData) => {
+export const computeObjectNumber = ({ recordData }) => {
   const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
   const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
   const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
@@ -43,6 +43,58 @@ export const computeObjectNumber = (recordData) => {
   const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
   const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
   return [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
+};
+
+export const computeSortableObjectNumber = ({ recordData }) => {
+  const parts = computeObjectNumber({ recordData }).split('.');
+
+  const sortableParts = [];
+  const isNumericRegExp = /^\d+$/;
+
+  for (let i = 0; i < parts.length; i += 1) {
+    let part = parts[i];
+
+    if (isNumericRegExp.test(part)) {
+      const len = part.length;
+      part = (new Array(len + 1).join('0') + part).slice(-len);
+    } else {
+      part = part.toLowerCase();
+    }
+    sortableParts.push(part);
+  }
+  return sortableParts.join(' ');
+};
+
+export const computeSortableEffectiveObjectNumber = ({ recordData }) => {
+  const effectiveObjectNumberParts = computeEffectiveObjectNumber({ recordData }).split('.');
+  const sortableParts = [];
+  const isNumericRegExp = /^\d+$/;
+
+  for (let i = 0; i < effectiveObjectNumberParts.length; i += 1) {
+    let part = effectiveObjectNumberParts[i];
+
+    if (isNumericRegExp.test(part)) {
+      const len = part.length;
+      part = (new Array(len + 1).join('0') + part).slice(-len);
+    } else {
+      part = part.toLowerCase();
+    }
+    sortableParts.push(part);
+  }
+  return sortableParts.join(' ');
+};
+
+export const computePlainTextTitle = ({ recordData }) => {
+  const titles = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'bampfaTitleGroupList', 'bampfaTitleGroup']);
+  const titleList = [];
+  for (const title of titles) {
+    if (title !== undefined) {
+      if (title.getIn(['bampfaFormattedTitle']) !== '') {
+        titleList.push(title.getIn(['bampfaFormattedTitle']));
+      }
+    }
+  }
+  return titleList.join('\n');
 };
 
 export const zeroPad = (str, len) => {

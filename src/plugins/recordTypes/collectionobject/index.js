@@ -8,10 +8,10 @@ export default () => pluginContext => ({
   optionLists,
   recordTypes: {
     collectionobject: {
+      messages,
+      advancedSearch: advancedSearch(pluginContext),
       forms: forms(pluginContext),
       fields: fields(pluginContext),
-      advancedSearch: advancedSearch(pluginContext),
-      messages,
     },
   },
 });

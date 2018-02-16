@@ -1,34 +1,34 @@
 import { defineMessages } from 'react-intl';
 
 export default {
-  soundOrSilents: {
+  soundLevels: {
     values: [
       'Sound',
       'Silent',
     ],
     messages: defineMessages({
       Sound: {
-        id: 'option.soundOrSilents.Sound',
+        id: 'option.soundLevels.Sound',
         defaultMessage: 'sound',
       },
       Silent: {
-        id: 'option.soundOrSilents.Silent',
+        id: 'option.soundLevels.Silent',
         defaultMessage: 'silent',
       },
     }),
   },
-  bwOrColors: {
+  colorLevels: {
     values: [
-      'Black &amp; white',
+      'Black & white',
       'Color',
     ],
     messages: defineMessages({
-      'Black &amp; white': {
-        id: 'option.bwOrColors.Black &amp; white',
+      'Black & white': {
+        id: 'option.colorLevels.Black & white',
         defaultMessage: 'black & white',
       },
       Color: {
-        id: 'option.bwOrColors.Color',
+        id: 'option.colorLevels.Color',
         defaultMessage: 'color',
       },
     }),
