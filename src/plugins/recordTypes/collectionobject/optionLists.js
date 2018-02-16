@@ -1,34 +1,34 @@
 import { defineMessages } from 'react-intl';
 
 export default {
-  soundOrSilents: {
+  soundLevels: {
     values: [
       'Sound',
       'Silent',
     ],
     messages: defineMessages({
       Sound: {
-        id: 'option.soundOrSilents.Sound',
+        id: 'option.soundLevels.Sound',
         defaultMessage: 'sound',
       },
       Silent: {
-        id: 'option.soundOrSilents.Silent',
+        id: 'option.soundLevels.Silent',
         defaultMessage: 'silent',
       },
     }),
   },
-  bwOrColors: {
+  colorLevels: {
     values: [
-      'Black &amp; white',
+      'Black & white',
       'Color',
     ],
     messages: defineMessages({
-      'Black &amp; white': {
-        id: 'option.bwOrColors.Black &amp; white',
+      'Black & white': {
+        id: 'option.colorLevels.Black & white',
         defaultMessage: 'black & white',
       },
       Color: {
-        id: 'option.bwOrColors.Color',
+        id: 'option.colorLevels.Color',
         defaultMessage: 'color',
       },
     }),
@@ -44,16 +44,16 @@ export default {
       'obsolete',
       'previous',
       'serial',
-      'UCB Collection',
+      'UC Collection',
       'UCB Inventory',
       'unknown',
     ],
     messages: defineMessages({
-      appraisal: {
+      Appraisal: {
         id: 'option.numberTypes.Appraisal',
         defaultMessage: 'appraisal',
       },
-      artist: {
+      Artist: {
         id: 'option.numberTypes.Artist',
         defaultMessage: 'artist',
       },
@@ -61,41 +61,21 @@ export default {
         id: 'option.numberTypes.Auction House',
         defaultMessage: 'auction house',
       },
-      donor: {
+      Donor: {
         id: 'option.numberTypes.Donor',
         defaultMessage: 'donor',
       },
-      gallery: {
+      Gallery: {
         id: 'option.numberTypes.Gallery',
         defaultMessage: 'gallery',
       },
-      lender: {
-        id: 'option.numberTypes.lender',
-        defaultMessage: 'lender',
-      },
-      obsolete: {
-        id: 'option.numberTypes.obsolete',
-        defaultMessage: 'obsolete',
-      },
-      previous: {
-        id: 'option.numberTypes.previous',
-        defaultMessage: 'previous',
-      },
-      serial: {
-        id: 'option.numberTypes.serial',
-        defaultMessage: 'serial',
-      },
-      'UCB Collection': {
-        id: 'option.numberTypes.UCBCollection',
+      'UC Collection': {
+        id: 'option.numberTypes.UC Collection',
         defaultMessage: 'UC collection',
       },
       'UCB Inventory': {
-        id: 'option.numberTypes.UCBInventory',
+        id: 'option.numberTypes.UCB Inventory',
         defaultMessage: 'UCB inventory',
-      },
-      unknown: {
-        id: 'option.numberTypes.unknown',
-        defaultMessage: 'unknown',
       },
     }),
   },

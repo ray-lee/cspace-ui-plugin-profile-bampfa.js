@@ -1,4 +1,5 @@
 import { defineMessages } from 'react-intl';
+import { computeMovementSummary } from '../../../utils';
 
 export default (pluginContext) => {
   const {
@@ -74,39 +75,7 @@ export default (pluginContext) => {
         },
         computedSummary: {
           [config]: {
-            compute: ({ recordData }) => {
-              let summary = '';
-              let date = recordData.getIn(['document', 'ns2:movements_common', 'locationDate']);
-              let reason = recordData.getIn(['document', 'ns2:movements_common', 'reasonForMove']);
-
-              if (typeof (date) === 'undefined') {
-                date = '';
-              }
-
-              if (typeof (reason) === 'undefined') {
-                reason = '';
-              }
-
-              /* Remove timestamp of the date */
-              const index = date.indexOf('T');
-              if (index > -1) {
-                date = date.substring(0, index);
-              }
-
-              /* Convert the reason URN into a string */
-              if (reason !== '') {
-                reason = reason.slice(reason.indexOf("'") + 1, reason.length - 1);
-              }
-
-              if (date && reason) {
-                summary = `${date} (${reason})`;
-              } else if (date) {
-                summary = date;
-              } else if (reason) {
-                summary = reason;
-              }
-              return summary;
-            },
+            compute: computeMovementSummary,
           },
         },
       },

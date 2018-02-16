@@ -6,11 +6,15 @@ export default (pluginContext) => {
     OP_RANGE,
   } = pluginContext.searchOperators;
 
+  const {
+    extensions,
+  } = pluginContext.config;
+
   return {
     op: OP_OR,
     value: [
       {
-        op: OP_EQ,
+        op: OP_CONTAIN,
         path: 'ns2:collectionobjects_common/objectNumber',
       },
       {
@@ -18,19 +22,17 @@ export default (pluginContext) => {
         path: 'ns2:collectionobjects_bampfa/sortableObjectNumber',
       },
       {
-        op: OP_CONTAIN,
+        op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/legalStatus',
       },
       {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/itemClass',
       },
-      /* eslint-disable max-len */
       {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/bampfaObjectProductionPersonGroupList/bampfaObjectProductionPersonGroup/bampfaObjectProductionPerson',
       },
-      /* eslint-enable max-len */
       {
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/bampfaTitleGroupList/bampfaTitleGroup/bampfaTitle',
@@ -53,7 +55,11 @@ export default (pluginContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/computedCurrentLocationSearch',
+        path: 'ns2:collectionobjects_common/computedCurrentLocation',
+      },
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_bampfa/computedCrate',
       },
       {
         op: OP_RANGE,
@@ -61,25 +67,23 @@ export default (pluginContext) => {
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/computedCrateSearch',
+        path: 'ns2:collectionobjects_common/objectProductionPlaceGroupList/objectProductionPlaceGroup/objectProductionPlace',
       },
-      /* eslint-disable max-len */
-      { // This needs to be named production organization
-        op: OP_CONTAIN,
+      {
+        op: OP_EQ,
         path: 'ns2:collectionobjects_common/objectProductionPeopleGroupList/objectProductionPeopleGroup/objectProductionPeople',
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/objectProductionPlaceGroupList/objectProductionPlaceGroup/objectProductionPlace',
+        path: 'ns2:collectionobjects_common/editionNumber',
       },
-      /* eslint-enable max-len */
       {
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/stateGeneration',
       },
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/editionNumber',
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/soundOrSilent',
       },
       {
         op: OP_EQ,
@@ -87,19 +91,11 @@ export default (pluginContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/soundOrSilent',
-      },
-      { // TO DO: Fix API Error
-        op: OP_RANGE,
-        path: 'ns2:collectionobjects_bampfa/acquisitionDateGroupList/acquisitionDateGroup',
-      },
-      {
-        op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/acquisitionMethod',
       },
       {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/bampfaAcquisitionReasonList/bampfaAcquisitionReason',
+        op: OP_RANGE,
+        path: 'ns2:collectionobjects_bampfa/acquisitionDateGroupList/acquisitionDateGroup',
       },
       {
         op: OP_CONTAIN,
@@ -107,32 +103,29 @@ export default (pluginContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/subjectThemes/subjectTheme',
+        path: 'ns2:collectionobjects_bampfa/bampfaAcquisitionReasonList/bampfaAcquisitionReason',
       },
       {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/bampfaCollectionList/bampfaCollection',
       },
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/partOf',
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/subjectThemes/subjectTheme',
+      },
+      {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_common/styles/style',
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/styles/style',
+        path: 'ns2:collectionobjects_bampfa/partOf',
       },
       {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/permissionToReproduce',
       },
-      {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionspace_core/updatedBy',
-      },
-      {
-        op: OP_RANGE,
-        path: 'ns2:collectionspace_core/updatedAt',
-      },
+      ...extensions.core.advancedSearch,
     ],
   };
 };
