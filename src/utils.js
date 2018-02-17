@@ -1,108 +1,35 @@
-export const computeEffectiveObjectNumber = ({ recordData }) => {
-  const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
-  const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
-  const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
-  const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
-  const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
-  const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
-  let otherNumber = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'otherNumberList', 'otherNumberGroup']);
+export const computeMovementSummary = ({ recordData }) => {
+  let summary = '';
+  let date = recordData.getIn(['document', 'ns2:movements_common', 'locationDate']);
+  let reason = recordData.getIn(['document', 'ns2:movements_common', 'reasonForMove']);
 
-  if (otherNumber) {
-    otherNumber = otherNumber.toArray();
-  } else {
-    otherNumber = [];
-  }
-  const objectNumber = [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
-  // The effective object number is the objectNumber, if it exists. Otherwise,
-  // fall back to the primary otherNumber.
-  let effectiveObjectNumber = objectNumber;
-
-  if (!effectiveObjectNumber) {
-    let fallbackNumber = null;
-
-    if (otherNumber.length > 0) {
-      for (let i = 0; i < otherNumber.length; i += 1) {
-        const candidateNumber = otherNumber[i];
-
-        if (candidateNumber) {
-          fallbackNumber = candidateNumber.get('numberValue');
-          break;
-        }
-      }
-    }
-    effectiveObjectNumber = fallbackNumber;
-  }
-  return effectiveObjectNumber;
-};
-
-export const computeObjectNumber = ({ recordData }) => {
-  const prefix = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPrefix']);
-  const partOne = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart1']);
-  const partTwo = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart2']);
-  const partThree = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart3']);
-  const partFour = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart4']);
-  const partFive = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'accNumberPart5']);
-  return [prefix, partOne, partTwo, partThree, partFour, partFive].filter(part => !!part).join('.');
-};
-
-export const computeSortableObjectNumber = ({ recordData }) => {
-  const parts = computeObjectNumber({ recordData }).split('.');
-
-  const sortableParts = [];
-  const isNumericRegExp = /^\d+$/;
-
-  for (let i = 0; i < parts.length; i += 1) {
-    let part = parts[i];
-
-    if (isNumericRegExp.test(part)) {
-      const len = part.length;
-      part = (new Array(len + 1).join('0') + part).slice(-len);
-    } else {
-      part = part.toLowerCase();
-    }
-    sortableParts.push(part);
-  }
-  return sortableParts.join(' ');
-};
-
-export const computeSortableEffectiveObjectNumber = ({ recordData }) => {
-  const effectiveObjectNumberParts = computeEffectiveObjectNumber({ recordData }).split('.');
-  const sortableParts = [];
-  const isNumericRegExp = /^\d+$/;
-
-  for (let i = 0; i < effectiveObjectNumberParts.length; i += 1) {
-    let part = effectiveObjectNumberParts[i];
-
-    if (isNumericRegExp.test(part)) {
-      const len = part.length;
-      part = (new Array(len + 1).join('0') + part).slice(-len);
-    } else {
-      part = part.toLowerCase();
-    }
-    sortableParts.push(part);
-  }
-  return sortableParts.join(' ');
-};
-
-export const computePlainTextTitle = ({ recordData }) => {
-  const titles = recordData.getIn(['document', 'ns2:collectionobjects_bampfa', 'bampfaTitleGroupList', 'bampfaTitleGroup']);
-  const titleList = [];
-  for (const title of titles) {
-    if (title !== undefined) {
-      if (title.getIn(['bampfaFormattedTitle']) !== '') {
-        titleList.push(title.getIn(['bampfaFormattedTitle']));
-      }
-    }
-  }
-  return titleList.join('\n');
-};
-
-export const zeroPad = (str, len) => {
-  if (str.length >= len) {
-    return (str);
+  if (typeof (date) === 'undefined') {
+    date = '';
   }
 
-  return (new Array(len + 1).join('0') + str).slice(-len);
+  if (typeof (reason) === 'undefined') {
+    reason = '';
+  }
+
+  /* Remove timestamp of the date */
+  const index = date.indexOf('T');
+  if (index > -1) {
+    date = date.substring(0, index);
+  }
+
+  /* Convert the reason URN into a string */
+  if (reason !== '') {
+    reason = reason.slice(reason.indexOf("'") + 1, reason.length - 1);
+  }
+
+  if (date && reason) {
+    summary = `${date} (${reason})`;
+  } else if (date) {
+    summary = date;
+  } else if (reason) {
+    summary = reason;
+  }
+  return summary;
 };
 
 export const computeDimensionSummary = ({ path, recordData }) => {

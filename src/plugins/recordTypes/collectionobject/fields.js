@@ -1,12 +1,5 @@
 import { defineMessages } from 'react-intl';
-
-import {
-  computeEffectiveObjectNumber,
-  computeObjectNumber,
-  computePlainTextTitle,
-  computeSortableObjectNumber,
-  computeSortableEffectiveObjectNumber,
-} from '../../../utils';
+import { computeObjectNumbers, computePlainTextTitle } from './utils';
 
 export default (pluginContext) => {
   const {
@@ -40,10 +33,12 @@ export default (pluginContext) => {
 
   return {
     document: {
+      [config]: {
+        compute: computeObjectNumbers,
+      },
       'ns2:collectionobjects_common': {
         objectNumber: {
           [config]: {
-            compute: computeObjectNumber,
             view: {
               type: TextInput,
               props: {
@@ -96,6 +91,30 @@ export default (pluginContext) => {
             },
           },
         },
+        objectProductionPeopleGroupList: {
+          objectProductionPeopleGroup: {
+            objectProductionPeople: {
+              [config]: {
+                view: {
+                  type: AutocompleteInput,
+                  props: {
+                    source: 'organization/local,organization/collective',
+                  },
+                },
+              },
+            },
+            objectProductionPeopleRole: {
+              [config]: {
+                view: {
+                  type: TermPickerInput,
+                  props: {
+                    source: 'productionpeoplerole',
+                  },
+                },
+              },
+            },
+          },
+        },
         objectProductionPlaceGroupList: {
           objectProductionPlaceGroup: {
             [config]: {
@@ -138,21 +157,9 @@ export default (pluginContext) => {
             ns: 'http://collectionspace.org/services/collectionobject/local/bampfa',
           },
         },
-        sortableObjectNumber: {
-          [config]: {
-            compute: computeSortableObjectNumber,
-          },
-        },
-        effectiveObjectNumber: {
-          [config]: {
-            compute: computeEffectiveObjectNumber,
-          },
-        },
-        sortableEffectiveObjectNumber: {
-          [config]: {
-            compute: computeSortableEffectiveObjectNumber,
-          },
-        },
+        sortableObjectNumber: {},
+        effectiveObjectNumber: {},
+        sortableEffectiveObjectNumber: {},
         accNumberPrefix: {
           [config]: {
             messages: defineMessages({
@@ -393,6 +400,7 @@ export default (pluginContext) => {
           },
           bampfaTitleGroup: {
             [config]: {
+              compute: computePlainTextTitle,
               repeating: true,
               messages: defineMessages({
                 name: {
@@ -417,7 +425,6 @@ export default (pluginContext) => {
             },
             bampfaTitle: {
               [config]: {
-                compute: computePlainTextTitle,
                 messages: defineMessages({
                   name: {
                     id: 'field.collectionobjects_bampfa.bampfaTitle.name',
@@ -465,6 +472,7 @@ export default (pluginContext) => {
         },
         computedCrate: {
           [config]: {
+            cloneable: false,
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_bampfa.computedCrate.name',
@@ -472,8 +480,9 @@ export default (pluginContext) => {
               },
             }),
             view: {
-              type: TextInput,
+              type: AutocompleteInput,
               props: {
+                source: 'location/crate',
                 readOnly: true,
               },
             },

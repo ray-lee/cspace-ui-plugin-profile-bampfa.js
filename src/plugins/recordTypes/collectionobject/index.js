@@ -1,3 +1,4 @@
+import columns from './columns';
 import forms from './forms';
 import fields from './fields';
 import optionLists from './optionLists';
@@ -10,6 +11,7 @@ export default () => pluginContext => ({
     collectionobject: {
       messages,
       advancedSearch: advancedSearch(pluginContext),
+      columns: columns(pluginContext),
       forms: forms(pluginContext),
       fields: fields(pluginContext),
     },
