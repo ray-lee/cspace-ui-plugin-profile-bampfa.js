@@ -12,7 +12,6 @@ export default (pluginContext) => {
     CheckboxInput,
     RichTextInput,
     TermPickerInput,
-    ReadOnlyInput,
   } = pluginContext.inputComponents;
 
   const {
@@ -22,6 +21,10 @@ export default (pluginContext) => {
   const {
     configKey: config,
   } = pluginContext.configHelpers;
+
+  const {
+    Immutable,
+  } = pluginContext.lib;
 
   const {
     DATA_TYPE_BOOL,
@@ -34,7 +37,7 @@ export default (pluginContext) => {
   return {
     document: {
       [config]: {
-        compute: computeObjectNumbers,
+        compute: args => computeObjectNumbers(args, Immutable),
       },
       'ns2:collectionobjects_common': {
         objectNumber: {
@@ -1053,7 +1056,7 @@ export default (pluginContext) => {
                   defaultMessage: 'Condition check',
                 },
               }),
-                repeating: true,
+              repeating: true,
               view: {
                 type: CompoundInput,
               },

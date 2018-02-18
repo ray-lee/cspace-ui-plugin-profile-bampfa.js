@@ -4,6 +4,7 @@ import fields from './fields';
 import optionLists from './optionLists';
 import advancedSearch from './advancedSearch';
 import messages from './messages';
+import title from './title';
 
 export default () => pluginContext => ({
   optionLists,
@@ -14,6 +15,7 @@ export default () => pluginContext => ({
       columns: columns(pluginContext),
       forms: forms(pluginContext),
       fields: fields(pluginContext),
+      title: title(pluginContext),
     },
   },
 });

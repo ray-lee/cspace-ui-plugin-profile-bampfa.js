@@ -1,3 +1,5 @@
+/* global document */
+
 const numberPattern = /^\d+$/;
 
 const makeObjectNumberPartSortable = value =>
@@ -9,7 +11,7 @@ const makeObjectNumberSortable = value =>
 const getPrimaryOtherNumber = commonData =>
   commonData.getIn(['otherNumberList', 'otherNumber', 0, 'numberValue']) || null;
 
-export const computeObjectNumbers = ({ data }) => {
+export const computeObjectNumbers = ({ data }, Immutable) => {
   const commonData = data.get('ns2:collectionobjects_common');
   const bampfaData = data.get('ns2:collectionobjects_bampfa');
 
@@ -25,16 +27,27 @@ export const computeObjectNumbers = ({ data }) => {
     ? sortableObjectNumber
     : makeObjectNumberSortable(effectiveObjectNumber);
 
-  const updatedCommonData = commonData.set('objectNumber', objectNumber);
+  return Immutable.fromJS({
+    'ns2:collectionobjects_common': {
+      objectNumber,
+    },
+    'ns2:collectionobjects_bampfa': {
+      sortableObjectNumber,
+      effectiveObjectNumber,
+      sortableEffectiveObjectNumber,
+    },
+  });
 
-  const updatedBampfaData = bampfaData
-    .set('sortableObjectNumber', sortableObjectNumber)
-    .set('effectiveObjectNumber', effectiveObjectNumber)
-    .set('sortableEffectiveObjectNumber', sortableEffectiveObjectNumber);
+  // const updatedCommonData = commonData.set('objectNumber', objectNumber);
 
-  return data
-    .set('ns2:collectionobjects_common', updatedCommonData)
-    .set('ns2:collectionobjects_bampfa', updatedBampfaData);
+  // const updatedBampfaData = bampfaData
+  //   .set('sortableObjectNumber', sortableObjectNumber)
+  //   .set('effectiveObjectNumber', effectiveObjectNumber)
+  //   .set('sortableEffectiveObjectNumber', sortableEffectiveObjectNumber);
+
+  // return data
+  //   .set('ns2:collectionobjects_common', updatedCommonData)
+  //   .set('ns2:collectionobjects_bampfa', updatedBampfaData);
 };
 
 const htmlParagraphSeparator = /<\/p>/;
@@ -58,5 +71,7 @@ export const computePlainTextTitle = ({ data }) => {
     ? html.split(htmlParagraphSeparator).filter(line => !!line).map(htmlToText).join('\n')
     : null;
 
-  return data.set('bampfaTitle', text);
+  const nextData = data.set('bampfaTitle', text);
+
+  return nextData;
 };
