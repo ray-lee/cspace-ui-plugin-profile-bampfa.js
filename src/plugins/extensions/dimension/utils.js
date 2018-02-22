@@ -19,7 +19,7 @@ export const computeDimensionSummary = ({ data }) => {
 
       if (
         value &&
-        (unit === 'inches' || unit === 'centimeters') &&
+        (unit === 'in.' || unit === 'cm.') &&
         !(dimension in measurements)
       ) {
         measurements[dimension] = {
