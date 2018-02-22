@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export const computeMovementSummary = ({ recordData }, { formatDate, formatRefName }) => {
   const commonData = recordData.getIn(['document', 'ns2:movements_common']);
 

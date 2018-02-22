@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeDimensionSummary } from '../../../utils';
+import { computeDimensionSummary } from './utils';
 
 export default (pluginContext) => {
   const {
@@ -17,6 +17,9 @@ export default (pluginContext) => {
   return {
     measuredPartGroupList: {
       measuredPartGroup: {
+        [config]: {
+          compute: computeDimensionSummary,
+        },
         measuredPart: {
           [config]: {
             view: {
@@ -32,7 +35,6 @@ export default (pluginContext) => {
                 readOnly: true,
               },
             },
-            compute: computeDimensionSummary,
           },
         },
         dimensionSubGroupList: {
