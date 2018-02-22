@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeMediaOrderNumber, computeMediaTitle } from '../../../utils';
+import { computeMediaOrderNumber, computeMediaTitle } from './utils';
 
 export default (pluginContext) => {
   const {
