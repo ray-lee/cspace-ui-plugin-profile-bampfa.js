@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeMovementSummary } from '../../../utils';
+import { computeMovementSummary } from './utils';
 
 export default (pluginContext) => {
   const {
@@ -11,6 +11,10 @@ export default (pluginContext) => {
   const {
     configKey: config,
   } = pluginContext.configHelpers;
+
+  const {
+    formatHelpers,
+  } = pluginContext;
 
   return {
     document: {
@@ -75,7 +79,7 @@ export default (pluginContext) => {
         },
         computedSummary: {
           [config]: {
-            compute: computeMovementSummary,
+            compute: args => computeMovementSummary(args, formatHelpers),
           },
         },
       },
