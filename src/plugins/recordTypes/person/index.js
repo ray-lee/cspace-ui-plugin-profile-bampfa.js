@@ -1,20 +1,13 @@
-import { defineMessages } from 'react-intl';
 import forms from './forms';
 import fields from './fields';
+import messages from './messages';
 
 export default () => pluginContext => ({
   recordTypes: {
     person: {
+      messages,
       forms: forms(pluginContext),
       fields: fields(pluginContext),
-      messages: {
-        panel: defineMessages({
-          copyright: {
-            id: 'panel.person.copyright',
-            defaultMessage: 'Copyright Information',
-          },
-        }),
-      },
     },
   },
 });

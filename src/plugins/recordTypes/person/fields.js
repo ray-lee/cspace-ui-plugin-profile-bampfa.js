@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computePersonNames } from '../../../utils';
+import { computePersonNames } from './utils';
 
 export default (pluginContext) => {
   const {
