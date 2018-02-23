@@ -1,7 +1,7 @@
-import customForm from './custom';
+import defaultForm from './default';
 
 export default pluginContext => ({
-  default: customForm(pluginContext),
+  default: defaultForm(pluginContext),
   doorstep: {
     disabled: true,
   },

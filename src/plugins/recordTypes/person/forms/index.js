@@ -1,7 +1,7 @@
-import customForm from './custom';
+import defaultForm from './default';
 import miniForm from './mini';
 
 export default pluginContext => ({
-  default: customForm(pluginContext),
+  default: defaultForm(pluginContext),
   mini: miniForm(pluginContext),
 });
