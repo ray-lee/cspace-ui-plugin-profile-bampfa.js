@@ -4,10 +4,7 @@ export const computeMovementSummary = ({ recordData }, { formatDate, formatRefNa
 
   const formattedLocationDate = formatDate(commonData.get('locationDate'));
   const reason = commonData.get('reasonForMove');
-
-  const formattedReason = reason
-    ? `(${formatRefName(reason)})`
-    : null;
+  const formattedReason = reason ? `(${formatRefName(reason)})` : null;
 
   return [formattedLocationDate, formattedReason]
     .filter(part => !!part)

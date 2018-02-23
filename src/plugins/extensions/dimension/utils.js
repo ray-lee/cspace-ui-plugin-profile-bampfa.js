@@ -67,17 +67,13 @@ export const computeDimensionSummary = ({ data }) => {
     measurementSummary = `${measurementSummary} ${commonUnit}`;
   }
 
-  // Compose this with the measured part and the measured part note
+  // Compose this with the measured part and the measured part note.
 
   const summaryParts = [
-    measuredPart ? `${measuredPart}:` : null,
+    measuredPart && `${measuredPart}:`,
     measurementSummary,
-    measuredPartNote ? `(${measuredPartNote})` : null,
+    measuredPartNote && `(${measuredPartNote})`,
   ];
 
-  const summary = summaryParts
-    .filter(part => !!part)
-    .join(' ');
-
-  return data.set('dimensionSummary', summary);
+  return data.set('dimensionSummary', summaryParts.filter(part => !!part).join(' '));
 };

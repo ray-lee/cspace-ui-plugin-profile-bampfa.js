@@ -19,11 +19,7 @@ export const computeMediaTitle = ({ subrecordData }) => {
   if (blobData) {
     const fileList = blobData.getIn(['document', 'ns2:blobs_common', 'file']);
 
-    if (fileList && fileList.length > 0) {
-      return fileList[0].name;
-    }
-
-    return null;
+    return ((fileList && fileList.length > 0) ? fileList[0].name : null);
   }
 
   return undefined;

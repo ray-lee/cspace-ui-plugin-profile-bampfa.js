@@ -16,7 +16,7 @@ export const computeObjectNumbers = ({ data }, Immutable) => {
   const bampfaData = data.get('ns2:collectionobjects_bampfa');
 
   const objectNumber = ['Prefix', 'Part1', 'Part2', 'Part3', 'Part4', 'Part5']
-    .map(name => bampfaData.get(`accNumber${name}`))
+    .map(name => (bampfaData.get(`accNumber${name}`) || '').trim())
     .filter(part => !!part)
     .join('.');
 
@@ -63,7 +63,5 @@ export const computePlainTextTitle = ({ data }) => {
     ? html.split(htmlParagraphSeparator).filter(line => !!line).map(htmlToText).join('\n')
     : null;
 
-  const nextData = data.set('bampfaTitle', text);
-
-  return nextData;
+  return data.set('bampfaTitle', text);
 };
