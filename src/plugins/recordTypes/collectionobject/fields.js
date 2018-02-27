@@ -42,6 +42,7 @@ export default (pluginContext) => {
       'ns2:collectionobjects_common': {
         objectNumber: {
           [config]: {
+            cloneable: true,
             view: {
               type: TextInput,
               props: {
