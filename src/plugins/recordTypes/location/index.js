@@ -1,6 +1,6 @@
 import vocabularies from './vocabularies';
 
-export default () => pluginContext => ({
+export default () => () => ({
   recordTypes: {
     location: {
       vocabularies,
