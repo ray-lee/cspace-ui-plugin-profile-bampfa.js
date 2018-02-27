@@ -38,15 +38,13 @@ A BAMPFA-customized CollectionSpace 5.0 server can be built from these sources, 
 on a host of your own.
 
 To run the application against CollectionSpace services located on a different host, edit
-index.html, and change the `serverUrl` and `serverTimeZone` configuration properties. For
-example, to use a server running on localhost, port 8180, in the Pacific time zone, use the
-settings:
+index.html, and change the `serverUrl` configuration property. For example, to use a server running
+on localhost, port 8180, use the settings:
 
 ```
 cspaceUI({
   serverUrl: 'http://localhost:8180',
-  serverTimeZone: 'America/Los_Angeles',
-  ...
+  // ...
 });
 ```
 

@@ -6,7 +6,6 @@ import media from './media';
 import movement from './movement';
 import organization from './organization';
 import person from './person';
-import work from './work';
 
 export default [
   collectionobject,
@@ -17,5 +16,4 @@ export default [
   movement,
   organization,
   person,
-  work,
 ];

@@ -51,7 +51,7 @@ let config = {
     // eslint-disable-next-line global-require
     require('./test/integration/testParams');
 
-        // Set up chai here, so every test file doesn't have to do it.
+    // Set up chai here, so every test file doesn't have to do it.
     // eslint-disable-next-line global-require
     const chai = require('chai');
 
