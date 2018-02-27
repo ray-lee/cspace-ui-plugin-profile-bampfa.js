@@ -14,13 +14,21 @@ export const computeMediaOrderNumber = ({ recordData }) => {
 };
 
 export const computeMediaTitle = ({ subrecordData }) => {
-  const blobData = subrecordData.get('blob');
+  const blobCommonData = subrecordData.getIn(['blob', 'document', 'ns2:blobs_common']);
 
-  if (blobData) {
-    const fileList = blobData.getIn(['document', 'ns2:blobs_common', 'file']);
+  if (blobCommonData) {
+    const name = blobCommonData.get('name');
 
-    return ((fileList && fileList.length > 0) ? fileList[0].name : null);
+    if (name) {
+      return name;
+    }
+
+    const fileList = blobCommonData.get('file');
+
+    if (fileList && fileList.length > 0) {
+      return fileList[0].name;
+    }
   }
 
-  return undefined;
+  return null;
 };
