@@ -17,7 +17,10 @@ export default (pluginContext) => {
         messages: defineMessages({
           label: {
             id: 'column.collectionobject.default.effectiveObjectNumber',
-            defaultMessage: 'ID number',
+            // For collectionobject records, "ID Number" refers to specifically to objectNumber,
+            // but effectiveObjectNimner could contain otherNumber if there is no objectNumber. To
+            // prevent confusion, don't label the column "ID Number".
+            defaultMessage: 'Number',
           },
         }),
         order: 10,
