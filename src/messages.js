@@ -10,6 +10,9 @@ export default {
       <a href="mailto:cspace-support@lists.berkeley.edu">cspace-support@lists.berkeley.edu</a>.
     </p>`,
 
+  'footer.feedback': 'Contact UC Berkeley CollectionSpace support',
+  'footer.feedbackUrl': 'mailto:cspace-support@lists.berkeley.edu',
+
   // collectionobject
 
   'field.collectionobjects_common.objectNumber.name': 'ID number',
