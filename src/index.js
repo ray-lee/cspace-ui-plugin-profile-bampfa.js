@@ -1,3 +1,4 @@
+import { defineMessages } from 'react-intl';
 import messages from './messages';
 import plugins from './plugins';
 import logo from '../images/logo.svg';
@@ -11,6 +12,17 @@ module.exports = () => ({
   // mediaSnapshotSort: 'computedOrderNumber',
   prettyUrls: true,
   tenantId: '55',
+  pluginInfo: {
+    cspaceUIPluginProfileBAMPFA: {
+      messages: defineMessages({
+        name: {
+          id: 'cspaceUIPluginProfileBAMPFA.name',
+          defaultMessage: 'BAMPFA profile',
+        },
+      }),
+      version: cspaceUIPluginProfileBAMPFA.packageVersion,
+    },
+  },
   plugins: plugins.map(plugin => plugin()),
   recordTypes: {
     acquisition: {
