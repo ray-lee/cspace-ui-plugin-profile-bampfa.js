@@ -1,3 +1,7 @@
+/* global cspaceUIPluginProfileBAMPFA */
+/* The cspaceUIPluginProfileBAMPFA global variable is set by webpack (in non-test builds). See
+ * webpack.config.js. */
+
 import { defineMessages } from 'react-intl';
 import messages from './messages';
 import plugins from './plugins';
