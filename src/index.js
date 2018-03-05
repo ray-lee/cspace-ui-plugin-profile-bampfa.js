@@ -28,21 +28,4 @@ module.exports = () => ({
     },
   },
   plugins: plugins.map(plugin => plugin()),
-  recordTypes: {
-    acquisition: {
-      disabled: true,
-    },
-    claim: {
-      disabled: true,
-    },
-    conservation: {
-      disabled: true,
-    },
-    exhibition: {
-      disabled: true,
-    },
-    objectexit: {
-      disabled: true,
-    },
-  },
 });

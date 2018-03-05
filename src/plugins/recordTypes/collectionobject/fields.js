@@ -19,6 +19,7 @@ export default (pluginContext) => {
   } = pluginContext.config;
 
   const {
+    mergeStrategy,
     configKey: config,
   } = pluginContext.configHelpers;
 
@@ -45,9 +46,9 @@ export default (pluginContext) => {
             cloneable: true,
             view: {
               type: TextInput,
-              props: {
+              props: mergeStrategy.override({
                 readOnly: true,
-              },
+              }),
             },
           },
         },

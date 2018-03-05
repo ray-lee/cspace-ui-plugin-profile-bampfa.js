@@ -16,4 +16,23 @@ export default [
   movement,
   organization,
   person,
+  () => ({
+    recordTypes: {
+      acquisition: {
+        disabled: true,
+      },
+      claim: {
+        disabled: true,
+      },
+      conservation: {
+        disabled: true,
+      },
+      exhibition: {
+        disabled: true,
+      },
+      objectexit: {
+        disabled: true,
+      },
+    },
+  }),
 ];
