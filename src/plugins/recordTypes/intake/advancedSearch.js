@@ -1,6 +1,5 @@
 export default (pluginContext) => {
   const {
-    OP_OR,
     OP_EQ,
     OP_CONTAIN,
     OP_RANGE,
