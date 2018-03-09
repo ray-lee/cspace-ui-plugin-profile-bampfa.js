@@ -26,10 +26,8 @@ Then open a browser to http://localhost:8080. This runs the cspace-ui applicatio
 this plugin.
 
 By default, the application served from the dev server will use the CollectionSpace services API
-located at http://nightly.collectionspace.org:8180. Note that nightly.collectionspace.org does not
-host BAMPFA-customized CollectionSpace services, so some features may not work properly. There is
-currently no publicly accessible CollectionSpace 5.0 server customized for BAMPFA, but source code
-is available:
+located at http://localhost:8180. This assumes that a BAMPFA-customized CollectionSpace server
+has been installed locally, or on a local VM. Source code to build a server is available:
 
 - BAMPFA 5.0 services layer: https://github.com/cspace-deployment/services/tree/bampfa_5.0
 - BAMPFA 5.0 application layer: https://github.com/cspace-deployment/application/tree/bampfa_5.0
@@ -39,11 +37,11 @@ on a host of your own.
 
 To run the application against CollectionSpace services located on a different host, edit
 index.html, and change the `serverUrl` configuration property. For example, to use a server running
-on localhost, port 8180, use the settings:
+on nightly.collectionspace.org, port 8180, use the settings:
 
 ```
 cspaceUI({
-  serverUrl: 'http://localhost:8180',
+  serverUrl: 'http://nightly.collectionspace.org:8180',
   // ...
 });
 ```
