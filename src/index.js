@@ -12,8 +12,7 @@ module.exports = () => ({
   logo,
   messages,
   className: styles.common,
-  // TODO: Uncomment when DRYD-302 is fixed.
-  // mediaSnapshotSort: 'computedOrderNumber',
+  mediaSnapshotSort: 'computedOrderNumber',
   prettyUrls: true,
   tenantId: '55',
   pluginInfo: {
