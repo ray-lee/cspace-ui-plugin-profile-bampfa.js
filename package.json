@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "CollectionSpace UI profile plugin implementing customizations for the UC Berkeley Art Museum and Pacific Film Archive",
   "author": "Ray Lee <rhlee@berkeley.edu>",
+  "contributors": [
+    "Cesar Villalobos-Huizar <cesarv.h@berkeley.edu>"
+  ],
   "license": "ECL-2.0",
   "keywords": [
     "collectionspace",
@@ -59,7 +62,7 @@
     "chai-immutable": "^1.6.0",
     "coveralls": "^2.13.3",
     "cross-env": "^2.0.0",
-    "cspace-ui": "^1.0.0-rc.1",
+    "cspace-ui": "^1.0.0-rc.2",
     "css-loader": "^0.28.9",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^12.0.0",
