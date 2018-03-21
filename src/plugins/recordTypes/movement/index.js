@@ -3,13 +3,13 @@ import forms from './forms';
 import fields from './fields';
 import advancedSearch from './advancedSearch';
 
-export default () => pluginContext => ({
+export default () => configContext => ({
   recordTypes: {
     movement: {
-      columns: columns(pluginContext),
-      forms: forms(pluginContext),
-      fields: fields(pluginContext),
-      advancedSearch: advancedSearch(pluginContext),
+      columns: columns(configContext),
+      forms: forms(configContext),
+      fields: fields(configContext),
+      advancedSearch: advancedSearch(configContext),
     },
   },
 });

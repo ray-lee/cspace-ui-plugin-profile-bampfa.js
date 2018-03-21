@@ -1,15 +1,15 @@
 import { defineMessages } from 'react-intl';
 import { computePersonNames } from './utils';
 
-export default (pluginContext) => {
+export default (configContext) => {
   const {
     OptionPickerInput,
     TextInput,
-  } = pluginContext.inputComponents;
+  } = configContext.inputComponents;
 
   const {
     configKey: config,
-  } = pluginContext.configHelpers;
+  } = configContext.configHelpers;
 
   return {
     document: {

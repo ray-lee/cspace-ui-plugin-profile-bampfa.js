@@ -1,18 +1,18 @@
 import { defineMessages } from 'react-intl';
 import { computeDimensionSummary } from './utils';
 
-export default (pluginContext) => {
+export default (configContext) => {
   const {
     TextInput,
-  } = pluginContext.inputComponents;
+  } = configContext.inputComponents;
 
   const {
     configKey: config,
-  } = pluginContext.configHelpers;
+  } = configContext.configHelpers;
 
   const {
     DATA_TYPE_STRING,
-  } = pluginContext.dataTypes;
+  } = configContext.dataTypes;
 
   return {
     measuredPartGroupList: {

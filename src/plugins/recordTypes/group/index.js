@@ -1,9 +1,9 @@
 import fields from './fields';
 
-export default () => pluginContext => ({
+export default () => configContext => ({
   recordTypes: {
     group: {
-      fields: fields(pluginContext),
+      fields: fields(configContext),
     },
   },
 });

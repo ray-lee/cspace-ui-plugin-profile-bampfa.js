@@ -1,25 +1,25 @@
 import { defineMessages } from 'react-intl';
 import { computeMediaOrderNumber, computeMediaTitle } from './utils';
 
-export default (pluginContext) => {
+export default (configContext) => {
   const {
     TextInput,
     OptionPickerInput,
     CheckboxInput,
-  } = pluginContext.inputComponents;
+  } = configContext.inputComponents;
 
   const {
     extensions,
-  } = pluginContext.config;
+  } = configContext.config;
 
   const {
     configKey: config,
-  } = pluginContext.configHelpers;
+  } = configContext.configHelpers;
 
   const {
     DATA_TYPE_INT,
     DATA_TYPE_BOOL,
-  } = pluginContext.dataTypes;
+  } = configContext.dataTypes;
 
   return {
     document: {

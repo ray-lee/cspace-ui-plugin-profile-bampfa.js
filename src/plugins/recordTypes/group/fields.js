@@ -1,11 +1,11 @@
-export default (pluginContext) => {
+export default (configContext) => {
   const {
     TextInput,
-  } = pluginContext.inputComponents;
+  } = configContext.inputComponents;
 
   const {
     configKey: config,
-  } = pluginContext.configHelpers;
+  } = configContext.configHelpers;
 
   return ({
     document: {

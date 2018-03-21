@@ -6,16 +6,16 @@ import advancedSearch from './advancedSearch';
 import messages from './messages';
 import title from './title';
 
-export default () => pluginContext => ({
+export default () => configContext => ({
   optionLists,
   recordTypes: {
     collectionobject: {
       messages,
-      advancedSearch: advancedSearch(pluginContext),
-      columns: columns(pluginContext),
-      forms: forms(pluginContext),
-      fields: fields(pluginContext),
-      title: title(pluginContext),
+      advancedSearch: advancedSearch(configContext),
+      columns: columns(configContext),
+      forms: forms(configContext),
+      fields: fields(configContext),
+      title: title(configContext),
     },
   },
 });

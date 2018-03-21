@@ -1,7 +1,7 @@
 import { defineMessages } from 'react-intl';
 import { computeObjectNumbers, computePlainTextTitle, transformSortableObjectNumberSearch } from './utils';
 
-export default (pluginContext) => {
+export default (configContext) => {
   const {
     AutocompleteInput,
     CompoundInput,
@@ -12,20 +12,20 @@ export default (pluginContext) => {
     CheckboxInput,
     RichTextInput,
     TermPickerInput,
-  } = pluginContext.inputComponents;
+  } = configContext.inputComponents;
 
   const {
     extensions,
-  } = pluginContext.config;
+  } = configContext.config;
 
   const {
     mergeStrategy,
     configKey: config,
-  } = pluginContext.configHelpers;
+  } = configContext.configHelpers;
 
   const {
     Immutable,
-  } = pluginContext.lib;
+  } = configContext.lib;
 
   const {
     DATA_TYPE_BOOL,
@@ -33,7 +33,7 @@ export default (pluginContext) => {
     DATA_TYPE_FLOAT,
     DATA_TYPE_INT,
     DATA_TYPE_STRUCTURED_DATE,
-  } = pluginContext.dataTypes;
+  } = configContext.dataTypes;
 
   return {
     document: {

@@ -1,20 +1,20 @@
 import { defineMessages } from 'react-intl';
 import { computeMovementSummary } from './utils';
 
-export default (pluginContext) => {
+export default (configContext) => {
   const {
     AutocompleteInput,
     TextInput,
     TermPickerInput,
-  } = pluginContext.inputComponents;
+  } = configContext.inputComponents;
 
   const {
     configKey: config,
-  } = pluginContext.configHelpers;
+  } = configContext.configHelpers;
 
   const {
     formatHelpers,
-  } = pluginContext;
+  } = configContext;
 
   return {
     document: {
