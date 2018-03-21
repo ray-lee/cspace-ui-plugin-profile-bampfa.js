@@ -13,6 +13,13 @@ const template = (configContext) => {
 
   return (
     <Field name="document">
+      <Field
+        name="relation-list-item"
+        subpath="rel:relations-common-list"
+        showChildren={false}
+        showSiblings={false}
+      />
+
       <Row>
         <Field name="nationalities">
           <Field name="nationality" />
