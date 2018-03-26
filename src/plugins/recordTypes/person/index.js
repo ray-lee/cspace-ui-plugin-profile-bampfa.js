@@ -1,13 +1,13 @@
-import forms from './forms';
 import fields from './fields';
+import forms from './forms';
 import messages from './messages';
 
 export default () => configContext => ({
   recordTypes: {
     person: {
       messages,
-      forms: forms(configContext),
       fields: fields(configContext),
+      forms: forms(configContext),
     },
   },
 });
