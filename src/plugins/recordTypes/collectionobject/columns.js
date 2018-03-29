@@ -70,7 +70,7 @@ export default (configContext) => {
         }),
         order: 10,
         sortBy: 'collectionobjects_bampfa:sortableEffectiveObjectNumber',
-        width:  200,
+        width: 200,
       },
       bampfaTitle: {
         messages: defineMessages({
