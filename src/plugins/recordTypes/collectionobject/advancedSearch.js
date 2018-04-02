@@ -14,10 +14,6 @@ export default (configContext) => {
     op: defaultAdvancedSearchBooleanOp,
     value: [
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/objectNumber',
-      },
-      {
         op: OP_RANGE,
         path: 'ns2:collectionobjects_bampfa/sortableObjectNumber',
       },
@@ -52,7 +48,7 @@ export default (configContext) => {
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/creditLine', // make it a multiline field
+        path: 'ns2:collectionobjects_bampfa/creditLine',
       },
       {
         op: OP_EQ,
