@@ -31,6 +31,10 @@ export default (configContext) => {
       },
       {
         op: OP_EQ,
+        path: 'ns2:media_bampfa/primaryDisplay',
+      },
+      {
+        op: OP_EQ,
         path: 'ns2:media_common/publisher',
       },
       {
@@ -52,6 +56,10 @@ export default (configContext) => {
       {
         op: OP_EQ,
         path: 'ns2:media_common/rightsHolder',
+      },
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:media_bampfa/websiteDisplayLevel',
       },
       ...extensions.core.advancedSearch,
     ],
