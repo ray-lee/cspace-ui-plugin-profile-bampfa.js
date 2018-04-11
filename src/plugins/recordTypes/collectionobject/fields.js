@@ -157,15 +157,6 @@ export default (configContext) => {
             },
           },
         },
-        physicalDescription: {
-          [config]: {
-            searchView: {
-              props: {
-                multiline: true,
-              },
-            },
-          },
-        },
         ...extensions.dimension.fields,
       },
       'ns2:collectionobjects_bampfa': {
@@ -495,6 +486,9 @@ export default (configContext) => {
                 defaultMessage: 'Credit line',
               },
             }),
+            searchView: {
+              type: TextInput,
+            },
             view: {
               type: TextInput,
               props: {
