@@ -14,20 +14,12 @@ export default (configContext) => {
     op: defaultAdvancedSearchBooleanOp,
     value: [
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/objectNumber',
-      },
-      {
         op: OP_RANGE,
         path: 'ns2:collectionobjects_bampfa/sortableObjectNumber',
       },
       {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/legalStatus',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/itemClass',
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_common/otherNumberList/otherNumber/numberValue',
       },
       {
         op: OP_EQ,
@@ -39,15 +31,20 @@ export default (configContext) => {
       },
       {
         op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/seriesTitle',
+        path: 'ns2:collectionobjects_bampfa/acquisitionSources/acquisitionSource',
       },
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/physicalDescription',
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/acquisitionMethod',
       },
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/otherNumberList/otherNumber/numberValue',
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/itemClass',
+      },
+      // nationality here
+      {
+        op: OP_RANGE,
+        path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
       },
       {
         op: OP_CONTAIN,
@@ -58,12 +55,52 @@ export default (configContext) => {
         path: 'ns2:collectionobjects_common/computedCurrentLocation',
       },
       {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/legalStatus',
+      },
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_common/physicalDescription', // make it multiline
+      },
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_bampfa/seriesTitle',
+      },
+      {
+        op: OP_RANGE,
+        path: 'ns2:collectionobjects_bampfa/acquisitionDateGroupList/acquisitionDateGroup',
+      },
+      {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/bwOrColor',
+      },
+      {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/bampfaCollectionList/bampfaCollection',
+      },
+      {
         op: OP_CONTAIN,
         path: 'ns2:collectionobjects_bampfa/computedCrate',
       },
       {
-        op: OP_RANGE,
-        path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_common/editionNumber',
+      },
+      {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/bampfaAcquisitionReasonList/bampfaAcquisitionReason',
+      },
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_bampfa/partOf',
+      },
+      {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_common/styles/style',
+      },
+      {
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/permissionToReproduce',
       },
       {
         op: OP_CONTAIN,
@@ -74,8 +111,8 @@ export default (configContext) => {
         path: 'ns2:collectionobjects_common/objectProductionPeopleGroupList/objectProductionPeopleGroup/objectProductionPeople',
       },
       {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_common/editionNumber',
+        op: OP_EQ,
+        path: 'ns2:collectionobjects_bampfa/soundOrSilent',
       },
       {
         op: OP_CONTAIN,
@@ -83,47 +120,7 @@ export default (configContext) => {
       },
       {
         op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/soundOrSilent',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/bwOrColor',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/acquisitionMethod',
-      },
-      {
-        op: OP_RANGE,
-        path: 'ns2:collectionobjects_bampfa/acquisitionDateGroupList/acquisitionDateGroup',
-      },
-      {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/acquisitionSources/acquisitionSource',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/bampfaAcquisitionReasonList/bampfaAcquisitionReason',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/bampfaCollectionList/bampfaCollection',
-      },
-      {
-        op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/subjectThemes/subjectTheme',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_common/styles/style',
-      },
-      {
-        op: OP_CONTAIN,
-        path: 'ns2:collectionobjects_bampfa/partOf',
-      },
-      {
-        op: OP_EQ,
-        path: 'ns2:collectionobjects_bampfa/permissionToReproduce',
       },
       ...extensions.core.advancedSearch,
     ],
