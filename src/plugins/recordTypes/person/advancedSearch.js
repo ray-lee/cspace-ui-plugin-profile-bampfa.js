@@ -18,7 +18,7 @@ export default (pluginContext) => {
         path: 'ns2:persons_common/personTermGroupList/personTermGroup/termDisplayName',
       },
       {
-        op: OP_CONTAIN,
+        op: OP_EQ,
         path: 'ns2:persons_common/personTermGroupList/personTermGroup/termType',
       },
       {

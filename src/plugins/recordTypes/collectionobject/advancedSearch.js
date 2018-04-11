@@ -79,7 +79,7 @@ export default (configContext) => {
         path: 'ns2:collectionobjects_bampfa/bampfaCollectionList/bampfaCollection',
       },
       {
-        op: OP_CONTAIN,
+        op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/computedCrate',
       },
       {
