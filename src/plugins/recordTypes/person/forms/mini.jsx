@@ -21,9 +21,11 @@ const template = (configContext) => {
       />
 
       <Row>
-        <Field name="nationalities">
-          <Field name="nationality" />
-        </Field>
+        <Field
+          name="0"
+          repeating={false}
+          subpath={['ns2:persons_common', 'nationalities', 'nationality']}
+        />
 
         <Field name="birthPlace" />
       </Row>
