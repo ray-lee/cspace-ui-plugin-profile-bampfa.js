@@ -282,6 +282,16 @@ export default (configContext) => {
         accessionDateGroup: {
           [config]: {
             dataType: DATA_TYPE_STRUCTURED_DATE,
+            messages: defineMessages({
+              fullName: {
+                id: 'field.collectionobjects_bampfa.accessionDateGroup.fullName',
+                defaultMessage: 'Accession date',
+              },
+              name: {
+                id: 'field.collectionobjects_bampfa.accessionDateGroup.name',
+                defaultMessage: 'Accession date',
+              },
+            }),
           },
           ...extensions.structuredDate.fields,
         },
@@ -289,6 +299,10 @@ export default (configContext) => {
           [config]: {
             dataType: DATA_TYPE_STRUCTURED_DATE,
             messages: defineMessages({
+              fullName: {
+                id: 'field.collectionobjects_bampfa.legalStatusDateGroup.fullName',
+                defaultMessage: 'Status date',
+              },
               name: {
                 id: 'field.collectionobjects_bampfa.legalStatusDateGroup.name',
                 defaultMessage: 'Status date',
