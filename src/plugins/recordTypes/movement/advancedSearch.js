@@ -2,6 +2,7 @@ export default (configContext) => {
   const {
     OP_EQ,
     OP_RANGE,
+    OP_CONTAIN,
   } = configContext.searchOperators;
 
   const {
@@ -25,7 +26,7 @@ export default (configContext) => {
         path: 'ns2:movements_common/locationDate',
       },
       {
-        op: OP_EQ,
+        op: OP_CONTAIN,
         path: 'ns2:movements_common/movementContact',
       },
       {
