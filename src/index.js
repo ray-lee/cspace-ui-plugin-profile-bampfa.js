@@ -14,6 +14,7 @@ module.exports = () => ({
   className: styles.common,
   mediaSnapshotSort: 'computedOrderNumber',
   prettyUrls: true,
+  relationMemberPerm: 'R',
   tenantId: '55',
   pluginInfo: {
     cspaceUIPluginProfileBAMPFA: {

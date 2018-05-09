@@ -1,6 +1,6 @@
 {
   "name": "cspace-ui-plugin-profile-bampfa",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "CollectionSpace UI profile plugin implementing customizations for the UC Berkeley Art Museum and Pacific Film Archive",
   "author": "Ray Lee <rhlee@berkeley.edu>",
   "contributors": [
@@ -62,7 +62,7 @@
     "chai-immutable": "^1.6.0",
     "coveralls": "^3.0.0",
     "cross-env": "^2.0.0",
-    "cspace-ui": "^1.0.0-rc.14",
+    "cspace-ui": "^1.0.0-rc.16",
     "css-loader": "^0.28.9",
     "eslint": "^3.2.2",
     "eslint-config-airbnb": "^12.0.0",
