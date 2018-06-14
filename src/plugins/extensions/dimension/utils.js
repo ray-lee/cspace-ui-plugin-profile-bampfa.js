@@ -1,3 +1,13 @@
+const INCHES_VALUE = 'inches';
+const CENTIMETERS_VALUE = 'centimeters';
+
+const summaryUnits = {
+  [INCHES_VALUE]: 'in.',
+  [CENTIMETERS_VALUE]: 'cm.',
+};
+
+const formatUnit = unit => summaryUnits[unit] || unit;
+
 // eslint-disable-next-line import/prefer-default-export
 export const computeDimensionSummary = ({ data }) => {
   const measuredPart = data.get('measuredPart');
@@ -19,7 +29,7 @@ export const computeDimensionSummary = ({ data }) => {
 
       if (
         value &&
-        (unit === 'in.' || unit === 'cm.') &&
+        (unit === INCHES_VALUE || unit === CENTIMETERS_VALUE) &&
         !(dimension in measurements)
       ) {
         measurements[dimension] = {
@@ -53,7 +63,7 @@ export const computeDimensionSummary = ({ data }) => {
   const hasCommonUnit = (Object.keys(usedUnits).length === 1);
 
   const orderedMeasurementDescriptions = orderedMeasurements.map(({ value, unit }) =>
-    (hasCommonUnit ? value : `${value} ${unit}`));
+    (hasCommonUnit ? value : `${value} ${formatUnit(unit)}`));
 
   // Join all measurement descriptions with x.
 
@@ -64,7 +74,7 @@ export const computeDimensionSummary = ({ data }) => {
   if (hasCommonUnit) {
     const commonUnit = (Object.keys(usedUnits))[0];
 
-    measurementSummary = `${measurementSummary} ${commonUnit}`;
+    measurementSummary = `${measurementSummary} ${formatUnit(commonUnit)}`;
   }
 
   // Compose this with the measured part and the measured part note.
