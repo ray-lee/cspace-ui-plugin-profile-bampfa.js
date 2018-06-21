@@ -47,6 +47,7 @@ export default {
   'field.movements_common.currentLocation.fullName': 'Storage location',
   'field.movements_common.locationDate.name': 'Inventory/move date',
   'field.movements_common.movementContact.name': 'Handler',
+  'field.movements_common.movementContact.fullName': 'Handler',
   'field.movements_common.movementMethod.name': 'Method',
   'field.movements_common.reasonForMove.name': 'Reason',
   'inputTable.movement.currentLocation': 'Storage location',
