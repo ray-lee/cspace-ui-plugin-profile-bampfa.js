@@ -12,6 +12,7 @@ module.exports = () => ({
   logo,
   messages,
   className: styles.common,
+  defaultAdvancedSearchBooleanOp: 'and',
   mediaSnapshotSort: 'computedOrderNumber',
   prettyUrls: true,
   relationMemberPerm: 'R',
