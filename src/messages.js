@@ -33,9 +33,11 @@ export default {
   // intake
 
   'field.intakes_common.currentOwner.name': 'Source',
+  'column.intake.default.currentOwner': 'Source',
   'field.intakes_common.entryDate.name': 'Date in',
   'field.intakes_common.entryNote.name': 'Intake note',
   'field.intakes_common.entryNumber.name': 'TR number',
+  'column.intake.default.entryNumber': 'TR number',
   'field.intakes_common.entryReason.name': 'Purpose',
 
   // media
