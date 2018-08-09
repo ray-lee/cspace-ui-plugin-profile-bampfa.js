@@ -42,7 +42,8 @@ export default {
 
   // media
 
-  'field.media_common.title.name': 'Filename',
+  'field.media_common.title.name': 'File name',
+  'column.media.default.title': 'File name',
 
   // movement
 
