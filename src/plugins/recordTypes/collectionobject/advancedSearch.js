@@ -2,6 +2,7 @@ export default (configContext) => {
   const {
     OP_EQ,
     OP_CONTAIN,
+    OP_MATCH,
     OP_RANGE,
   } = configContext.searchOperators;
 
@@ -13,6 +14,10 @@ export default (configContext) => {
   return {
     op: defaultAdvancedSearchBooleanOp,
     value: [
+      {
+        op: OP_MATCH,
+        path: 'ns2:collectionobjects_common/objectNumber',
+      },
       {
         op: OP_RANGE,
         path: 'ns2:collectionobjects_bampfa/sortableObjectNumber',
