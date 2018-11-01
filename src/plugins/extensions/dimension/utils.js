@@ -43,7 +43,7 @@ export const computeDimensionSummary = ({ data }) => {
   // Order the collected measurements by dimension, and drop measurements of dimensions that are
   // not used in the summary.
 
-  const orderedDimensions = ['height', 'width', 'depth', 'diameter'];
+  const orderedDimensions = ['height', 'width', 'length', 'depth', 'diameter'];
   const orderedMeasurements = [];
   const usedUnits = {};
 
