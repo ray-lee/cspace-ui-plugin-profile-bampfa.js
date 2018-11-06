@@ -46,7 +46,10 @@ export default (configContext) => {
         op: OP_EQ,
         path: 'ns2:collectionobjects_bampfa/itemClass',
       },
-      // nationality here
+      {
+        op: OP_CONTAIN,
+        path: 'ns2:collectionobjects_bampfa/nationalities/nationality',
+      },
       {
         op: OP_RANGE,
         path: 'ns2:collectionobjects_common/objectProductionDateGroupList/objectProductionDateGroup',
