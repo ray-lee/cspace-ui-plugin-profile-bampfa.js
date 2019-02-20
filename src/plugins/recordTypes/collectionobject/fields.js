@@ -1338,6 +1338,34 @@ export default (configContext) => {
             },
           },
         },
+        nationalities: {
+          // This is a hidden field. Denormalized from the Persons record to contain nationalities.
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.nationalities.name',
+                defaultMessage: 'Nationality',
+              },
+            }),
+            view: {
+              type: CompoundInput,
+            },
+          },
+          nationality: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.collectionobjects_bampfa.nationality.fullName',
+                  defaultMessage: 'Nationality',
+                },
+              }),
+              repeating: true,
+              view: {
+                type: TextInput,
+              },
+            },
+          },
+        },
       },
     },
   };
