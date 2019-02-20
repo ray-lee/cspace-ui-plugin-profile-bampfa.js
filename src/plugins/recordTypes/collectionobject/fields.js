@@ -1339,6 +1339,7 @@ export default (configContext) => {
           },
         },
         nationalities: {
+          // This is a hidden field. Denormalized from the Persons record to contain nationalities.
           [config]: {
             messages: defineMessages({
               name: {
