@@ -1356,7 +1356,7 @@ export default (configContext) => {
               messages: defineMessages({
                 fullName: {
                   id: 'field.collectionobjects_bampfa.nationality.fullName',
-                  defaultMessage: 'Nationality',
+                  defaultMessage: 'Artist nationality',
                 },
               }),
               repeating: true,
