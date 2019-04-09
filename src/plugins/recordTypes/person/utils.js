@@ -61,9 +61,9 @@ export const computePersonNames = ({ data, recordData }) => {
   // replacing if there is a display name already there.
   let finalNameLFM = namePartsLFM.filter(part => !!part).join(' ');
 
-  finalNameLFM = (finalNameLFM === '' && displayName != '') ? displayName : finalNameLFM;
+  finalNameLFM = (finalNameLFM === '' && displayName !== '') ? displayName : finalNameLFM;
 
   return data
     .set('termDisplayName', finalNameLFM)
-    .set('termName', namePartsFML.filter(part => !!part).join(' '))
+    .set('termName', namePartsFML.filter(part => !!part).join(' '));
 };
