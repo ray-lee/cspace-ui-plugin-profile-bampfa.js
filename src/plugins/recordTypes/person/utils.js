@@ -12,6 +12,8 @@ export const computePersonNames = ({ data, recordData }) => {
   const surName = (data.get('surName') || '').trim();
   const nameAdditions = (data.get('nameAdditions') || '').trim();
 
+  const displayName = (data.get('termDisplayName') || '').trim();
+
   const nationality = getPrimaryNationality(recordData) || '';
 
   // Calculate first-middle-last name.
@@ -53,7 +55,15 @@ export const computePersonNames = ({ data, recordData }) => {
     ];
   }
 
+  // When the persons record is made from within another record, the LMF fields won't
+  // have any values filled in. This causes the displayName to be overwritten on save. Since
+  // this field is required, it becomes impossible to save the record. Skip the
+  // replacing if there is a display name already there.
+  let finalNameLFM = namePartsLFM.filter(part => !!part).join(' ');
+
+  finalNameLFM = (finalNameLFM === '' && displayName !== '') ? displayName : finalNameLFM;
+
   return data
-    .set('termDisplayName', namePartsLFM.filter(part => !!part).join(' '))
+    .set('termDisplayName', finalNameLFM)
     .set('termName', namePartsFML.filter(part => !!part).join(' '));
 };
