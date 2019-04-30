@@ -28,12 +28,8 @@ export default (configContext) => {
   } = configContext.lib;
 
   const {
-    formatHelpers,
-  } = configContext;
-
-  const {
     formatRefName,
-  } = formatHelpers;
+  } = configContext.formatHelpers;
 
   const {
     DATA_TYPE_BOOL,
@@ -182,9 +178,6 @@ export default (configContext) => {
               },
             }),
             searchTransform: transformSortableObjectNumberSearch,
-            view: {
-              type: TextInput,
-            },
             searchView: {
               type: TextInput,
             },
