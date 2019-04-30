@@ -11,7 +11,7 @@ const makeObjectNumberSortable = value =>
 const getPrimaryOtherNumber = commonData =>
   commonData.getIn(['otherNumberList', 'otherNumber', 0, 'numberValue']) || null;
 
-export const computeObjectNumbers = ({ data }, Immutable) => {
+export const computeObjectNumbers = (data , Immutable) => {
   const commonData = data.get('ns2:collectionobjects_common');
   const bampfaData = data.get('ns2:collectionobjects_bampfa');
 
@@ -65,3 +65,16 @@ export const computePlainTextTitle = ({ data }) => {
 
   return data.set('bampfaTitle', text);
 };
+
+export const computeFields = ({data}, formatRefName, Immutable) => {
+  const artistName = data.getIn(['ns2:collectionobjects_bampfa', 'bampfaObjectProductionPersonGroupList', 'bampfaObjectProductionPersonGroup', 0, 'bampfaObjectProductionPerson']);
+  
+  const computedArtistName = formatRefName(artistName);
+
+  let objectNumbers = computeObjectNumbers( data, Immutable);
+  const bampfaValues = objectNumbers.get('ns2:collectionobjects_bampfa')
+                                     .set('computedArtistName', computedArtistName);
+  objectNumbers = objectNumbers.set('ns2:collectionobjects_bampfa', bampfaValues);
+
+  return objectNumbers;
+}

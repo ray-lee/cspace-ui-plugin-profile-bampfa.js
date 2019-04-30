@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeObjectNumbers, computePlainTextTitle, transformSortableObjectNumberSearch } from './utils';
+import { computeFields, computePlainTextTitle, transformSortableObjectNumberSearch, computeArtistDisplayName } from './utils';
 
 export default (configContext) => {
   const {
@@ -28,6 +28,14 @@ export default (configContext) => {
   } = configContext.lib;
 
   const {
+    formatHelpers,
+  } = configContext;
+
+  const {
+    formatRefName,
+  } = formatHelpers;
+
+  const {
     DATA_TYPE_BOOL,
     DATA_TYPE_DATE,
     DATA_TYPE_FLOAT,
@@ -38,7 +46,7 @@ export default (configContext) => {
   return {
     document: {
       [config]: {
-        compute: args => computeObjectNumbers(args, Immutable),
+        compute: args => computeFields(args, formatRefName, Immutable),
       },
       'ns2:collectionobjects_common': {
         objectNumber: {
@@ -174,6 +182,9 @@ export default (configContext) => {
               },
             }),
             searchTransform: transformSortableObjectNumberSearch,
+            view: {
+              type: TextInput,
+            },
             searchView: {
               type: TextInput,
             },
@@ -1363,6 +1374,19 @@ export default (configContext) => {
               view: {
                 type: TextInput,
               },
+            },
+          },
+        },
+        computedArtistName: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_bampfa.computedArtistName.name',
+                defaultMessage: 'Artist',
+              },
+            }),
+            view: {
+              type: TextInput,
             },
           },
         },

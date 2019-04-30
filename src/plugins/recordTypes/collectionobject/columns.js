@@ -27,16 +27,15 @@ export default (configContext) => {
         sortBy: 'collectionobjects_bampfa:sortableEffectiveObjectNumber',
         width: 150,
       },
-      bampfaObjectProductionPerson: {
-        formatValue: formatRefName,
+      computedArtistName: {
         messages: defineMessages({
           label: {
-            id: 'column.collectionobject.default.bampfaObjectProductionPerson',
+            id: 'column.collectionobject.default.computedArtistName',
             defaultMessage: 'Artist or maker',
           },
         }),
         order: 15,
-        sortBy: 'collectionobjects_bampfa:bampfaObjectProductionPersonGroupList/0/bampfaObjectProductionPerson',
+        sortBy: 'collectionobjects_bampfa:computedArtistName',
         width: 225,
       },
       bampfaTitle: {
