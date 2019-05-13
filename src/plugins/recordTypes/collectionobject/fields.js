@@ -1,5 +1,5 @@
 import { defineMessages } from 'react-intl';
-import { computeFields, computePlainTextTitle, transformSortableObjectNumberSearch, computeArtistDisplayName } from './utils';
+import { computeFields, computePlainTextTitle, transformSortableObjectNumberSearch } from './utils';
 
 export default (configContext) => {
   const {
