@@ -46,7 +46,7 @@ cspaceUI({
 });
 ```
 
-This project installs a compatible published version of cspace-ui as a development dependency, and
+This project installs a compatible published version of cspace-ui as a development dependency and
 runs this plugin with that version of cspace-ui. During development it may be necessary to run this
 plugin against an unreleased version of cspace-ui, for example to use features that are being
 developed in cspace-ui concurrently with the development of this plugin. To do this, download the
