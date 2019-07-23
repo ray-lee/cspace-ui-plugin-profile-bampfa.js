@@ -1,5 +1,4 @@
 export default (configContext) => {
-
   const {
     configKey: config,
   } = configContext.configHelpers;
@@ -13,7 +12,7 @@ export default (configContext) => {
               [config]: {
                 view: {
                   props: {
-                    source: 'person/local,person/shared,organization/local,organization/shared,organization/collective,organization/ulan',
+                    source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
                   },
                 },
               },
@@ -26,7 +25,7 @@ export default (configContext) => {
               [config]: {
                 view: {
                   props: {
-                    source: 'person/local,person/shared,organization/local,organization/shared,organization/collective,organization/ulan',
+                    source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
                   },
                 },
               },
@@ -47,7 +46,7 @@ export default (configContext) => {
             [config]: {
               view: {
                 props: {
-                  source: 'organization/local,organization/shared,organization/collective,organization/ulan,place/local,place/shared,location/local',
+                  source: 'organization/local,organization/shared,organization/collective,organization/ulan,place/local,place/shared,location/local,location/crate,location/offsite',
                 },
               },
             },
@@ -59,7 +58,7 @@ export default (configContext) => {
               [config]: {
                 view: {
                   props: {
-                    source: 'person/local,person/shared,organization/local,organization/shared,organization/collective,organization/ulan',
+                    source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
                   },
                 },
               },
