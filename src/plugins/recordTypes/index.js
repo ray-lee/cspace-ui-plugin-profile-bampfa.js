@@ -10,6 +10,7 @@ import media from './media';
 import movement from './movement';
 import objectexit from './objectexit';
 import organization from './organization';
+import uoc from './uoc';
 import person from './person';
 
 export default [
@@ -25,5 +26,6 @@ export default [
   movement,
   objectexit,
   organization,
+  uoc,
   person,
 ];
