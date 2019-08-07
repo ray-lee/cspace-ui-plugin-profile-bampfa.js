@@ -1,5 +1,5 @@
-import report from './report';
+import batch from './batch';
 
 export default [
-  ...report,
+  ...batch,
 ];
