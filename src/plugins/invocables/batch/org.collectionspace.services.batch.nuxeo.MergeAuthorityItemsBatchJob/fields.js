@@ -3,7 +3,7 @@ export default (configContext) => {
     configKey: config,
   } = configContext.configHelpers;
 
-   return {
+  return {
     params: {
       targetCSID: {
         [config]: {
