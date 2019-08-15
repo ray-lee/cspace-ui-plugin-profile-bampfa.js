@@ -11,6 +11,8 @@ const template = (configContext) => {
 
   return (
     <Field name="document">
+      <Field name="Requester" />
+      <Field name="ObjectNumber" />
       <Field name="OutputMIME" />
     </Field>
   );
@@ -19,7 +21,7 @@ const template = (configContext) => {
 export default configContext => ({
   messages: defineMessages({
     name: {
-      id: 'form.report.bampfaUOCApprovalStatus.default.name',
+      id: 'form.report.bampfaUOCRequesterbyObject.default.name',
       defaultMessage: 'Standard Template',
     },
   }),
