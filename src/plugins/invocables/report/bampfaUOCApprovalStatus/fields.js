@@ -6,7 +6,6 @@ export default (configContext) => {
     OptionPickerInput,
     TermPickerInput,
     DateInput,
-    TextInput,
     AutocompleteInput,
   } = configContext.inputComponents;
 
@@ -48,9 +47,12 @@ export default (configContext) => {
             },
           }),
           view: {
-            type: TextInput,
+            type: AutocompleteInput,
+            props: {
+              source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
+            },
           },
-        }
+        },
       },
       AuthBy: {
         [config]: {
@@ -89,7 +91,7 @@ export default (configContext) => {
           messages: defineMessages({
             name: {
               id: 'field.report.bampfaUOCApprovalStatus.StartDate.name',
-              defaultMessage: 'Start date',
+              defaultMessage: 'Earliest requested date',
             },
           }),
           view: {
@@ -102,7 +104,7 @@ export default (configContext) => {
           messages: defineMessages({
             name: {
               id: 'field.report.bampfaUOCApprovalStatus.EndDate.name',
-              defaultMessage: 'End date',
+              defaultMessage: 'Latest requested date',
             },
           }),
           view: {
