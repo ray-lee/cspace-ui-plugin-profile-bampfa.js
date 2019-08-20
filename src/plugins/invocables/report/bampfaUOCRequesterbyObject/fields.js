@@ -28,7 +28,10 @@ export default (configContext) => {
             },
           }),
           view: {
-            type: TextInput,
+            type: AutocompleteInput,
+            props: {
+              source: 'person/local,person/shared,organization/local,organization/shared',
+            },
           },
         },
       },
@@ -41,10 +44,7 @@ export default (configContext) => {
             },
           }),
           view: {
-            type: AutocompleteInput,
-            props: {
-              source: 'person/local,person/shared,organization/local,organization/shared',
-            },
+            type: TextInput,
           },
         },
       },
