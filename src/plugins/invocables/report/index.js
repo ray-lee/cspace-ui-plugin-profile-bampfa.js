@@ -1,7 +1,7 @@
 import bampfaUOCApprovalStatus from './bampfaUOCApprovalStatus';
-import bampfaUOCRequesterbyObject from './bampfaUOCRequesterbyObject';
+import bampfaUOCbyRequesterObject from './bampfaUOCbyRequesterObject';
 
 export default [
   bampfaUOCApprovalStatus,
-  bampfaUOCRequesterbyObject,
+  bampfaUOCbyRequesterObject,
 ];

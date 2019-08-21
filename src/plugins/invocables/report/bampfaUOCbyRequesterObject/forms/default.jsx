@@ -21,7 +21,7 @@ const template = (configContext) => {
 export default configContext => ({
   messages: defineMessages({
     name: {
-      id: 'form.report.bampfaUOCRequesterbyObject.default.name',
+      id: 'form.report.bampfaUOCbyRequesterObject.default.name',
       defaultMessage: 'Standard Template',
     },
   }),
