@@ -38,23 +38,6 @@ export default (configContext) => {
           },
         },
       },
-      Requester: {
-        [config]: {
-          messages: defineMessages({
-            name: {
-              id: 'field.report.bampfaUOCApprovalStatus.Requester.name',
-              defaultMessage: 'Requester',
-            },
-          }),
-          view: {
-            type: AutocompleteInput,
-            props: {
-              source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
-              showQuickAdd: false,
-            },
-          },
-        },
-      },
       AuthBy: {
         [config]: {
           messages: defineMessages({

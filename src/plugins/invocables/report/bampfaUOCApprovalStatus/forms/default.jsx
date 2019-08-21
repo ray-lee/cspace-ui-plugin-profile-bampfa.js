@@ -15,7 +15,6 @@ const template = (configContext) => {
 
   return (
     <Field name="document">
-      <Field name="Requester" />
       <Row>
         <Field name="AuthStatus" />
         <Field name="AuthBy" />
