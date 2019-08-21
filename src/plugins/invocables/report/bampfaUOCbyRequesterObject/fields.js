@@ -32,7 +32,7 @@ export default (configContext) => {
             props: {
               source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/collective,organization/ulan',
               showQuickAdd: false,
-            }
+            },
           },
         },
       },
