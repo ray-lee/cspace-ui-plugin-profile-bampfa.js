@@ -6,6 +6,15 @@ import { defineMessages } from 'react-intl';
  */
 export default () => ({
   optionLists: {
+    searchResultPagePageSizes: {
+      values: [
+        '20',
+        '40',
+        '100',
+        '500',
+        '1000',
+      ],
+    },
     reproductionPermissionLevels: {
       values: [
         'Unknown',
