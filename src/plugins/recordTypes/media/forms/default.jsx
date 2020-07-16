@@ -22,10 +22,19 @@ const template = (configContext) => {
   return (
     <Field name="document">
       <Panel name="media" collapsible>
-        <Row>
-          <Field name="imageNumber" subpath="ns2:media_bampfa" />
-          <Field name="primaryDisplay" subpath="ns2:media_bampfa" />
-        </Row>
+        <Cols>
+          <Col>
+            <Field name="imageNumber" subpath="ns2:media_bampfa" />
+
+            <Field name="publishToList">
+              <Field name="publishTo" />
+            </Field>
+          </Col>
+
+          <Col>
+            <Field name="primaryDisplay" subpath="ns2:media_bampfa" />
+          </Col>
+        </Cols>
 
         <Panel name="file" collapsible>
           <Subrecord name="blob" showDetachButton />
