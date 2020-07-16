@@ -62,6 +62,7 @@ export default {
   // person
 
   'field.persons_common.termName.name': 'FML name',
+  'field.persons_common.termName.fullName': 'FML name',
   'field.persons_common.termQualifier.name': 'Term qualifier',
   'field.persons_common.birthPlace.name': 'Birth country',
 };
