@@ -49,24 +49,6 @@ export default (configContext) => {
           },
         },
       },
-      OutputMIME: {
-        [config]: {
-          defaultValue: 'application/pdf',
-          messages: defineMessages({
-            name: {
-              id: 'field.report.bampfaUOCbyRequesterObject.OutputMIME.name',
-              defaultMessage: 'Output format',
-            },
-          }),
-          required: true,
-          view: {
-            type: OptionPickerInput,
-            props: {
-              source: 'uocApprovalStatusMIMETypes',
-            },
-          },
-        },
-      },
     },
   };
 };

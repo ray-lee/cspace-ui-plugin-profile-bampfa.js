@@ -13,7 +13,6 @@ const template = (configContext) => {
     <Field name="document">
       <Field name="Requester" />
       <Field name="ObjectNumber" />
-      <Field name="OutputMIME" />
     </Field>
   );
 };

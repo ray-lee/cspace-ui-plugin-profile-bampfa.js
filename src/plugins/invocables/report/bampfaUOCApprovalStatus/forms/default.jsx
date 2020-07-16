@@ -23,7 +23,6 @@ const template = (configContext) => {
         <Field name="StartDate" />
         <Field name="EndDate" />
       </Row>
-      <Field name="OutputMIME" />
     </Field>
   );
 };
