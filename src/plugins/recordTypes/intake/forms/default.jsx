@@ -30,7 +30,10 @@ const template = (configContext) => {
           </Col>
 
           <Col>
-            <Field name="currentOwner" />
+            <Field name="currentOwners">
+              <Field name="currentOwner" />
+            </Field>
+
             <Field name="sourceAddress" subpath="ns2:intakes_bampfa" />
             <Field name="receipt" subpath="ns2:intakes_bampfa" />
           </Col>
