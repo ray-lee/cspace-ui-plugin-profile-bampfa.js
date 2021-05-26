@@ -1,7 +1,7 @@
-import bampfaUOCApprovalStatus from './bampfaUOCApprovalStatus';
+import bampfaUOCbyApprovalStatus from './bampfaUOCbyApprovalStatus';
 import bampfaUOCbyRequesterObject from './bampfaUOCbyRequesterObject';
 
 export default [
-  bampfaUOCApprovalStatus,
+  bampfaUOCbyApprovalStatus,
   bampfaUOCbyRequesterObject,
 ];

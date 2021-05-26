@@ -24,7 +24,7 @@ export default (configContext) => {
         [config]: {
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCApprovalStatus.AuthBy.name',
+              id: 'field.report.bampfaUOCbyApprovalStatus.AuthBy.name',
               defaultMessage: 'Authorized by',
             },
           }),
@@ -41,7 +41,7 @@ export default (configContext) => {
         [config]: {
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCApprovalStatus.AuthStatus.name',
+              id: 'field.report.bampfaUOCbyApprovalStatus.AuthStatus.name',
               defaultMessage: 'Authorization status',
             },
           }),
@@ -57,7 +57,7 @@ export default (configContext) => {
         [config]: {
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCApprovalStatus.StartDate.name',
+              id: 'field.report.bampfaUOCbyApprovalStatus.StartDate.name',
               defaultMessage: 'Earliest requested date',
             },
           }),
@@ -70,7 +70,7 @@ export default (configContext) => {
         [config]: {
           messages: defineMessages({
             name: {
-              id: 'field.report.bampfaUOCApprovalStatus.EndDate.name',
+              id: 'field.report.bampfaUOCbyApprovalStatus.EndDate.name',
               defaultMessage: 'Latest requested date',
             },
           }),
