@@ -3,7 +3,6 @@ import { defineMessages } from 'react-intl';
 export default (configContext) => {
   const {
     CompoundInput,
-    OptionPickerInput,
     TermPickerInput,
     DateInput,
     AutocompleteInput,

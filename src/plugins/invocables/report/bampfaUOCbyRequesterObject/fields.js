@@ -3,7 +3,6 @@ import { defineMessages } from 'react-intl';
 export default (configContext) => {
   const {
     CompoundInput,
-    OptionPickerInput,
     TextInput,
     AutocompleteInput,
   } = configContext.inputComponents;
