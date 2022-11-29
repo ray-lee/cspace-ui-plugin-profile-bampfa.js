@@ -2,7 +2,6 @@ import acquisition from './acquisition';
 import claim from './claim';
 import collectionobject from './collectionobject';
 import conservation from './conservation';
-import exhibition from './exhibition';
 import group from './group';
 import intake from './intake';
 import location from './location';
@@ -18,7 +17,6 @@ export default [
   claim,
   collectionobject,
   conservation,
-  exhibition,
   group,
   intake,
   location,
