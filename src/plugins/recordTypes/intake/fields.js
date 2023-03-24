@@ -36,7 +36,7 @@ export default (configContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.intakes_bampfa.intakeObject.name',
-                defaultMessage: 'Object (artist/title/medium)',
+                defaultMessage: 'Object description',
               },
             }),
             view: {
@@ -72,9 +72,9 @@ export default (configContext) => {
               },
             }),
             view: {
-              type: OptionPickerInput,
+              type: TermPickerInput,
               props: {
-                source: 'receiptStatuses',
+                source: 'intakereceipt',
               },
             },
           },

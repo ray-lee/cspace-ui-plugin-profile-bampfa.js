@@ -51,37 +51,6 @@ const template = (configContext) => {
         <Field name="disposition" subpath="ns2:intakes_bampfa" />
       </Panel>
 
-      <Panel name="objectCollectionInfo" collapsible collapsed>
-        <Cols>
-          <Col>
-            <Field name="fieldCollectionDate" />
-
-            <Field name="fieldCollectionMethods">
-              <Field name="fieldCollectionMethod" />
-            </Field>
-
-            <Field name="fieldCollectionNote" />
-            <Field name="fieldCollectionNumber" />
-          </Col>
-
-          <Col>
-            <Field name="fieldCollectionPlace" />
-
-            <Field name="fieldCollectionSources">
-              <Field name="fieldCollectionSource" />
-            </Field>
-
-            <Field name="fieldCollectors">
-              <Field name="fieldCollector" />
-            </Field>
-
-            <Field name="fieldCollectionEventNames">
-              <Field name="fieldCollectionEventName" />
-            </Field>
-          </Col>
-        </Cols>
-      </Panel>
-
       <Panel name="valuation" collapsible collapsed>
         <Row>
           <Field name="valuer" />
