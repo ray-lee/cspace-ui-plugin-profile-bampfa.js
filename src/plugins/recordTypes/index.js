@@ -1,6 +1,7 @@
 import acquisition from './acquisition';
 import claim from './claim';
 import collectionobject from './collectionobject';
+import conditioncheck from './conditioncheck';
 import conservation from './conservation';
 import group from './group';
 import intake from './intake';
@@ -16,6 +17,7 @@ export default [
   acquisition,
   claim,
   collectionobject,
+  conditioncheck,
   conservation,
   group,
   intake,
