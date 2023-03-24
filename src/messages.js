@@ -40,6 +40,12 @@ export default {
   'column.intake.default.entryNumber': 'TR number',
   'field.intakes_common.entryReason.name': 'Purpose',
 
+  // loans out
+  'record.loanout.name': 'Outgoing Loan',
+  'record.loanout.collectionName': 'Outgoing Loans',
+  'panel.loanout.info': 'Outgoing Loan information',
+  'field.loansout_common.loanOutNumber.name': 'Outgoing loan number',
+
   // media
 
   'field.media_common.title.name': 'File name',
