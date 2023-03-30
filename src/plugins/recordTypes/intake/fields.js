@@ -14,6 +14,16 @@ export default (configContext) => {
   return {
     document: {
       'ns2:intakes_common': {
+        entryNumber: {
+          [config]: {
+            view: {
+              type: IDGeneratorInput,
+              props: {
+                source: 'study,receipt',
+              },
+            },
+          },
+        },
         entryReason: {
           [config]: {
             view: {

@@ -1,6 +1,7 @@
 export default (configContext) => {
   const {
     TermPickerInput,
+    IDGeneratorInput,
   } = configContext.inputComponents;
 
   const {
@@ -10,6 +11,16 @@ export default (configContext) => {
   return {
     document: {
       'ns2:conditionchecks_common': {
+        conditionCheckRefNumber: {
+          [config]: {
+            view: {
+              type: IDGeneratorInput,
+              props: {
+                source: 'bampfaconditioncheck',
+              },
+            },
+          },
+        },
         conditionCheckGroupList: {
           conditionCheckGroup: {
             condition: {

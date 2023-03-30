@@ -5,6 +5,7 @@ import conditioncheck from './conditioncheck';
 import conservation from './conservation';
 import group from './group';
 import intake from './intake';
+import loanout from './loanout';
 import location from './location';
 import media from './media';
 import movement from './movement';
@@ -21,6 +22,7 @@ export default [
   conservation,
   group,
   intake,
+  loanout,
   location,
   media,
   movement,
