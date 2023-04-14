@@ -3,8 +3,8 @@ import { defineMessages } from 'react-intl';
 export default (configContext) => {
   const {
     TextInput,
-    TermPickerInput,
     IDGeneratorInput,
+    TermPickerInput,
   } = configContext.inputComponents;
 
   const {

@@ -1,7 +1,8 @@
 export default (configContext) => {
   const {
-    TermPickerInput,
     IDGeneratorInput,
+    TermPickerInput,
+
   } = configContext.inputComponents;
 
   const {
@@ -16,7 +17,7 @@ export default (configContext) => {
             view: {
               type: IDGeneratorInput,
               props: {
-                source: 'bampfaconditioncheck',
+                source: 'bampfaconditioncheckgenerator',
               },
             },
           },
