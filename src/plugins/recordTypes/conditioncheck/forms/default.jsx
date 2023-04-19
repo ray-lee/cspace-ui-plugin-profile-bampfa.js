@@ -41,19 +41,19 @@ const template = (configContext) => {
           <Field name="nextConditionCheckDate" />
         </Row>
 
-        <Field name="completenessGroupList">
-          <Field name="completenessGroup">
-            <Field name="completeness" />
-            <Field name="completenessDate" />
-            <Field name="completenessNote" />
-          </Field>
-        </Field>
-
         <Field name="conditionCheckGroupList">
           <Field name="conditionCheckGroup">
             <Field name="condition" />
             <Field name="conditionDate" />
             <Field name="conditionNote" />
+          </Field>
+        </Field>
+
+        <Field name="completenessGroupList">
+          <Field name="completenessGroup">
+            <Field name="completeness" />
+            <Field name="completenessDate" />
+            <Field name="completenessNote" />
           </Field>
         </Field>
 
