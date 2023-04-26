@@ -1,6 +1,7 @@
 export default (configContext) => {
   const {
     IDGeneratorInput,
+    TermPickerInput,
   } = configContext.inputComponents;
 
   const {
@@ -18,6 +19,16 @@ export default (configContext) => {
                 type: IDGeneratorInput,
                 props: {
                   source: 'bampfaloanout',
+                },
+              },
+            },
+          },
+          loanPurpose: {
+            [config]: {
+              view: {
+                type: TermPickerInput,
+                props: {
+                  source: 'bampfaloanpurposes',
                 },
               },
             },
