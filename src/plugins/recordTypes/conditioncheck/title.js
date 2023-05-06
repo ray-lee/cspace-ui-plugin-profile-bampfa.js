@@ -1,10 +1,12 @@
-import { formatOption } from '../../../helpers/formatHelpers';
-
 export default configContext => (data, formatterContext) => {
   const {
     getPart,
     deepGet,
   } = configContext.recordDataHelpers;
+
+  const {
+    formatOption,
+  } = configContext.formatHelpers;
 
   const {
     getDisplayName,
