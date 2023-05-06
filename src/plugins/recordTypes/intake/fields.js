@@ -62,7 +62,7 @@ export default (configContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.intakes_bampfa.sourceAddress.name',
-                defaultMessage: 'Address for agenda',
+                defaultMessage: 'Address override',
               },
             }),
             view: {

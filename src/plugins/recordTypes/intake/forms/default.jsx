@@ -30,6 +30,7 @@ const template = (configContext) => {
           </Col>
 
           <Col>
+            <Field name="returnDate" />
             <Field name="currentOwners">
               <Field name="currentOwner" />
             </Field>
@@ -39,11 +40,13 @@ const template = (configContext) => {
           </Col>
         </Cols>
 
-        <Field name="currentLocationGroupList">
-          <Field name="currentLocationGroup">
-            <Field name="currentLocation" />
-            <Field name="currentLocationFitness" />
-            <Field name="currentLocationNote" />
+        <Field name="approvalGroupList">
+          <Field name="approvalGroup">
+            <Field name="approvalGroup" />
+            <Field name="approvalIndividual" />
+            <Field name="approvalStatus" />
+            <Field name="approvalDate" />
+            <Field name="approvalNote" />
           </Field>
         </Field>
 
@@ -74,6 +77,21 @@ const template = (configContext) => {
             <Field name="insuranceNote" />
           </Col>
         </Cols>
+      </Panel>
+
+      <Panel name="location" collapsible collapsed>
+        <Field name="currentLocationGroupList">
+          <Field name="currentLocationGroup">
+            <Field name="currentLocation" />
+            <Field name="currentLocationFitness" />
+            <Field name="currentLocationNote" />
+          </Field>
+        </Field>
+
+        <Row>
+          <Field name="locationDate" />
+          <Field name="normalLocation" />
+        </Row>
       </Panel>
 
       <Panel name="condition" collapsible collapsed>
