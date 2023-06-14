@@ -19,6 +19,7 @@ const template = (configContext) => {
           <Field name="material" />
           <Field name="responsibleDepartment" />
           <Field name="assocPeople" />
+          <Field name="publishTo" />
         </Col>
 
         <Col>
