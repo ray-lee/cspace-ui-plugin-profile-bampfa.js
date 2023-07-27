@@ -709,7 +709,10 @@ export default (configContext) => {
               }),
               repeating: true,
               view: {
-                type: TextInput,
+                type: AutocompleteInput,
+                props: {
+                  source: 'person/local,person/shared,organization/local,organization/collective',
+                },
               },
             },
           },
