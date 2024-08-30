@@ -1,8 +1,6 @@
-/* eslint import/no-extraneous-dependencies: "off" */
 /* eslint no-console: "off" */
 
-const webpack = require('webpack');
-const sauceBrowsers = require('./sauceBrowsers.conf.js');
+const path = require('path');
 
 const getTestFiles = (config) => {
   if (config.file) {
@@ -13,60 +11,53 @@ const getTestFiles = (config) => {
 };
 
 module.exports = function karma(config) {
-  let browsers = [];
-  let customLaunchers = {};
+  const localBrowsers = ['Chrome'];
+  const githubBrowsers = ['Chrome'];
 
-  if (process.env.TRAVIS_BUILD_NUMBER) {
-    if (process.env.TRAVIS_SECURE_ENV_VARS === 'true' &&
-        process.env.SAUCE_USERNAME &&
-        process.env.SAUCE_ACCESS_KEY) {
-      // We're on Travis, and Sauce Labs environment variables are available.
-      // Run on the Sauce Labs cloud using the full set of browsers.
+  let browsers;
 
-      console.log('Running on Sauce Labs.');
+  if (process.env.GITHUB_ACTIONS) {
+    // This is a CI run on GitHub.
 
-      customLaunchers = sauceBrowsers;
-      browsers = Object.keys(customLaunchers);
-    } else {
-      // We're on Travis, but Sauce Labs environment variables aren't available.
-      // Run on Travis, using Firefox.
+    console.log('Running on GitHub.');
 
-      console.log('Running on Travis.');
-
-      browsers = [
-        'Firefox',
-      ];
-    }
+    browsers = githubBrowsers;
   } else {
     // This is a local run.
-    const karmaBrowsers = process.env.KARMA_BROWSERS;
-    const localBrowsers = karmaBrowsers ? karmaBrowsers.split(',') : ['Chrome'];
 
     console.log('Running locally.');
 
-    browsers = localBrowsers;
+    const localBrowsersEnv = process.env.KARMA_BROWSERS;
+
+    browsers = localBrowsersEnv ? localBrowsersEnv.split(',') : localBrowsers;
   }
 
   config.set({
     browsers,
-    customLaunchers,
+    concurrency: 1,
     files: getTestFiles(config),
 
     frameworks: [
       'mocha',
       'chai',
+      'webpack',
     ],
 
     reporters: [
       'mocha',
       'coverage',
-      'saucelabs',
     ],
 
     browserConsoleLogOptions: {
       level: 'log',
       format: '%b %T: %m',
       terminal: true,
+    },
+
+    client: {
+      mocha: {
+        timeout: 4000,
+      },
     },
 
     autoWatch: true,
@@ -80,12 +71,12 @@ module.exports = function karma(config) {
     },
 
     webpack: {
-      devtool: 'cheap-module-inline-source-map',
+      mode: 'development',
       module: {
         rules: [
           {
             test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
+            exclude: path.resolve(__dirname, 'node_modules'),
             use: [
               {
                 loader: 'babel-loader',
@@ -101,33 +92,25 @@ module.exports = function karma(config) {
               {
                 loader: 'css-loader',
                 options: {
-                  modules: true,
-                  localIdentName: '[folder]-[name]--[local]',
+                  modules: {
+                    localIdentName: '[folder]-[name]--[local]',
+                  },
                 },
               },
             ],
           },
           {
             test: /\.(png|jpg|svg)$/,
-            use: [
-              {
-                loader: 'url-loader',
-              },
-            ],
+            type: 'asset/inline',
           },
         ],
       },
-      plugins: [
-        new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
-        }),
-      ],
       resolve: {
         extensions: ['.js', '.jsx'],
       },
     },
 
-    // Make webpack output less verbose, so Travis can display the entire log.
+    // Make webpack output less verbose.
 
     webpackMiddleware: {
       stats: {
@@ -145,24 +128,6 @@ module.exports = function karma(config) {
       type: 'json',
       dir: 'coverage/',
     },
-
-    // Sauce Labs configuration.
-
-    sauceLabs: {
-      testName: 'cspace-ui-plugin tests',
-      recordScreenshots: false,
-      public: true,
-      connectOptions: {
-        directDomains: ['cdn.polyfill.io'],
-      },
-    },
-
-    // Tolerate Sauce Labs slowness/flakiness.
-
-    browserDisconnectTimeout: 10000,
-    browserDisconnectTolerance: 1,
-    browserNoActivityTimeout: 4 * 60 * 1000,
-    captureTimeout: 4 * 60 * 1000,
 
     // Add middleware to fall back to the base path.
     // This allows running React Router with browser history.
