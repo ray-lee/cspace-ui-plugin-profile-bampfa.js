@@ -1,27 +1,33 @@
 export default (configContext) => {
   const {
+    lib,
+    layoutComponents,
+    recordComponents,
+  } = configContext;
+
+  const {
     React,
-  } = configContext.lib;
+  } = lib;
 
   const {
     Panel,
     Row,
-  } = configContext.layoutComponents;
+  } = layoutComponents;
 
   const {
     Field,
-  } = configContext.recordComponents;
+  } = recordComponents;
 
   return (
     <Field name="measuredPartGroupList">
-      <Field name="measuredPartGroup" >
+      <Field name="measuredPartGroup">
         <Panel>
           <Row>
             <Field name="measuredPart" />
             <Field name="dimensionSummary" />
           </Row>
 
-          <Field name="dimensionSubGroupList" >
+          <Field name="dimensionSubGroupList">
             <Field name="dimensionSubGroup">
               <Field name="dimension" />
               <Field name="value" />

@@ -8,6 +8,6 @@ export default (configContext) => {
       condition: {
         formatValue: formatRefName,
       },
-    }
+    },
   };
 };

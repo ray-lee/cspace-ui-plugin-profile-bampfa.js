@@ -1,6 +1,7 @@
 export const getPrimaryNationality = (recordData) => {
   const nationalities = recordData.getIn(
-    ['document', 'ns2:persons_common', 'nationalities', 'nationality']);
+    ['document', 'ns2:persons_common', 'nationalities', 'nationality'],
+  );
 
   return (nationalities ? nationalities.first() : null);
 };
@@ -59,11 +60,11 @@ export const computePersonNames = ({ data, recordData }) => {
   // have any values filled in. This causes the displayName to be overwritten on save. Since
   // this field is required, it becomes impossible to save the record. Skip the
   // replacing if there is a display name already there.
-  let finalNameLFM = namePartsLFM.filter(part => !!part).join(' ');
+  let finalNameLFM = namePartsLFM.filter((part) => !!part).join(' ');
 
   finalNameLFM = (finalNameLFM === '' && displayName !== '') ? displayName : finalNameLFM;
 
   return data
     .set('termDisplayName', finalNameLFM)
-    .set('termName', namePartsFML.filter(part => !!part).join(' '));
+    .set('termName', namePartsFML.filter((part) => !!part).join(' '));
 };

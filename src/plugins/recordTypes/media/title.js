@@ -1,4 +1,4 @@
-export default configContext => (data) => {
+export default (configContext) => (data) => {
   const {
     getPart,
   } = configContext.recordDataHelpers;
@@ -13,5 +13,5 @@ export default configContext => (data) => {
   const bampfaData = getPart(data, 'media_bampfa');
   const imageNumber = bampfaData ? bampfaData.get('imageNumber') : null;
 
-  return [imageNumber, title].filter(part => !!part).join(' – ');
+  return [imageNumber, title].filter((part) => !!part).join(' – ');
 };

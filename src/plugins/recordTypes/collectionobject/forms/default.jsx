@@ -42,8 +42,8 @@ const template = (configContext) => {
           </Col>
         </Row>
 
-        <Field name="bampfaObjectProductionPersonGroupList" subpath="ns2:collectionobjects_bampfa" >
-          <Field name="bampfaObjectProductionPersonGroup" >
+        <Field name="bampfaObjectProductionPersonGroupList" subpath="ns2:collectionobjects_bampfa">
+          <Field name="bampfaObjectProductionPersonGroup">
             <Field name="bampfaObjectProductionPerson" />
             <Field name="bampfaObjectProductionPersonRole" />
             <Field name="bampfaObjectProductionPersonQualifier" />
@@ -52,8 +52,8 @@ const template = (configContext) => {
 
         <Field name="artistDisplayOverride" subpath="ns2:collectionobjects_bampfa" />
 
-        <Field name="bampfaTitleGroupList" subpath="ns2:collectionobjects_bampfa" >
-          <Field name="bampfaTitleGroup" >
+        <Field name="bampfaTitleGroupList" subpath="ns2:collectionobjects_bampfa">
+          <Field name="bampfaTitleGroup">
             <Field name="bampfaFormattedTitle" />
           </Field>
         </Field>
@@ -66,7 +66,7 @@ const template = (configContext) => {
           <Col>
             <Field name="physicalDescription" />
 
-            <Field name="otherNumberList" >
+            <Field name="otherNumberList">
               <Field name="otherNumber">
                 <Field name="numberValue" />
                 <Field name="numberType" />
@@ -86,7 +86,7 @@ const template = (configContext) => {
         <Row>
           <Col>
             <Field name="objectProductionDateGroupList">
-              <Field name="objectProductionDateGroup" >
+              <Field name="objectProductionDateGroup">
                 <Field name="productionDate" />
               </Field>
             </Field>
@@ -160,11 +160,11 @@ const template = (configContext) => {
               <Field name="acquisitionDateGroup" />
             </Field>
 
-            <Field name="acquisitionSources" subpath="ns2:collectionobjects_bampfa" >
+            <Field name="acquisitionSources" subpath="ns2:collectionobjects_bampfa">
               <Field name="acquisitionSource" />
             </Field>
 
-            <Field name="bampfaAcquisitionReasonList" subpath="ns2:collectionobjects_bampfa" >
+            <Field name="bampfaAcquisitionReasonList" subpath="ns2:collectionobjects_bampfa">
               <Field name="bampfaAcquisitionReason" />
             </Field>
 
@@ -196,7 +196,7 @@ const template = (configContext) => {
       <Panel name="classification" collapsible collapsed>
         <Row>
           <Col>
-            <Field name="bampfaCollectionList" subpath="ns2:collectionobjects_bampfa" >
+            <Field name="bampfaCollectionList" subpath="ns2:collectionobjects_bampfa">
               <Field name="bampfaCollection" />
             </Field>
 
@@ -231,7 +231,7 @@ const template = (configContext) => {
       </Panel>
 
       <Panel name="condition" collapsible collapsed>
-        <Field name="bampfaConditionCheckGroupList" subpath="ns2:collectionobjects_bampfa" >
+        <Field name="bampfaConditionCheckGroupList" subpath="ns2:collectionobjects_bampfa">
           <Field name="bampfaConditionCheckGroup">
             <Panel>
               <Row>
@@ -266,7 +266,7 @@ const template = (configContext) => {
       </Panel>
 
       <Panel name="collectionText" collapsible collapsed>
-        <Field name="collectionTextGroupList" subpath="ns2:collectionobjects_bampfa" >
+        <Field name="collectionTextGroupList" subpath="ns2:collectionobjects_bampfa">
           <Field name="collectionTextGroup">
             <Panel>
               <Row>
@@ -304,6 +304,6 @@ const template = (configContext) => {
   );
 };
 
-export default configContext => ({
+export default (configContext) => ({
   template: template(configContext),
 });

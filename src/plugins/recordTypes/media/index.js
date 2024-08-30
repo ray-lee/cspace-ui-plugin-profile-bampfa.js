@@ -5,7 +5,7 @@ import forms from './forms';
 import optionLists from './optionLists';
 import title from './title';
 
-export default () => configContext => ({
+export default () => (configContext) => ({
   optionLists,
   recordTypes: {
     media: {

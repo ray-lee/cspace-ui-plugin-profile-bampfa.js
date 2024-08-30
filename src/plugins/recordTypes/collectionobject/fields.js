@@ -42,7 +42,7 @@ export default (configContext) => {
   return {
     document: {
       [config]: {
-        compute: args => computeFields(args, formatRefName, Immutable),
+        compute: (args) => computeFields(args, formatRefName, Immutable),
       },
       'ns2:collectionobjects_common': {
         objectNumber: {
