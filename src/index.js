@@ -8,7 +8,7 @@ import plugins from './plugins';
 import logo from '../images/logo.svg';
 import styles from '../styles/cspace-ui-plugin-profile/bampfa.css';
 
-module.exports = () => ({
+export default () => ({
   logo,
   messages,
   className: styles.common,
