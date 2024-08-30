@@ -6,7 +6,7 @@ import advancedSearch from './advancedSearch';
 import messages from './messages';
 import title from './title';
 
-export default () => configContext => ({
+export default () => (configContext) => ({
   optionLists,
   recordTypes: {
     collectionobject: {

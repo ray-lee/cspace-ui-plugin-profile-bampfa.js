@@ -3,7 +3,7 @@ import forms from './forms';
 import messages from './messages';
 import advancedSearch from './advancedSearch';
 
-export default () => configContext => ({
+export default () => (configContext) => ({
   recordTypes: {
     person: {
       messages,

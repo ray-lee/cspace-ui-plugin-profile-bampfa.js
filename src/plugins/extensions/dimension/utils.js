@@ -6,7 +6,7 @@ const summaryUnits = {
   [CENTIMETERS_VALUE]: 'cm.',
 };
 
-const formatUnit = unit => summaryUnits[unit] || unit;
+const formatUnit = (unit) => summaryUnits[unit] || unit;
 
 // eslint-disable-next-line import/prefer-default-export
 export const computeDimensionSummary = ({ data }) => {
@@ -28,9 +28,9 @@ export const computeDimensionSummary = ({ data }) => {
       const unit = dimensionSubGroup.get('measurementUnit');
 
       if (
-        value &&
-        (unit === INCHES_VALUE || unit === CENTIMETERS_VALUE) &&
-        !(dimension in measurements)
+        value
+        && (unit === INCHES_VALUE || unit === CENTIMETERS_VALUE)
+        && !(dimension in measurements)
       ) {
         measurements[dimension] = {
           value,
@@ -62,8 +62,7 @@ export const computeDimensionSummary = ({ data }) => {
 
   const hasCommonUnit = (Object.keys(usedUnits).length === 1);
 
-  const orderedMeasurementDescriptions = orderedMeasurements.map(({ value, unit }) =>
-    (hasCommonUnit ? value : `${value} ${formatUnit(unit)}`));
+  const orderedMeasurementDescriptions = orderedMeasurements.map(({ value, unit }) => (hasCommonUnit ? value : `${value} ${formatUnit(unit)}`));
 
   // Join all measurement descriptions with x.
 
@@ -85,5 +84,5 @@ export const computeDimensionSummary = ({ data }) => {
     measuredPartNote && `(${measuredPartNote})`,
   ];
 
-  return data.set('dimensionSummary', summaryParts.filter(part => !!part).join(' '));
+  return data.set('dimensionSummary', summaryParts.filter((part) => !!part).join(' '));
 };

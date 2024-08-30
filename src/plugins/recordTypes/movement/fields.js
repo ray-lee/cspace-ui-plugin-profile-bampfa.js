@@ -79,7 +79,7 @@ export default (configContext) => {
         },
         computedSummary: {
           [config]: {
-            compute: args => computeMovementSummary(args, formatHelpers),
+            compute: (args) => computeMovementSummary(args, formatHelpers),
           },
         },
       },

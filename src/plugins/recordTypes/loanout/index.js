@@ -1,7 +1,7 @@
 import fields from './fields';
 import idGenerators from './idGenerators';
 
-export default () => configContext => ({
+export default () => (configContext) => ({
   idGenerators,
   recordTypes: {
     loanout: {

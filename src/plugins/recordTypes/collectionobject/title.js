@@ -1,4 +1,4 @@
-export default configContext => (data) => {
+export default (configContext) => (data) => {
   const {
     deepGet,
     getPart,
@@ -25,8 +25,8 @@ export default configContext => (data) => {
     titleParts.push(
       deepGet(
         bampfaData,
-        ['bampfaTitleGroupList', 'bampfaTitleGroup', 0, 'bampfaTitle']
-      )
+        ['bampfaTitleGroupList', 'bampfaTitleGroup', 0, 'bampfaTitle'],
+      ),
     );
   }
 
@@ -34,8 +34,8 @@ export default configContext => (data) => {
     titleParts.push(
       deepGet(
         commonData,
-        ['objectProductionDateGroupList', 'objectProductionDateGroup', 0, 'dateDisplayDate']
-      )
+        ['objectProductionDateGroupList', 'objectProductionDateGroup', 0, 'dateDisplayDate'],
+      ),
     );
   }
 
@@ -49,11 +49,11 @@ export default configContext => (data) => {
             'bampfaObjectProductionPersonGroup',
             0,
             'bampfaObjectProductionPerson',
-          ]
-        )
-      )
+          ],
+        ),
+      ),
     );
   }
 
-  return titleParts.filter(part => !!part).join(' – ');
+  return titleParts.filter((part) => !!part).join(' – ');
 };

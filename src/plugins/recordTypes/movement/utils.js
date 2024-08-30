@@ -7,6 +7,6 @@ export const computeMovementSummary = ({ recordData }, { formatDate, formatRefNa
   const formattedReason = reason ? `(${formatRefName(reason)})` : null;
 
   return [formattedLocationDate, formattedReason]
-    .filter(part => !!part)
+    .filter((part) => !!part)
     .join(' ');
 };

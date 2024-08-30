@@ -1,6 +1,6 @@
 import defaultForm from './default';
 
-export default configContext => ({
+export default (configContext) => ({
   default: defaultForm(configContext),
   inventory: {
     disabled: true,

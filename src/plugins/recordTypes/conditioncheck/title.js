@@ -1,4 +1,4 @@
-export default configContext => (data, formatterContext) => {
+export default (configContext) => (data, formatterContext) => {
   const {
     getPart,
     deepGet,
@@ -26,5 +26,5 @@ export default configContext => (data, formatterContext) => {
   const condition = getDisplayName(deepGet(common, ['conditionCheckGroupList', 'conditionCheckGroup', 0, 'condition']));
   const formattedCondition = formatOption('conditions', condition, formatterContext);
 
-  return [conditioncheckRefNumber, formattedCondition].filter(part => !!part).join(' – ');
+  return [conditioncheckRefNumber, formattedCondition].filter((part) => !!part).join(' – ');
 };

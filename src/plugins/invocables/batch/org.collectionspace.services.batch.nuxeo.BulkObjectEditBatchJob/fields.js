@@ -9,7 +9,6 @@ export default (configContext) => {
     configKey: config,
   } = configContext.configHelpers;
 
-
   return {
     params: {
       bampfaObjectProductionPerson: {

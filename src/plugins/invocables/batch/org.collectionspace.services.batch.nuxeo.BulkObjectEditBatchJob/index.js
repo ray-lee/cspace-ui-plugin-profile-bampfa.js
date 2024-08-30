@@ -1,7 +1,7 @@
 import forms from './forms';
 import fields from './fields';
 
-export default () => configContext => ({
+export default () => (configContext) => ({
   invocables: {
     batch: {
       'org.collectionspace.services.batch.nuxeo.BulkObjectEditBatchJob': {

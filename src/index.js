@@ -28,5 +28,5 @@ export default () => ({
       version: cspaceUIPluginProfileBAMPFA.packageVersion,
     },
   },
-  plugins: plugins.map(plugin => plugin()),
+  plugins: plugins.map((plugin) => plugin()),
 });
