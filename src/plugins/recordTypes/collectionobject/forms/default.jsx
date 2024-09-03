@@ -104,12 +104,19 @@ const template = (configContext) => {
               <Field name="briefDescription" />
             </Field>
 
-            <Row>
-              <Field name="numberOfObjects" />
-              <Field name="numberOfScans" subpath="ns2:collectionobjects_bampfa" />
-            </Row>
+            <Field name="numberOfScans" subpath="ns2:collectionobjects_bampfa" />
           </Col>
         </Row>
+
+        <Field name="objectCountGroupList">
+          <Field name="objectCountGroup">
+            <Field name="objectCount" />
+            <Field name="objectCountType" />
+            <Field name="objectCountCountedBy" />
+            <Field name="objectCountDate" />
+            <Field name="objectCountNote" />
+          </Field>
+        </Field>
 
         <Field name="objectProductionPlaceGroupList">
           <Field name="objectProductionPlaceGroup">

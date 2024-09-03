@@ -19,7 +19,7 @@ export default {
   'field.collectionobjects_common.otherNumber.name': 'T.R./other number',
   'field.collectionobjects_common.numberValue.fullName': 'T.R./other number',
   'field.collectionobjects_common.physicalDescription.name': 'Medium',
-  'field.collectionobjects_common.numberOfObjects.name': 'Item count',
+  'field.collectionobjects_common.objectCountGroup.name': 'Item count',
   'field.collectionobjects_common.objectProductionPeople.name': 'Name',
   'field.collectionobjects_common.objectProductionPeopleGroup.name': 'Production organization',
   'field.collectionobjects_common.objectProductionPeople.fullName': 'Production organization name',
