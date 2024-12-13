@@ -453,6 +453,9 @@ export default (configContext) => {
             },
             bampfaFormattedTitle: {
               [config]: {
+                // Disable searching on this field, since the computed bampfaTitle field should be
+                // used for search instead.
+                searchDisabled: true,
                 view: {
                   type: RichTextInput,
                   props: {
@@ -470,6 +473,9 @@ export default (configContext) => {
                     defaultMessage: 'Title',
                   },
                 }),
+                // Explicitly enable this field for search. Since this field does not appear on
+                // any templates, it would not be searchable by default.
+                searchDisabled: false,
                 searchView: {
                   type: TextInput,
                 },
