@@ -1167,6 +1167,10 @@ export default (configContext) => {
               [config]: {
                 dataType: DATA_TYPE_DATE,
                 messages: defineMessages({
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.conditionCheckDate.fullName',
+                    defaultMessage: 'Condition check date',
+                  },
                   name: {
                     id: 'field.collectionobjects_bampfa.conditionCheckDate.name',
                     defaultMessage: 'Date',
@@ -1258,6 +1262,14 @@ export default (configContext) => {
               [config]: {
                 dataType: DATA_TYPE_STRUCTURED_DATE,
                 messages: defineMessages({
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.collectionTextDateGroup.fullName',
+                    defaultMessage: 'Text/label date',
+                  },
+                  groupName: {
+                    id: 'field.collectionobjects_bampfa.collectionTextDateGroup.groupName',
+                    defaultMessage: 'Date',
+                  },
                   name: {
                     id: 'field.collectionobjects_bampfa.collectionTextDateGroup.name',
                     defaultMessage: 'Date',
@@ -1272,6 +1284,10 @@ export default (configContext) => {
             collectionTextNote: {
               [config]: {
                 messages: defineMessages({
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.collectionTextNote.fullName',
+                    defaultMessage: 'Text/label note',
+                  },
                   name: {
                     id: 'field.collectionobjects_bampfa.collectionTextNote.name',
                     defaultMessage: 'Note',
@@ -1312,6 +1328,10 @@ export default (configContext) => {
             catalogerName: {
               [config]: {
                 messages: defineMessages({
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.catalogerName.fullName',
+                    defaultMessage: 'Cataloger name',
+                  },
                   name: {
                     id: 'field.collectionobjects_bampfa.catalogerName.name',
                     defaultMessage: 'Name',
@@ -1326,6 +1346,10 @@ export default (configContext) => {
               [config]: {
                 dataType: DATA_TYPE_DATE,
                 messages: defineMessages({
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.catalogDate.fullName',
+                    defaultMessage: 'Cataloger date',
+                  },
                   name: {
                     id: 'field.collectionobjects_bampfa.catalogDate.name',
                     defaultMessage: 'Date',
@@ -1339,6 +1363,10 @@ export default (configContext) => {
             catalogNote: {
               [config]: {
                 messages: defineMessages({
+                  fullName: {
+                    id: 'field.collectionobjects_bampfa.catalogNote.fullName',
+                    defaultMessage: 'Cataloger note',
+                  },
                   name: {
                     id: 'field.collectionobjects_bampfa.catalogNote.name',
                     defaultMessage: 'Note',
