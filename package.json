@@ -51,7 +51,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.0",
-    "@ucb-cspace/cspace-ui": "^9.0.1-ucb.2",
+    "@ucb-cspace/cspace-ui": "^9.0.1-ucb.3",
     "babel-loader": "^9.1.2",
     "babel-plugin-dev-expression": "^0.2.1",
     "babel-plugin-istanbul": "^5.1.2",
